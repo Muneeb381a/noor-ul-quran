@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+﻿import { useState, useEffect, useCallback } from 'react';
 import lessons from '../../data/qaida-lessons.json';
 import allLetters from '../../data/arabic-letters.json';
 import MakhrajDiagram from '../../components/learn/qaida/MakhrajDiagram';
@@ -140,7 +140,7 @@ function QaidaQuiz({ lesson, onClose, onComplete }) {
         </div>
 
         {/* Progress bar */}
-        <div style={{ height: 4, background: 'rgba(255,255,255,0.08)', borderRadius: 2, marginBottom: '1.5rem' }}>
+        <div style={{ height: 4, background: 'rgba(28,25,23,0.09)', borderRadius: 2, marginBottom: '1.5rem' }}>
           <div style={{ height: '100%', width: `${((current) / questions.length) * 100}%`, background: 'var(--green-light)', borderRadius: 2, transition: 'width 0.3s' }} />
         </div>
 
@@ -150,7 +150,7 @@ function QaidaQuiz({ lesson, onClose, onComplete }) {
 
         <div
           onClick={() => speak(q.arabic)}
-          style={{ fontFamily: 'var(--font-arabic)', fontSize: '4rem', textAlign: 'center', marginBottom: '1.5rem', cursor: 'pointer', padding: '1rem', background: 'rgba(255,255,255,0.04)', borderRadius: 'var(--radius-lg)', userSelect: 'none', color: 'rgba(255,255,255,0.88)' }}
+          style={{ fontFamily: 'var(--font-arabic)', fontSize: '4rem', textAlign: 'center', marginBottom: '1.5rem', cursor: 'pointer', padding: '1rem', background: '#ffffff', borderRadius: 'var(--radius-lg)', userSelect: 'none', color: '#1C1917' }}
           title="Tap to hear"
         >
           {q.arabic}
@@ -189,7 +189,7 @@ function LetterCard({ letter, isActive, onClick }) {
       onClick={onClick}
       style={{
         width: 80, textAlign: 'center', padding: '0.75rem 0.5rem',
-        background: isActive ? 'var(--green-deep)' : 'rgba(255,255,255,0.06)',
+        background: isActive ? 'var(--green-deep)' : 'rgba(28,25,23,0.07)',
         color: isActive ? '#fff' : 'var(--text-dark)',
         borderRadius: 'var(--radius)',
         border: isActive ? '2px solid var(--green-deep)' : '1.5px solid #ddd',
@@ -238,13 +238,13 @@ function LessonContent({ lesson }) {
               </div>
 
               {/* Makhraj description */}
-              <div style={{ padding: '0.65rem 0.9rem', background: 'rgba(255,255,255,0.1)', borderRadius: 'var(--radius)', borderLeft: '3px solid var(--gold)' }}>
+              <div style={{ padding: '0.65rem 0.9rem', background: 'rgba(28,25,23,0.1)', borderRadius: 'var(--radius)', borderLeft: '3px solid var(--gold)' }}>
                 <p style={{ fontSize: '0.82rem', opacity: 0.9, lineHeight: 1.6 }}>
                   {activeMeta.makhraj_desc}
                 </p>
               </div>
 
-              <button onClick={() => speak(activeMeta.arabic_name)} style={{ ...btnOutline, borderColor: 'rgba(255,255,255,0.4)', color: '#fff', alignSelf: 'flex-start' }}>
+              <button onClick={() => speak(activeMeta.arabic_name)} style={{ ...btnOutline, borderColor: '#A8A29E', color: '#fff', alignSelf: 'flex-start' }}>
                 ▶ Hear Again
               </button>
             </div>
@@ -273,14 +273,14 @@ function LessonContent({ lesson }) {
     return (
       <div>
         {lesson.non_connecting && (
-          <div style={{ background: 'rgba(201,168,76,0.08)', border: '1px solid rgba(201,168,76,0.3)', borderRadius: 'var(--radius)', padding: '0.75rem 1rem', marginBottom: '1.25rem', fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)' }}>
+          <div style={{ background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.3)', borderRadius: 'var(--radius)', padding: '0.75rem 1rem', marginBottom: '1.25rem', fontSize: '0.9rem', color: '#57534E' }}>
             <strong>Non-connecting letters</strong> (never connect to the next letter):&nbsp;
             <span style={{ fontFamily: 'var(--font-arabic)', fontSize: '1.4rem', letterSpacing: '0.5rem' }}>{lesson.non_connecting.join(' ')}</span>
           </div>
         )}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '0.75rem' }}>
           {lesson.examples?.map((ex, i) => (
-            <div key={i} onClick={() => speak(ex.form || ex.isolated)} style={{ padding: '1rem', background: 'rgba(255,255,255,0.04)', borderRadius: 'var(--radius)', border: '1px solid rgba(255,255,255,0.1)', cursor: 'pointer', transition: 'border-color 0.15s' }}
+            <div key={i} onClick={() => speak(ex.form || ex.isolated)} style={{ padding: '1rem', background: '#ffffff', borderRadius: 'var(--radius)', border: '1px solid rgba(28,25,23,0.1)', cursor: 'pointer', transition: 'border-color 0.15s' }}
               onMouseEnter={e => e.currentTarget.style.borderColor = 'var(--green-light)'}
               onMouseLeave={e => e.currentTarget.style.borderColor = '#ddd'}
             >
@@ -303,7 +303,7 @@ function LessonContent({ lesson }) {
       <div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
           {lesson.examples?.map((ex, i) => (
-            <div key={i} onClick={() => speak(ex.arabic)} style={{ padding: '1.25rem', borderRadius: 'var(--radius-lg)', border: `2px solid ${ex.color}`, background: 'rgba(255,255,255,0.04)', cursor: 'pointer', transition: 'transform 0.1s' }}
+            <div key={i} onClick={() => speak(ex.arabic)} style={{ padding: '1.25rem', borderRadius: 'var(--radius-lg)', border: `2px solid ${ex.color}`, background: '#ffffff', cursor: 'pointer', transition: 'transform 0.1s' }}
               onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.02)'}
               onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
             >
@@ -319,7 +319,7 @@ function LessonContent({ lesson }) {
             <h4 style={{ color: 'var(--green-deep)', marginBottom: '0.75rem' }}>Practice</h4>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
               {lesson.practice.map((p, i) => (
-                <div key={i} onClick={() => speak(p.arabic)} style={{ padding: '0.75rem 1rem', background: 'rgba(255,255,255,0.04)', borderRadius: 'var(--radius)', border: '1px solid rgba(255,255,255,0.08)', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div key={i} onClick={() => speak(p.arabic)} style={{ padding: '0.75rem 1rem', background: '#ffffff', borderRadius: 'var(--radius)', border: '1px solid rgba(28,25,23,0.09)', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <span style={{ fontFamily: 'var(--font-arabic)', fontSize: '1.4rem', letterSpacing: '0.4rem' }}>{p.arabic}</span>
                   <span style={{ fontSize: '0.85rem', color: 'var(--text-mid)' }}>{p.label}</span>
                 </div>
@@ -336,7 +336,7 @@ function LessonContent({ lesson }) {
       <div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', marginBottom: '1.5rem' }}>
           {lesson.examples?.map((ex, i) => (
-            <div key={i} onClick={() => speak(ex.arabic)} style={{ padding: '1.25rem', borderRadius: 'var(--radius-lg)', border: `2px solid ${ex.color}`, background: 'rgba(255,255,255,0.04)', cursor: 'pointer' }}>
+            <div key={i} onClick={() => speak(ex.arabic)} style={{ padding: '1.25rem', borderRadius: 'var(--radius-lg)', border: `2px solid ${ex.color}`, background: '#ffffff', cursor: 'pointer' }}>
               <div style={{ fontFamily: 'var(--font-arabic)', fontSize: '2.5rem', color: ex.color, textAlign: 'center', marginBottom: '0.5rem' }}>{ex.arabic}</div>
               <div style={{ fontWeight: 'bold', color: ex.color }}>{ex.name}</div>
               <div style={{ fontSize: '0.82rem', color: 'var(--text-mid)', marginTop: '0.4rem' }}>{ex.desc}</div>
@@ -347,7 +347,7 @@ function LessonContent({ lesson }) {
           <div>
             <h4 style={{ color: 'var(--green-deep)', marginBottom: '0.75rem' }}>Practice — tap to hear</h4>
             {lesson.practice.map((p, i) => (
-              <div key={i} onClick={() => speak(p.arabic)} style={{ padding: '0.75rem 1rem', background: 'rgba(255,255,255,0.04)', borderRadius: 'var(--radius)', border: '1px solid rgba(255,255,255,0.08)', cursor: 'pointer', marginBottom: '0.6rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+              <div key={i} onClick={() => speak(p.arabic)} style={{ padding: '0.75rem 1rem', background: '#ffffff', borderRadius: 'var(--radius)', border: '1px solid rgba(28,25,23,0.09)', cursor: 'pointer', marginBottom: '0.6rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <span style={{ fontFamily: 'var(--font-arabic)', fontSize: '1.5rem' }}>{p.arabic}</span>
                 <span style={{ fontSize: '0.85rem', color: 'var(--text-mid)' }}>{p.label}</span>
               </div>
@@ -366,7 +366,7 @@ function LessonContent({ lesson }) {
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '0.75rem' }}>
           {lesson.examples?.map((ex, i) => (
-            <div key={i} onClick={() => speak(ex.arabic)} style={{ padding: '1rem', background: 'rgba(255,255,255,0.04)', borderRadius: 'var(--radius)', border: '1px solid rgba(255,255,255,0.08)', cursor: 'pointer', textAlign: 'center' }}>
+            <div key={i} onClick={() => speak(ex.arabic)} style={{ padding: '1rem', background: '#ffffff', borderRadius: 'var(--radius)', border: '1px solid rgba(28,25,23,0.09)', cursor: 'pointer', textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--font-arabic)', fontSize: '2rem', color: 'var(--green-deep)', marginBottom: '0.4rem' }}>{ex.arabic}</div>
               <div style={{ fontSize: '0.82rem', color: 'var(--text-mid)', fontStyle: 'italic' }}>{ex.transliteration}</div>
               <div style={{ fontSize: '0.85rem', fontWeight: 600, marginTop: '0.2rem' }}>{ex.meaning}</div>
@@ -401,13 +401,13 @@ export default function QaidaPage() {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: 'calc(100vh - 120px)', fontFamily: 'var(--font-body)', background: '#030A05' }}>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: 'calc(100vh - 120px)', fontFamily: 'var(--font-body)', background: '#FFFBEB' }}>
 
 
       <div style={{ display: 'flex', flex: 1 }}>
 
       {/* ── Sidebar ── */}
-      <aside style={{ width: 240, flexShrink: 0, borderRight: '1px solid rgba(255,255,255,0.07)', background: '#060F08', overflowY: 'auto', padding: '1rem 0' }}>
+      <aside style={{ width: 240, flexShrink: 0, borderRight: '1px solid rgba(28,25,23,0.1)', background: '#FFFBEB', overflowY: 'auto', padding: '1rem 0' }}>
         <div style={{ padding: '0 1rem 0.75rem', borderBottom: '1px solid #e0ddd5', marginBottom: '0.5rem' }}>
           <h3 style={{ color: 'var(--green-deep)', fontSize: '1rem' }}>Qaida Lessons</h3>
           <p style={{ fontSize: '0.75rem', color: 'var(--text-mid)' }}>
@@ -425,7 +425,7 @@ export default function QaidaPage() {
               borderRight: isActive ? '3px solid var(--gold)' : '3px solid transparent',
               display: 'flex', alignItems: 'center', gap: '0.6rem',
             }}>
-              <span style={{ width: 22, height: 22, borderRadius: '50%', background: done ? 'var(--success)' : isActive ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.65rem', fontWeight: 'bold', color: done ? '#fff' : isActive ? '#fff' : 'rgba(255,255,255,0.35)', flexShrink: 0 }}>
+              <span style={{ width: 22, height: 22, borderRadius: '50%', background: done ? 'var(--success)' : isActive ? '#D6D3D1' : 'rgba(28,25,23,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.65rem', fontWeight: 'bold', color: done ? '#fff' : isActive ? '#fff' : '#A8A29E', flexShrink: 0 }}>
                 {done ? '✓' : l.id}
               </span>
               <span style={{ fontSize: '0.85rem', lineHeight: 1.3 }}>{l.title.split(' — ')[0]}</span>
@@ -508,7 +508,7 @@ const overlay = {
   display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 999, padding: '1rem',
 };
 const modal = {
-  background: '#060F08', borderRadius: 'var(--radius-lg)',
+  background: '#FFFBEB', borderRadius: 'var(--radius-lg)',
   padding: '1.75rem', width: '100%', maxWidth: 460, maxHeight: '90vh', overflowY: 'auto',
   boxShadow: '0 8px 32px rgba(0,0,0,0.18)',
 };

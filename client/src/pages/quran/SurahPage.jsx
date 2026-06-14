@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useCallback } from 'react';
+﻿import { useState, useRef, useEffect, useCallback } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useSurah } from '../../hooks/useQuran';
 import { useAudio } from '../../hooks/useAudio';
@@ -131,16 +131,16 @@ export default function SurahPage() {
   );
 
   return (
-    <div style={{ minHeight: '80vh', background: '#030A05' }}>
+    <div style={{ minHeight: '80vh', background: '#FFFBEB' }}>
       {/* ── Surah Header ── */}
       <div style={{
-        background: 'linear-gradient(160deg, var(--green-deep) 0%, #0D2B1D 100%)',
+        background: 'linear-gradient(160deg, var(--green-deep) 0%, #052e16 100%)',
         padding: '2.5rem 1.5rem 2rem',
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
       }}>
-        <div style={{ position: 'absolute', inset: 0, opacity: 0.05, backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(201,168,76,1) 20px, rgba(201,168,76,1) 21px)', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.05, backgroundImage: 'repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(245,158,11,1) 20px, rgba(245,158,11,1) 21px)', pointerEvents: 'none' }} />
 
         <div style={{ position: 'relative' }}>
           {/* Back link */}
@@ -159,10 +159,10 @@ export default function SurahPage() {
           </h1>
 
           {/* English */}
-          <p style={{ fontFamily: 'var(--font-heading)', fontSize: '1rem', color: 'rgba(255,255,255,0.7)', letterSpacing: '0.1em', marginBottom: '0.25rem' }}>
+          <p style={{ fontFamily: 'var(--font-heading)', fontSize: '1rem', color: 'rgba(255,255,255,0.85)', letterSpacing: '0.1em', marginBottom: '0.25rem' }}>
             {surah?.englishName}
           </p>
-          <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.45)', marginBottom: '1rem' }}>
+          <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.55)', marginBottom: '1rem' }}>
             {surah?.englishNameTranslation}
           </p>
 
@@ -172,7 +172,7 @@ export default function SurahPage() {
               surah?.revelationType === 'Meccan' ? 'Makki' : 'Madani',
               `${surah?.numberOfAyahs} Ayahs`,
             ].map(t => (
-              <span key={t} style={{ padding: '0.25rem 0.75rem', background: 'rgba(201,168,76,0.15)', color: 'var(--gold-light)', borderRadius: 'var(--radius-full)', fontSize: '0.78rem', border: '1px solid rgba(201,168,76,0.3)' }}>
+              <span key={t} style={{ padding: '0.25rem 0.75rem', background: 'rgba(245,158,11,0.15)', color: 'var(--gold-light)', borderRadius: 'var(--radius-full)', fontSize: '0.78rem', border: '1px solid rgba(245,158,11,0.3)' }}>
                 {t}
               </span>
             ))}
@@ -180,19 +180,19 @@ export default function SurahPage() {
 
           {/* Ornament */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', justifyContent: 'center' }}>
-            <div style={{ flex: 1, maxWidth: 120, height: 1, background: 'linear-gradient(to right, transparent, rgba(201,168,76,0.5))' }} />
+            <div style={{ flex: 1, maxWidth: 120, height: 1, background: 'linear-gradient(to right, transparent, rgba(245,158,11,0.5))' }} />
             <span style={{ color: 'var(--gold)', fontSize: '1rem' }}>❖</span>
-            <div style={{ flex: 1, maxWidth: 120, height: 1, background: 'linear-gradient(to left, transparent, rgba(201,168,76,0.5))' }} />
+            <div style={{ flex: 1, maxWidth: 120, height: 1, background: 'linear-gradient(to left, transparent, rgba(245,158,11,0.5))' }} />
           </div>
         </div>
       </div>
 
       {/* ── Toolbar ── */}
-      <div style={{ background: 'rgba(4,10,6,0.97)', backdropFilter:'blur(20px)', borderBottom: '1px solid rgba(201,168,76,0.1)', padding: '0.6rem 1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', position: 'sticky', top: 68, zIndex: 10 }}>
+      <div style={{ background: 'rgba(4,10,6,0.97)', backdropFilter:'blur(20px)', borderBottom: '1px solid rgba(245,158,11,0.1)', padding: '0.6rem 1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', position: 'sticky', top: 68, zIndex: 10 }}>
         {/* Play all */}
         <button onClick={handlePlayAll} style={{
           display:'flex',alignItems:'center',gap:'0.4rem',padding:'0.42rem 1rem',
-          background: playingAll ? 'linear-gradient(135deg,#1B4332,#2D6A4F)' : 'rgba(82,183,136,0.08)',
+          background: playingAll ? 'linear-gradient(135deg,#14532D,#15803D)' : 'rgba(82,183,136,0.08)',
           color: playingAll ? '#fff' : 'rgba(82,183,136,0.9)',
           border: `1.5px solid ${playingAll ? 'rgba(82,183,136,0.5)' : 'rgba(82,183,136,0.25)'}`,
           borderRadius:99,fontSize:'0.8rem',fontWeight:600,cursor:'pointer',transition:'all 0.2s',
@@ -203,9 +203,9 @@ export default function SurahPage() {
         {/* Translation toggle */}
         <button onClick={() => setShowTrans(p => !p)} style={{
           padding:'0.42rem 1rem',
-          background: showTrans ? 'rgba(201,168,76,0.1)' : 'rgba(255,255,255,0.04)',
-          color: showTrans ? '#E9C46A' : 'rgba(255,255,255,0.45)',
-          border: `1.5px solid ${showTrans ? 'rgba(201,168,76,0.35)' : 'rgba(255,255,255,0.1)'}`,
+          background: showTrans ? 'rgba(245,158,11,0.1)' : 'rgba(28,25,23,0.04)',
+          color: showTrans ? '#FCD34D' : 'rgba(255,255,255,0.5)',
+          border: `1.5px solid ${showTrans ? 'rgba(245,158,11,0.35)' : 'rgba(255,255,255,0.15)'}`,
           borderRadius:99,fontSize:'0.8rem',fontWeight:600,cursor:'pointer',transition:'all 0.2s',
         }}>
           Translation {showTrans ? 'On' : 'Off'}
@@ -213,7 +213,7 @@ export default function SurahPage() {
 
         {/* Font size */}
         <div style={{ display:'flex',alignItems:'center',gap:'0.32rem',marginLeft:'auto' }}>
-          <span style={{ fontSize:'0.7rem',color:'rgba(255,255,255,0.28)',marginRight:'0.15rem',whiteSpace:'nowrap',fontFamily:'var(--font-urdu)',lineHeight:3 }}>خط کا سائز</span>
+          <span style={{ fontSize:'0.7rem',color:'#A8A29E',marginRight:'0.15rem',whiteSpace:'nowrap',fontFamily:'var(--font-urdu)',lineHeight:3 }}>خط کا سائز</span>
           {[
             { sz:24, display:'0.72rem', title:'Small'       },
             { sz:28, display:'0.88rem', title:'Medium'      },
@@ -224,9 +224,9 @@ export default function SurahPage() {
             return (
               <button key={sz} onClick={() => setFontSize(sz)} title={title} style={{
                 width:34,height:34,borderRadius:8,cursor:'pointer',transition:'all 0.18s',lineHeight:1,
-                background: active ? 'linear-gradient(135deg,#1B4332,#2D6A4F)' : 'rgba(255,255,255,0.05)',
-                color: active ? '#fff' : 'rgba(255,255,255,0.45)',
-                border: active ? '1.5px solid rgba(82,183,136,0.5)' : '1.5px solid rgba(255,255,255,0.08)',
+                background: active ? 'linear-gradient(135deg,#14532D,#15803D)' : 'rgba(255,255,255,0.07)',
+                color: active ? '#fff' : 'rgba(255,255,255,0.5)',
+                border: active ? '1.5px solid rgba(82,183,136,0.5)' : '1.5px solid rgba(255,255,255,0.12)',
                 fontSize:display,fontWeight:700,
                 display:'flex',alignItems:'center',justifyContent:'center',
                 fontFamily:'var(--font-heading)',
@@ -239,16 +239,16 @@ export default function SurahPage() {
       {/* ── Resume Banner ── */}
       {resumeAyah && !resumeDismissed && (
         <div style={{
-          background: 'linear-gradient(90deg, #0D2818, #1B4332)',
-          borderBottom: '1px solid rgba(201,168,76,0.2)',
+          background: 'linear-gradient(90deg, #14532D, #14532D)',
+          borderBottom: '1px solid rgba(245,158,11,0.2)',
           padding: '0.65rem 1.5rem',
           display: 'flex', alignItems: 'center', justifyContent: 'space-between',
           gap: '0.75rem', flexWrap: 'wrap',
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
             <span style={{ fontSize: '1rem' }}>📍</span>
-            <p style={{ margin: 0, fontSize: '0.82rem', color: 'rgba(255,255,255,0.75)' }}>
-              آپ نے آخری بار <strong style={{ color: '#C9A84C' }}>آیت {resumeAyah}</strong> پر پڑھنا چھوڑا تھا
+            <p style={{ margin: 0, fontSize: '0.82rem', color: 'rgba(255,255,255,0.85)' }}>
+              آپ نے آخری بار <strong style={{ color: '#F59E0B' }}>آیت {resumeAyah}</strong> پر پڑھنا چھوڑا تھا
             </p>
           </div>
           <div style={{ display: 'flex', gap: '0.5rem' }}>
@@ -256,7 +256,7 @@ export default function SurahPage() {
               onClick={() => scrollToAyah(resumeAyah)}
               style={{
                 padding: '0.38rem 0.95rem',
-                background: 'linear-gradient(135deg, #E2B84E, #C9A84C)',
+                background: 'linear-gradient(135deg, #E2B84E, #F59E0B)',
                 color: '#050E08', fontWeight: 700, fontSize: '0.78rem',
                 border: 'none', borderRadius: 99, cursor: 'pointer',
               }}
@@ -267,9 +267,9 @@ export default function SurahPage() {
               onClick={() => setResumeDismissed(true)}
               style={{
                 padding: '0.38rem 0.75rem',
-                background: 'rgba(255,255,255,0.07)',
-                color: 'rgba(255,255,255,0.5)', fontSize: '0.75rem',
-                border: '1px solid rgba(255,255,255,0.12)', borderRadius: 99, cursor: 'pointer',
+                background: 'rgba(28,25,23,0.09)',
+                color: '#78716C', fontSize: '0.75rem',
+                border: '1px solid rgba(28,25,23,0.12)', borderRadius: 99, cursor: 'pointer',
               }}
             >
               ✕
@@ -288,7 +288,7 @@ export default function SurahPage() {
             padding: '1.5rem',
             background: 'var(--white)',
             borderRadius: 'var(--radius-xl)',
-            border: '1px solid rgba(201,168,76,0.25)',
+            border: '1px solid rgba(245,158,11,0.25)',
             boxShadow: 'var(--shadow-gold)',
           }}>
             <p className="bismillah">
@@ -302,16 +302,16 @@ export default function SurahPage() {
           background: 'var(--white)',
           borderRadius: 'var(--radius-xl)',
           boxShadow: 'var(--shadow-md)',
-          border: '1px solid rgba(201,168,76,0.15)',
+          border: '1px solid rgba(245,158,11,0.15)',
           overflow: 'hidden',
         }}>
           {/* Translation label */}
           {showTrans && (
             <div style={{ background: 'linear-gradient(90deg, var(--green-deep), var(--green-mid))', padding: '0.5rem 1.5rem', display: 'flex', gap: '1.5rem' }}>
-              <span style={{ color: 'rgba(255,255,255,0.75)', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+              <span style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
                 English — Sahih International
               </span>
-              <span style={{ color: 'rgba(201,168,76,0.8)', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.05em' }}>
+              <span style={{ color: 'rgba(245,158,11,0.8)', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.05em' }}>
                 اردو — جالندھری
               </span>
             </div>
@@ -327,9 +327,9 @@ export default function SurahPage() {
                 data-ayah={ayah.numberInSurah}
                 style={{
                   padding: 'clamp(1.25rem, 3vw, 2rem) clamp(1.25rem, 4vw, 2.5rem)',
-                  borderBottom: i < ayahs.length - 1 ? '1px solid rgba(201,168,76,0.12)' : 'none',
+                  borderBottom: i < ayahs.length - 1 ? '1px solid rgba(245,158,11,0.12)' : 'none',
                   borderLeft: isPlaying ? '4px solid var(--green-light)' : isFlashing ? '4px solid var(--gold)' : '4px solid transparent',
-                  background: isPlaying ? 'rgba(82,183,136,0.04)' : isFlashing ? 'rgba(201,168,76,0.06)' : 'transparent',
+                  background: isPlaying ? 'rgba(82,183,136,0.04)' : isFlashing ? 'rgba(245,158,11,0.06)' : 'transparent',
                   transition: 'all 0.3s',
                   cursor: 'pointer',
                 }}
@@ -355,7 +355,7 @@ export default function SurahPage() {
                 {showTrans && (enAyahs[i]?.text || urAyahs[i]?.text) && (
                   <div style={{
                     paddingTop: '0.85rem',
-                    borderTop: '1px dashed rgba(201,168,76,0.2)',
+                    borderTop: '1px dashed rgba(245,158,11,0.2)',
                     display: 'flex',
                     flexDirection: 'column',
                     gap: '0.6rem',
@@ -366,7 +366,7 @@ export default function SurahPage() {
                         width: 28, height: 28, flexShrink: 0,
                         background: isPlaying ? 'var(--green-deep)' : 'linear-gradient(135deg, var(--cream-dark), var(--cream-mid))',
                         borderRadius: '50%',
-                        border: `1px solid ${isPlaying ? 'var(--green-light)' : 'rgba(201,168,76,0.3)'}`,
+                        border: `1px solid ${isPlaying ? 'var(--green-light)' : 'rgba(245,158,11,0.3)'}`,
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                         fontFamily: 'var(--font-arabic)',
                         fontSize: '0.72rem',
@@ -396,14 +396,14 @@ export default function SurahPage() {
                         {urAyahs[i]?.text && (
                           <p style={{
                             fontSize: '1.12rem',
-                            color: '#2D6A4F',
+                            color: '#15803D',
                             lineHeight: 3.4,
                             fontFamily: 'var(--font-urdu)',
                             direction: 'rtl',
                             textAlign: 'right',
                             wordSpacing: '3px',
                             paddingRight: '0.25rem',
-                            borderRight: '3px solid rgba(201,168,76,0.35)',
+                            borderRight: '3px solid rgba(245,158,11,0.35)',
                             paddingTop: '0.5rem',
                           }}>
                             {urAyahs[i].text}
@@ -424,7 +424,7 @@ export default function SurahPage() {
             <Link to={`/quran/${num - 1}`} style={{
               padding: '0.7rem 1.25rem',
               background: 'var(--white)',
-              border: '1px solid rgba(27,67,50,0.12)',
+              border: '1px solid rgba(20,83,45,0.12)',
               borderRadius: 'var(--radius-lg)',
               color: 'var(--green-deep)',
               fontWeight: 600,

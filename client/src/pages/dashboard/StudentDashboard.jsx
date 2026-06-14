@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react';
+﻿import { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useStreak } from '../../hooks/useStreak';
@@ -49,7 +49,7 @@ function Card({ children, style }) {
     <div style={{
       background: '#fff', borderRadius: 20,
       border: '1px solid rgba(0,0,0,0.06)',
-      boxShadow: '0 1px 4px rgba(0,0,0,0.04), 0 8px 24px rgba(27,67,50,0.07)',
+      boxShadow: '0 1px 4px rgba(0,0,0,0.04), 0 8px 24px rgba(20,83,45,0.07)',
       overflow: 'hidden', ...style,
     }}>{children}</div>
   );
@@ -103,7 +103,7 @@ function StatPill({ icon, label, value, sub, color, bg }) {
 
 /* ── Quick Actions ────────────────────────────────────────────────────────── */
 const ACTIONS = [
-  { to: '/hifz/new-log',  icon: '📝', label: 'Log Session', sub: 'Sabaq · Sabaqi · Manzil', from: '#1B4332', via: '#2D6A4F' },
+  { to: '/hifz/new-log',  icon: '📝', label: 'Log Session', sub: 'Sabaq · Sabaqi · Manzil', from: '#14532D', via: '#15803D' },
   { to: '/quran',         icon: '📖', label: 'Read Quran',  sub: '114 Surahs',              from: '#0D47A1', via: '#1565C0' },
   { to: '/learn/qaida',   icon: '✏️', label: 'Qaida',       sub: '10 Lessons',              from: '#1B5E20', via: '#2E7D32' },
   { to: '/learn/tajweed', icon: '🎨', label: 'Tajweed',     sub: '13 Rules',                from: '#880E4F', via: '#AD1457' },
@@ -128,7 +128,7 @@ function QuickActions() {
         >
           <span style={{ fontSize: '1.5rem' }}>{a.icon}</span>
           <span style={{ fontSize: '0.76rem', fontWeight: 700, color: '#fff', textAlign: 'center', lineHeight: 1.2 }}>{a.label}</span>
-          <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.6)', textAlign: 'center' }}>{a.sub}</span>
+          <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.55)', textAlign: 'center' }}>{a.sub}</span>
         </Link>
       ))}
     </div>
@@ -140,19 +140,19 @@ function DailyVerse() {
   const v = VERSES[dayIndex() % VERSES.length];
   return (
     <Card>
-      <CardHead icon="✨" title="Verse of the Day" link="Open Quran" linkTo="/quran" accent="#1B4332" />
+      <CardHead icon="✨" title="Verse of the Day" link="Open Quran" linkTo="/quran" accent="#14532D" />
       <div style={{ padding: '1.25rem 1.4rem' }}>
         <div style={{
-          background: 'linear-gradient(135deg, #0D2818, #1B4332)',
+          background: 'linear-gradient(135deg, #14532D, #14532D)',
           borderRadius: 14, padding: '1.4rem',
           position: 'relative', overflow: 'hidden', marginBottom: '1rem',
         }}>
           <div style={{ position: 'absolute', bottom: -15, right: -10, opacity: 0.08 }}>
             <svg viewBox="0 0 200 200" width="110" height="110">
-              <polygon points="100,4 116,66 180,66 130,102 148,164 100,128 52,164 70,102 20,66 84,66" fill="rgba(201,168,76,1)" />
+              <polygon points="100,4 116,66 180,66 130,102 148,164 100,128 52,164 70,102 20,66 84,66" fill="rgba(245,158,11,1)" />
             </svg>
           </div>
-          <p style={{ fontFamily: 'var(--font-quran)', fontSize: '1.55rem', direction: 'rtl', color: '#E9C46A', lineHeight: 2.2, margin: 0, position: 'relative' }}>{v.arabic}</p>
+          <p style={{ fontFamily: 'var(--font-quran)', fontSize: '1.55rem', direction: 'rtl', color: '#FCD34D', lineHeight: 2.2, margin: 0, position: 'relative' }}>{v.arabic}</p>
         </div>
         <p style={{ fontSize: '0.88rem', color: '#444', fontStyle: 'italic', lineHeight: 1.7, marginBottom: '0.3rem' }}>"{v.trans}"</p>
         <p style={{ fontSize: '0.72rem', color: '#aaa' }}>— {v.ref}</p>
@@ -170,10 +170,10 @@ function LetterOfDay() {
       <div style={{ padding: '1.25rem 1.4rem', display: 'flex', gap: '1.1rem', alignItems: 'center' }}>
         <div style={{
           width: 82, height: 82, borderRadius: 20, flexShrink: 0,
-          background: 'linear-gradient(145deg, #1B4332, #2D6A4F)',
+          background: 'linear-gradient(145deg, #14532D, #15803D)',
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontFamily: 'var(--font-arabic)', fontSize: '3rem', color: '#E9C46A',
-          boxShadow: '0 6px 24px rgba(27,67,50,0.4)',
+          fontFamily: 'var(--font-arabic)', fontSize: '3rem', color: '#FCD34D',
+          boxShadow: '0 6px 24px rgba(20,83,45,0.4)',
         }}>{letter.arabic}</div>
         <div>
           <div style={{ fontFamily: 'var(--font-arabic)', fontSize: '1.05rem', color: 'var(--green-deep)', marginBottom: '0.2rem' }}>{letter.arabic_name}</div>
@@ -194,8 +194,8 @@ function DailyTip() {
       display: 'flex', alignItems: 'flex-start', gap: '1rem',
       padding: '1.1rem 1.3rem',
       background: 'linear-gradient(135deg, #FFF8E1, #FFFDF5)',
-      borderRadius: 16, border: '1px solid rgba(201,168,76,0.25)',
-      boxShadow: '0 2px 12px rgba(201,168,76,0.08)',
+      borderRadius: 16, border: '1px solid rgba(245,158,11,0.25)',
+      boxShadow: '0 2px 12px rgba(245,158,11,0.08)',
     }}>
       <span style={{ fontSize: '1.8rem', flexShrink: 0 }}>{tip.icon}</span>
       <div>
@@ -228,9 +228,9 @@ function WeeklyChart({ logs = [] }) {
                 <div style={{
                   width: '100%', height: h, borderRadius: 6,
                   background: day.count > 0
-                    ? (day.isToday ? 'linear-gradient(to top, #C9A84C, #E9C46A)' : 'linear-gradient(to top, var(--green-deep), var(--green-light))')
+                    ? (day.isToday ? 'linear-gradient(to top, #F59E0B, #FCD34D)' : 'linear-gradient(to top, var(--green-deep), var(--green-light))')
                     : '#F0EDE6',
-                  border: day.isToday ? '1.5px solid rgba(201,168,76,0.6)' : '1px solid transparent',
+                  border: day.isToday ? '1.5px solid rgba(245,158,11,0.6)' : '1px solid transparent',
                   transition: 'height 0.4s ease',
                   position: 'relative',
                 }} title={`${day.count} session${day.count !== 1 ? 's' : ''}`}>
@@ -268,7 +268,7 @@ function QaidaTracker() {
           <span style={{ fontSize: '0.78rem', fontWeight: 800, color: '#2E7D32' }}>{pct}%</span>
         </div>
         <div style={{ height: 6, background: '#F0EDE6', borderRadius: 99, overflow: 'hidden', marginBottom: '0.9rem' }}>
-          <div style={{ height: '100%', width: `${pct}%`, background: 'linear-gradient(90deg, #1B4332, #52B788)', borderRadius: 99, transition: 'width 0.7s ease' }} />
+          <div style={{ height: '100%', width: `${pct}%`, background: 'linear-gradient(90deg, #14532D, #22C55E)', borderRadius: 99, transition: 'width 0.7s ease' }} />
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: '0.4rem' }}>
           {NAMES.map((n, i) => {
@@ -277,10 +277,10 @@ function QaidaTracker() {
               <div key={i} title={`Lesson ${i+1}: ${n}`} style={{
                 height: 34, borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: '0.7rem', fontWeight: 700, cursor: 'default',
-                background: ok ? 'linear-gradient(135deg, #1B4332, #2D6A4F)' : '#F5F0E8',
-                color: ok ? '#E9C46A' : '#CCC',
+                background: ok ? 'linear-gradient(135deg, #14532D, #15803D)' : '#F5F0E8',
+                color: ok ? '#FCD34D' : '#CCC',
                 border: `1px solid ${ok ? 'transparent' : '#E8E2D8'}`,
-                boxShadow: ok ? '0 2px 8px rgba(27,67,50,0.3)' : 'none',
+                boxShadow: ok ? '0 2px 8px rgba(20,83,45,0.3)' : 'none',
                 transition: 'all 0.2s',
               }}>{ok ? '✓' : i + 1}</div>
             );
@@ -358,7 +358,7 @@ function SurahMap({ progress = [] }) {
             <span style={{ fontSize: '0.78rem', color: '#aaa' }}> / 114 surahs</span>
           </div>
           <div style={{ display: 'flex', gap: '0.6rem', fontSize: '0.68rem', color: '#aaa' }}>
-            {[['#1B4332','Done'], ['#F57C00','Progress'], ['#EEE','Pending']].map(([c,l]) => (
+            {[['#14532D','Done'], ['#F57C00','Progress'], ['#EEE','Pending']].map(([c,l]) => (
               <span key={l} style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
                 <span style={{ width: 8, height: 8, borderRadius: 2, background: c, display: 'inline-block' }} />{l}
               </span>
@@ -371,7 +371,7 @@ function SurahMap({ progress = [] }) {
             return (
               <div key={i} title={`Surah ${i+1}`} style={{
                 aspectRatio: '1', borderRadius: 3,
-                background: p?.status === 'complete' ? 'linear-gradient(135deg,#1B4332,#2D6A4F)' : p?.status === 'in_progress' ? '#F57C00' : '#F0EDE6',
+                background: p?.status === 'complete' ? 'linear-gradient(135deg,#14532D,#15803D)' : p?.status === 'in_progress' ? '#F57C00' : '#F0EDE6',
                 border: p?.status === 'complete' ? '1px solid rgba(82,183,136,0.3)' : p?.status === 'in_progress' ? '1px solid #E65100' : '1px solid #E8E2D8',
                 cursor: 'default',
               }} />
@@ -415,7 +415,7 @@ function QuickSurahs() {
 
 /* ── Recent Logs ─────────────────────────────────────────────────────────── */
 function RecentLogs({ logs = [] }) {
-  const TYPE_COLOR = { sabaq: '#1B4332', sabaqi: '#0277BD', manzil: '#6A1B9A' };
+  const TYPE_COLOR = { sabaq: '#14532D', sabaqi: '#0277BD', manzil: '#6A1B9A' };
   const TYPE_LABEL = { sabaq: 'Sabaq', sabaqi: 'Sabaqi', manzil: 'Manzil' };
 
   return (
@@ -463,25 +463,25 @@ export default function StudentDashboard() {
   const completedSurahs = progress.filter(p => p.status === 'complete').length;
 
   return (
-    <div style={{ minHeight: '100vh', background: '#F6F1E9' }}>
+    <div style={{ minHeight: '100vh', background: '#FFFBEB' }}>
 
       {/* ── Hero Header ── */}
       <div style={{
-        background: 'linear-gradient(150deg, #060E09 0%, #0D2818 55%, #1B4332 100%)',
+        background: 'linear-gradient(150deg, #052e16 0%, #14532D 55%, #14532D 100%)',
         padding: '2.5rem 1.5rem 4.5rem', position: 'relative', overflow: 'hidden',
       }}>
-        <div style={{ position: 'absolute', inset: 0, opacity: 0.035, backgroundImage: 'repeating-linear-gradient(60deg,rgba(201,168,76,1) 0,rgba(201,168,76,1) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-60deg,rgba(201,168,76,1) 0,rgba(201,168,76,1) 1px,transparent 0,transparent 50%)', backgroundSize: '28px 28px', pointerEvents: 'none' }} />
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.035, backgroundImage: 'repeating-linear-gradient(60deg,rgba(245,158,11,1) 0,rgba(245,158,11,1) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-60deg,rgba(245,158,11,1) 0,rgba(245,158,11,1) 1px,transparent 0,transparent 50%)', backgroundSize: '28px 28px', pointerEvents: 'none' }} />
         <svg aria-hidden style={{ position: 'absolute', right: -60, top: '50%', transform: 'translateY(-50%) rotate(15deg)', opacity: 0.04, width: 320, height: 320 }}>
-          <polygon points="160,6 186,106 286,106 208,162 236,262 160,206 84,262 112,162 34,106 134,106" fill="rgba(201,168,76,1)" />
+          <polygon points="160,6 186,106 286,106 208,162 236,262 160,206 84,262 112,162 34,106 134,106" fill="rgba(245,158,11,1)" />
         </svg>
 
         <div style={{ maxWidth: 1140, margin: '0 auto', position: 'relative', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
-            <p style={{ fontFamily: 'var(--font-arabic)', fontSize: '1.15rem', color: 'rgba(201,168,76,0.65)', marginBottom: '0.35rem' }}>{ar}</p>
+            <p style={{ fontFamily: 'var(--font-arabic)', fontSize: '1.15rem', color: 'rgba(245,158,11,0.65)', marginBottom: '0.35rem' }}>{ar}</p>
             <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.5rem,3vw,2.1rem)', color: '#fff', fontWeight: 700, marginBottom: '0.3rem' }}>
               {en}, {user?.name?.split(' ')[0]} 👋
             </h1>
-            <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.38)' }}>
+            <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.55)' }}>
               {new Date().toLocaleDateString('en-US', { weekday:'long', year:'numeric', month:'long', day:'numeric' })}
             </p>
           </div>
@@ -489,13 +489,13 @@ export default function StudentDashboard() {
           <Link to="/hifz/new-log" style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
             padding: '0.8rem 1.6rem',
-            background: 'linear-gradient(135deg, #E2B84E, #C9A84C)',
+            background: 'linear-gradient(135deg, #E2B84E, #F59E0B)',
             color: '#050E08', borderRadius: 99, fontWeight: 800, fontSize: '0.88rem',
-            textDecoration: 'none', boxShadow: '0 4px 20px rgba(201,168,76,0.45)',
+            textDecoration: 'none', boxShadow: '0 4px 20px rgba(245,158,11,0.45)',
             transition: 'all 0.22s',
           }}
-          onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(201,168,76,0.55)'; }}
-          onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 20px rgba(201,168,76,0.45)'; }}
+          onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 8px 28px rgba(245,158,11,0.55)'; }}
+          onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 20px rgba(245,158,11,0.45)'; }}
           >
             📝 Log Today's Session
           </Link>
@@ -506,7 +506,7 @@ export default function StudentDashboard() {
       <div style={{ maxWidth: 1140, margin: '-2rem auto 0', padding: '0 1.5rem', position: 'relative', zIndex: 10 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(175px,1fr))', gap: '0.85rem' }}>
           <StatPill icon="🔥" label="Day Streak" value={streak?.current_streak || 0} sub={`Best: ${streak?.longest_streak || 0}`} color="#E65100" />
-          <StatPill icon="📖" label="Surahs Done" value={completedSurahs} sub="of 114" color="#1B4332" />
+          <StatPill icon="📖" label="Surahs Done" value={completedSurahs} sub="of 114" color="#14532D" />
           <StatPill icon="📝" label="Sessions" value={logsData?.total || 0} sub="total logged" color="#0277BD" />
           <StatPill icon="✏️" label="Letters" value="28" sub="Arabic alphabet" color="#2E7D32" />
           <StatPill icon="🎨" label="Tajweed" value="13" sub="rules to master" color="#AD1457" />
@@ -554,18 +554,18 @@ export default function StudentDashboard() {
         {/* Hadith banner */}
         <div style={{
           borderRadius: 20, overflow: 'hidden', position: 'relative',
-          background: 'linear-gradient(135deg, #060E09 0%, #0D2818 55%, #1B4332 100%)',
-          border: '1px solid rgba(201,168,76,0.14)',
+          background: 'linear-gradient(135deg, #052e16 0%, #14532D 55%, #14532D 100%)',
+          border: '1px solid rgba(245,158,11,0.14)',
           padding: '2.25rem 2rem', textAlign: 'center',
         }}>
-          <div style={{ position: 'absolute', inset: 0, opacity: 0.04, backgroundImage: 'repeating-linear-gradient(45deg,rgba(201,168,76,1) 0,rgba(201,168,76,1) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-45deg,rgba(201,168,76,1) 0,rgba(201,168,76,1) 1px,transparent 0,transparent 50%)', backgroundSize: '20px 20px', pointerEvents: 'none' }} />
-          <p style={{ fontFamily: 'var(--font-arabic)', fontSize: 'clamp(1.1rem,2.5vw,1.4rem)', color: 'rgba(201,168,76,0.72)', direction: 'rtl', lineHeight: 2.2, marginBottom: '0.6rem', position: 'relative' }}>
+          <div style={{ position: 'absolute', inset: 0, opacity: 0.04, backgroundImage: 'repeating-linear-gradient(45deg,rgba(245,158,11,1) 0,rgba(245,158,11,1) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-45deg,rgba(245,158,11,1) 0,rgba(245,158,11,1) 1px,transparent 0,transparent 50%)', backgroundSize: '20px 20px', pointerEvents: 'none' }} />
+          <p style={{ fontFamily: 'var(--font-arabic)', fontSize: 'clamp(1.1rem,2.5vw,1.4rem)', color: 'rgba(245,158,11,0.72)', direction: 'rtl', lineHeight: 2.2, marginBottom: '0.6rem', position: 'relative' }}>
             مَنۡ قَرَأَ حَرۡفًا مِنۡ كِتَابِ ٱللَّهِ فَلَهُۥ بِهِ حَسَنَةٌ وَٱلۡحَسَنَةُ بِعَشۡرِ أَمۡثَالِهَا
           </p>
-          <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.85rem', fontStyle: 'italic', marginBottom: '0.25rem', position: 'relative' }}>
+          <p style={{ color: '#78716C', fontSize: '0.85rem', fontStyle: 'italic', marginBottom: '0.25rem', position: 'relative' }}>
             "Whoever reads one letter from the Book of Allah will receive one good deed worth ten like it"
           </p>
-          <p style={{ color: 'rgba(201,168,76,0.38)', fontSize: '0.72rem', position: 'relative' }}>— Tirmidhi</p>
+          <p style={{ color: 'rgba(245,158,11,0.38)', fontSize: '0.72rem', position: 'relative' }}>— Tirmidhi</p>
         </div>
       </div>
     </div>

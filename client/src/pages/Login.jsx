@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import toast from 'react-hot-toast';
@@ -42,7 +42,7 @@ function Field({ label, type = 'text', value, onChange, icon, placeholder, requi
           color: 'var(--text-dark)',
           outline: 'none',
           transition: 'border-color 0.18s, box-shadow 0.18s',
-          boxShadow: focused ? '0 0 0 3px rgba(45,106,79,0.12)' : 'none',
+          boxShadow: focused ? '0 0 0 3px rgba(20,83,45,0.12)' : 'none',
         }}
       />
     </div>
@@ -53,7 +53,7 @@ function Field({ label, type = 'text', value, onChange, icon, placeholder, requi
 function LeftPanel() {
   return (
     <div style={{
-      background: 'linear-gradient(160deg, #0D2B1D 0%, #1B4332 60%, #2D6A4F 100%)',
+      background: 'linear-gradient(160deg, #052e16 0%, #14532D 60%, #15803D 100%)',
       display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
       padding: '3rem 2rem', position: 'relative', overflow: 'hidden',
       minHeight: 500,
@@ -62,8 +62,8 @@ function LeftPanel() {
       <div style={{
         position: 'absolute', inset: 0, opacity: 0.06,
         backgroundImage: `
-          repeating-linear-gradient(45deg, rgba(201,168,76,1) 0, rgba(201,168,76,1) 1px, transparent 0, transparent 50%),
-          repeating-linear-gradient(-45deg, rgba(201,168,76,1) 0, rgba(201,168,76,1) 1px, transparent 0, transparent 50%)
+          repeating-linear-gradient(45deg, rgba(245,158,11,1) 0, rgba(245,158,11,1) 1px, transparent 0, transparent 50%),
+          repeating-linear-gradient(-45deg, rgba(245,158,11,1) 0, rgba(245,158,11,1) 1px, transparent 0, transparent 50%)
         `,
         backgroundSize: '30px 30px',
       }} />
@@ -71,13 +71,13 @@ function LeftPanel() {
       {/* Outer decorative ring */}
       <div style={{
         position: 'absolute', width: 340, height: 340,
-        border: '1px solid rgba(201,168,76,0.12)',
+        border: '1px solid rgba(245,158,11,0.12)',
         borderRadius: '50%', top: '50%', left: '50%',
         transform: 'translate(-50%,-50%)',
       }} />
       <div style={{
         position: 'absolute', width: 260, height: 260,
-        border: '1px solid rgba(201,168,76,0.1)',
+        border: '1px solid rgba(245,158,11,0.1)',
         borderRadius: '50%', top: '50%', left: '50%',
         transform: 'translate(-50%,-50%)',
       }} />
@@ -85,7 +85,7 @@ function LeftPanel() {
       {/* Content */}
       <div style={{ position: 'relative', textAlign: 'center' }}>
         {/* Arabic star ornament */}
-        <div style={{ fontSize: '2rem', color: 'rgba(201,168,76,0.6)', marginBottom: '1rem', letterSpacing: '0.5rem' }}>
+        <div style={{ fontSize: '2rem', color: 'rgba(245,158,11,0.6)', marginBottom: '1rem', letterSpacing: '0.5rem' }}>
           ✦ ✦ ✦
         </div>
 
@@ -97,13 +97,13 @@ function LeftPanel() {
           lineHeight: 1.2,
           marginBottom: '0.5rem',
           direction: 'rtl',
-          textShadow: '0 2px 20px rgba(201,168,76,0.3)',
+          textShadow: '0 2px 20px rgba(245,158,11,0.3)',
         }}>نور القرآن</h1>
 
         <p style={{
           fontFamily: 'var(--font-heading)',
           fontSize: '0.75rem',
-          color: 'rgba(255,255,255,0.4)',
+          color: '#A8A29E',
           letterSpacing: '0.3em',
           textTransform: 'uppercase',
           marginBottom: '2.5rem',
@@ -111,26 +111,26 @@ function LeftPanel() {
 
         {/* Gold divider */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', justifyContent: 'center', marginBottom: '2rem' }}>
-          <div style={{ width: 50, height: 1, background: 'linear-gradient(to right, transparent, rgba(201,168,76,0.6))' }} />
+          <div style={{ width: 50, height: 1, background: 'linear-gradient(to right, transparent, rgba(245,158,11,0.6))' }} />
           <span style={{ color: 'var(--gold)', fontSize: '0.8rem' }}>❖</span>
-          <div style={{ width: 50, height: 1, background: 'linear-gradient(to left, transparent, rgba(201,168,76,0.6))' }} />
+          <div style={{ width: 50, height: 1, background: 'linear-gradient(to left, transparent, rgba(245,158,11,0.6))' }} />
         </div>
 
         {/* Quranic verse */}
         <p style={{
           fontFamily: 'var(--font-quran)',
           fontSize: '1.3rem',
-          color: 'rgba(255,255,255,0.85)',
+          color: '#1C1917',
           direction: 'rtl',
           lineHeight: 2.2,
           marginBottom: '0.5rem',
         }}>
           وَرَتِّلِ ٱلۡقُرۡءَانَ تَرۡتِيلٗا
         </p>
-        <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', fontStyle: 'italic' }}>
+        <p style={{ fontSize: '0.8rem', color: '#A8A29E', fontStyle: 'italic' }}>
           "Recite the Quran with measured recitation"
         </p>
-        <p style={{ fontSize: '0.72rem', color: 'rgba(201,168,76,0.5)', marginTop: '0.25rem' }}>
+        <p style={{ fontSize: '0.72rem', color: 'rgba(245,158,11,0.5)', marginTop: '0.25rem' }}>
           — Al-Muzzammil 73:4
         </p>
 
@@ -139,11 +139,11 @@ function LeftPanel() {
           {['📖 Quran Reader', '🎓 Hifz Tracker', '✏️ Qaida', '🤲 Duas'].map(f => (
             <span key={f} style={{
               padding: '0.3rem 0.75rem',
-              background: 'rgba(201,168,76,0.1)',
-              border: '1px solid rgba(201,168,76,0.2)',
+              background: 'rgba(245,158,11,0.1)',
+              border: '1px solid rgba(245,158,11,0.2)',
               borderRadius: 'var(--radius-full)',
               fontSize: '0.72rem',
-              color: 'rgba(255,255,255,0.6)',
+              color: '#57534E',
             }}>{f}</span>
           ))}
         </div>
@@ -178,7 +178,7 @@ export default function Login() {
       minHeight: '100vh',
       display: 'grid',
       gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.1fr)',
-      background: '#030A05',
+      background: '#FFFBEB',
     }}>
       {/* Left decorative panel */}
       <LeftPanel />
@@ -187,7 +187,7 @@ export default function Login() {
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         padding: '2rem',
-        background: '#030A05',
+        background: '#FFFBEB',
       }}>
         <div style={{ width: '100%', maxWidth: 420 }}>
 
@@ -238,12 +238,12 @@ export default function Login() {
                 fontFamily: 'var(--font-heading)',
                 letterSpacing: '0.05em',
                 cursor: loading ? 'not-allowed' : 'pointer',
-                boxShadow: '0 4px 16px rgba(27,67,50,0.25)',
+                boxShadow: '0 4px 16px rgba(20,83,45,0.25)',
                 transition: 'all 0.2s',
                 marginTop: '0.5rem',
               }}
-              onMouseEnter={e => { if (!loading) e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(27,67,50,0.35)'; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 16px rgba(27,67,50,0.25)'; }}
+              onMouseEnter={e => { if (!loading) e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(20,83,45,0.35)'; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 4px 16px rgba(20,83,45,0.25)'; }}
             >
               {loading ? 'Signing in...' : 'Sign In'}
             </button>
@@ -260,7 +260,7 @@ export default function Login() {
           <Link to="/register" style={{
             display: 'block', width: '100%', padding: '0.85rem',
             background: 'transparent',
-            border: '1.5px solid rgba(27,67,50,0.2)',
+            border: '1.5px solid rgba(20,83,45,0.2)',
             borderRadius: 'var(--radius-lg)',
             textAlign: 'center',
             color: 'var(--green-deep)',
@@ -268,7 +268,7 @@ export default function Login() {
             transition: 'all 0.2s',
           }}
           onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--green-mid)'; e.currentTarget.style.background = 'var(--green-pale)'; }}
-          onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(27,67,50,0.2)'; e.currentTarget.style.background = 'transparent'; }}
+          onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(20,83,45,0.2)'; e.currentTarget.style.background = 'transparent'; }}
           >
             Create a Free Account
           </Link>

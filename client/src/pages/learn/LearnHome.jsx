@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 
 const MODULES = [
   {
@@ -72,11 +72,11 @@ const TIPS = [
 
 export default function LearnHome() {
   return (
-    <div style={{ minHeight: '100vh', background: '#030A05' }}>
+    <div style={{ minHeight: '100vh', background: '#FFFBEB' }}>
 
       {/* Hero */}
       <div style={{
-        background: 'linear-gradient(150deg, #060E09 0%, #0D2818 55%, #1B4332 100%)',
+        background: 'linear-gradient(150deg, #052e16 0%, #14532D 55%, #14532D 100%)',
         padding: '4rem 1.5rem 3rem',
         textAlign: 'center',
         position: 'relative',
@@ -84,10 +84,10 @@ export default function LearnHome() {
       }}>
         <div style={{
           position: 'absolute', inset: 0, opacity: 0.04,
-          backgroundImage: 'repeating-linear-gradient(60deg,rgba(201,168,76,1) 0,rgba(201,168,76,1) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-60deg,rgba(201,168,76,1) 0,rgba(201,168,76,1) 1px,transparent 0,transparent 50%)',
+          backgroundImage: 'repeating-linear-gradient(60deg,rgba(245,158,11,1) 0,rgba(245,158,11,1) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-60deg,rgba(245,158,11,1) 0,rgba(245,158,11,1) 1px,transparent 0,transparent 50%)',
           backgroundSize: '28px 28px', pointerEvents: 'none',
         }} />
-        <p style={{ color: 'rgba(201,168,76,0.75)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', marginBottom: '0.9rem' }}>
+        <p style={{ color: 'rgba(245,158,11,0.75)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', marginBottom: '0.9rem' }}>
           📚 تعلیمی مرکز
         </p>
         <h1 style={{
@@ -95,16 +95,16 @@ export default function LearnHome() {
           fontSize: 'clamp(1.8rem, 4vw, 3rem)',
           color: '#fff', lineHeight: 1.4, marginBottom: '0.6rem',
         }}>مركز التعلم</h1>
-        <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '0.95rem', maxWidth: 480, margin: '0 auto 0' }}>
+        <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem', maxWidth: 480, margin: '0 auto 0' }}>
           Three complete modules — from your first letter to beautiful Quran recitation
         </p>
       </div>
 
       {/* Tip bar */}
-      <div style={{ background: 'rgba(201,168,76,0.06)', borderBottom: '1px solid rgba(201,168,76,0.12)', padding: '0.72rem 1.5rem', position:'sticky', top:68, zIndex:9, backdropFilter:'blur(12px)' }}>
+      <div style={{ background: 'rgba(245,158,11,0.06)', borderBottom: '1px solid rgba(245,158,11,0.12)', padding: '0.72rem 1.5rem', position:'sticky', top:68, zIndex:9, backdropFilter:'blur(12px)' }}>
         <div style={{ maxWidth: 1000, margin: '0 auto', display: 'flex', gap: '1.5rem', overflowX: 'auto', flexWrap: 'wrap' }}>
           {TIPS.map((t, i) => (
-            <span key={i} style={{ fontSize: '0.76rem', color: 'rgba(201,168,76,0.7)', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+            <span key={i} style={{ fontSize: '0.76rem', color: 'rgba(245,158,11,0.7)', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
               {t.icon} {t.text}
             </span>
           ))}
@@ -112,14 +112,14 @@ export default function LearnHome() {
       </div>
 
       {/* Module Cards */}
-      <div style={{ maxWidth: 1000, margin: '0 auto', padding: '2.5rem 1.5rem', background: '#030A05' }}>
+      <div style={{ maxWidth: 1000, margin: '0 auto', padding: '2.5rem 1.5rem', background: '#FFFBEB' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {MODULES.map((m, i) => (
             <Link key={m.path} to={m.path} style={{ textDecoration: 'none' }}>
               <div style={{
                 background: `linear-gradient(135deg, ${m.gradFrom} 0%, ${m.gradTo} 100%)`,
                 borderRadius: 24,
-                border: '1px solid rgba(255,255,255,0.07)',
+                border: '1px solid rgba(28,25,23,0.09)',
                 boxShadow: '0 4px 24px rgba(0,0,0,0.22)',
                 overflow: 'hidden',
                 transition: 'transform 0.25s ease, box-shadow 0.25s ease',
@@ -140,7 +140,7 @@ export default function LearnHome() {
                   {/* Tags row */}
                   <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', alignItems: 'center' }}>
                     <span style={{ fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: m.accent, background: `${m.accent}18`, border: `1px solid ${m.accent}30`, borderRadius: 99, padding: '0.18rem 0.6rem' }}>{m.tag}</span>
-                    <span style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.35)', fontWeight: 500 }}>{m.badge}</span>
+                    <span style={{ fontSize: '0.68rem', color: '#A8A29E', fontWeight: 500 }}>{m.badge}</span>
                   </div>
 
                   {/* Icon + Arabic */}
@@ -148,21 +148,21 @@ export default function LearnHome() {
                     <span style={{ fontSize: '2rem' }}>{m.icon}</span>
                     <div>
                       <p style={{ fontFamily: '"Noto Naskh Arabic", serif', fontSize: '1.1rem', color: m.accent, direction: 'rtl', margin: 0, lineHeight: 1.5 }}>{m.arabic}</p>
-                      <p style={{ fontFamily: 'var(--font-urdu)', fontSize: '0.88rem', lineHeight: 3.2, color: 'rgba(255,255,255,0.38)', direction: 'rtl', margin: 0, wordSpacing: '2px' }}>{m.urdu}</p>
+                      <p style={{ fontFamily: 'var(--font-urdu)', fontSize: '0.88rem', lineHeight: 3.2, color: '#A8A29E', direction: 'rtl', margin: 0, wordSpacing: '2px' }}>{m.urdu}</p>
                     </div>
                   </div>
 
                   {/* Title */}
-                  <h2 style={{ fontFamily: '"Cinzel", serif', fontSize: '1.35rem', color: '#fff', fontWeight: 700, margin: '0 0 0.5rem' }}>{m.title}</h2>
-                  <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.75, margin: '0 0 1.2rem', maxWidth: 480 }}>{m.desc}</p>
+                  <h2 style={{ fontFamily: '"Playfair Display", serif', fontSize: '1.35rem', color: '#fff', fontWeight: 700, margin: '0 0 0.5rem' }}>{m.title}</h2>
+                  <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.75, margin: '0 0 1.2rem', maxWidth: 480 }}>{m.desc}</p>
 
                   {/* Steps */}
                   <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
                     {m.steps.map((s, j) => (
                       <span key={j} style={{
                         fontSize: '0.68rem', padding: '0.22rem 0.6rem', borderRadius: 99,
-                        background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)',
-                        color: 'rgba(255,255,255,0.5)',
+                        background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)',
+                        color: 'rgba(255,255,255,0.55)',
                       }}>{s}</span>
                     ))}
                   </div>
@@ -187,22 +187,22 @@ export default function LearnHome() {
         {/* Quick links */}
         <div style={{ marginTop: '2.5rem', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1rem', textAlign: 'center' }}>
           {[
-            { icon: '📖', label: 'Quran',     sub: 'Read full Quran',    to: '/quran',              color:'#52B788' },
+            { icon: '📖', label: 'Quran',     sub: 'Read full Quran',    to: '/quran',              color:'#22C55E' },
             { icon: '🎯', label: 'Hifz',      sub: 'Track memorization', to: '/hifz',               color:'#64B5F6' },
             { icon: '📊', label: 'Dashboard', sub: 'Your progress',      to: '/dashboard/student',  color:'#B39DDB' },
           ].map(item => (
             <Link key={item.to} to={item.to} style={{ textDecoration: 'none' }}>
               <div style={{
-                background: 'rgba(255,255,255,0.025)', borderRadius: 18,
-                border: '1px solid rgba(255,255,255,0.07)',
+                background: '#ffffff', borderRadius: 18,
+                border: '1px solid rgba(28,25,23,0.09)',
                 padding: '1.25rem 0.75rem', transition: 'all 0.22s',
               }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.background = `rgba(${item.color === '#52B788' ? '82,183,136' : item.color === '#64B5F6' ? '100,181,246' : '179,157,219'},0.07)`; e.currentTarget.style.borderColor = `${item.color}28`; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.background = 'rgba(255,255,255,0.025)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'; }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.background = `rgba(${item.color === '#22C55E' ? '82,183,136' : item.color === '#64B5F6' ? '100,181,246' : '179,157,219'},0.07)`; e.currentTarget.style.borderColor = `${item.color}28`; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.background = '#ffffff'; e.currentTarget.style.borderColor = 'rgba(28,25,23,0.09)'; }}
               >
                 <div style={{ fontSize: '1.6rem', marginBottom: '0.4rem' }}>{item.icon}</div>
-                <p style={{ margin: 0, fontWeight: 700, fontSize: '0.85rem', color: 'rgba(255,255,255,0.82)' }}>{item.label}</p>
-                <p style={{ margin: '0.15rem 0 0', fontSize: '0.7rem', color: 'rgba(255,255,255,0.3)' }}>{item.sub}</p>
+                <p style={{ margin: 0, fontWeight: 700, fontSize: '0.85rem', color: '#292524' }}>{item.label}</p>
+                <p style={{ margin: '0.15rem 0 0', fontSize: '0.7rem', color: '#78716C' }}>{item.sub}</p>
               </div>
             </Link>
           ))}

@@ -1,39 +1,39 @@
 :root {
   /* ── Brand Colors ── */
-  --green-deep:    #1B4332;
-  --green-mid:     #2D6A4F;
-  --green-light:   #52B788;
-  --green-pale:    #D8F3DC;
-  --gold:          #C9A84C;
-  --gold-light:    #E9C46A;
-  --gold-pale:     #FFF3CD;
+  --green-deep:    #14532D;
+  --green-mid:     #15803D;
+  --green-light:   #22C55E;
+  --green-pale:    #DCFCE7;
+  --gold:          #F59E0B;
+  --gold-light:    #FCD34D;
+  --gold-pale:     #FEF3C7;
 
   /* ── Backgrounds ── */
-  --cream:         #FDF8F0;
-  --cream-dark:    #F5EDD8;
-  --cream-mid:     #EFE4CA;
-  --parchment:     #F9F3E3;
+  --cream:         #FFFBEB;
+  --cream-dark:    #FEF9C3;
+  --cream-mid:     #FDE68A;
+  --parchment:     #FFFBEB;
   --white:         #FFFFFF;
 
   /* ── Text ── */
-  --text-dark:     #1A1A1A;
-  --text-mid:      #4A4A4A;
-  --text-light:    #7A7A7A;
-  --text-gold:     #A07828;
+  --text-dark:     #1C1917;
+  --text-mid:      #57534E;
+  --text-light:    #78716C;
+  --text-gold:     #92400E;
 
   /* ── Semantic ── */
-  --danger:        #C0392B;
-  --danger-pale:   #FDECEA;
-  --success:       #27AE60;
-  --success-pale:  #E8F8F0;
-  --info:          #2980B9;
+  --danger:        #DC2626;
+  --danger-pale:   #FEE2E2;
+  --success:       #16A34A;
+  --success-pale:  #DCFCE7;
+  --info:          #0369A1;
 
   /* ── Typography ── */
   --font-quran:    'Amiri Quran', 'Amiri', 'Noto Naskh Arabic', serif;
   --font-arabic:   'Noto Naskh Arabic', 'Amiri', serif;
   --font-urdu:     'Noto Nastaliq Urdu', 'Noto Naskh Arabic', serif;
-  --font-heading:  'Cinzel', 'Georgia', serif;
-  --font-body:     'Lato', 'Segoe UI', sans-serif;
+  --font-heading:  'Playfair Display', 'Georgia', serif;
+  --font-body:     'Inter', 'Segoe UI', sans-serif;
 
   /* ── Arabic Text Sizes ── */
   --arabic-sm:     20px;
@@ -50,19 +50,19 @@
   --radius-full:   9999px;
 
   /* ── Shadows ── */
-  --shadow-sm:  0 1px 4px rgba(27,67,50,0.08);
-  --shadow-md:  0 4px 16px rgba(27,67,50,0.10);
-  --shadow-lg:  0 8px 32px rgba(27,67,50,0.14);
-  --shadow-xl:  0 16px 48px rgba(27,67,50,0.18);
-  --shadow-gold: 0 4px 20px rgba(201,168,76,0.25);
-  --shadow-gold-lg: 0 8px 40px rgba(201,168,76,0.35);
+  --shadow-sm:  0 1px 4px rgba(20,83,45,0.08);
+  --shadow-md:  0 4px 16px rgba(20,83,45,0.10);
+  --shadow-lg:  0 8px 32px rgba(20,83,45,0.14);
+  --shadow-xl:  0 16px 48px rgba(20,83,45,0.18);
+  --shadow-gold: 0 4px 20px rgba(245,158,11,0.25);
+  --shadow-gold-lg: 0 8px 40px rgba(245,158,11,0.35);
 
   /* ── Extended Palette ── */
-  --hero-dark:   #081510;
-  --hero-mid:    #0D2818;
-  --green-hover: #3A7D5E;
-  --gold-warm:   #D4A843;
-  --gold-dim:    rgba(201,168,76,0.15);
+  --hero-dark:   #052e16;
+  --hero-mid:    #14532D;
+  --green-hover: #16A34A;
+  --gold-warm:   #D97706;
+  --gold-dim:    rgba(245,158,11,0.15);
 
   /* ── Transitions ── */
   --transition: 0.2s ease;

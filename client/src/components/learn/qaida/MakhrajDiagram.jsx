@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 
 // ═══════════════════════════════════════════════════════════════════════════
 // Zone data — articulation points with full detail
@@ -181,7 +181,7 @@ export default function MakhrajDiagram({ makhraj }) {
       </div>
 
       {/* ── SVG Diagram ── */}
-      <div style={{ background: '#FDF8F0', borderRadius: 'var(--radius-lg)', border: `1.5px solid ${info ? info.color + '50' : 'rgba(201,168,76,0.2)'}`, overflow: 'hidden', boxShadow: info ? `0 0 20px ${info.color}18` : 'var(--shadow-sm)', transition: 'all 0.3s' }}>
+      <div style={{ background: '#FDF8F0', borderRadius: 'var(--radius-lg)', border: `1.5px solid ${info ? info.color + '50' : 'rgba(245,158,11,0.2)'}`, overflow: 'hidden', boxShadow: info ? `0 0 20px ${info.color}18` : 'var(--shadow-sm)', transition: 'all 0.3s' }}>
         <svg viewBox="0 0 600 420" style={{ width: '100%', height: 'auto', display: 'block' }}>
           <defs>
             {/* Glow for active zone */}
@@ -393,11 +393,11 @@ export default function MakhrajDiagram({ makhraj }) {
           <div style={{ background: info.color, padding: '0.75rem 1.1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div>
               <div style={{ color: '#fff', fontWeight: 700, fontSize: '0.95rem' }}>{info.label_en}</div>
-              <div style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.75rem' }}>{info.sub_en}</div>
+              <div style={{ color: '#44403C', fontSize: '0.75rem' }}>{info.sub_en}</div>
             </div>
             <div style={{ textAlign: 'right', direction: 'rtl' }}>
               <div style={{ fontFamily: 'var(--font-arabic)', fontSize: '1.15rem', color: '#fff', fontWeight: 700 }}>{info.label_ar}</div>
-              <div style={{ fontFamily: 'var(--font-arabic)', fontSize: '0.82rem', color: 'rgba(255,255,255,0.7)' }}>{info.sub_ar}</div>
+              <div style={{ fontFamily: 'var(--font-arabic)', fontSize: '0.82rem', color: '#44403C' }}>{info.sub_ar}</div>
             </div>
           </div>
 
@@ -431,7 +431,7 @@ export default function MakhrajDiagram({ makhraj }) {
           </div>
         </div>
       ) : (
-        <div style={{ marginTop: '0.85rem', padding: '0.75rem 1rem', background: 'var(--cream-dark)', borderRadius: 'var(--radius-lg)', textAlign: 'center', border: '1px dashed rgba(201,168,76,0.3)' }}>
+        <div style={{ marginTop: '0.85rem', padding: '0.75rem 1rem', background: 'var(--cream-dark)', borderRadius: 'var(--radius-lg)', textAlign: 'center', border: '1px dashed rgba(245,158,11,0.3)' }}>
           <p style={{ fontSize: '0.82rem', color: 'var(--text-light)' }}>
             Select a letter above to see its <strong>Makhraj</strong> — the exact articulation point in the mouth/throat.
           </p>
