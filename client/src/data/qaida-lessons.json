@@ -1,0 +1,194 @@
+[
+  {
+    "id": 1,
+    "title": "Arabic Alphabet — Isolated Letters",
+    "urdu_title": "حروف تہجی — الگ الگ",
+    "description": "Learn all 28 Arabic letters in isolated form. Tap any letter to hear its name.",
+    "type": "alphabet",
+    "letters": ["ا","ب","ت","ث","ج","ح","خ","د","ذ","ر","ز","س","ش","ص","ض","ط","ظ","ع","غ","ف","ق","ك","ل","م","ن","ه","و","ي"],
+    "quiz": true
+  },
+  {
+    "id": 2,
+    "title": "Connected Letters — Beginning Form",
+    "urdu_title": "حروف — ابتدائی شکل",
+    "description": "Letters that connect to the next letter — their shape at the beginning of a word.",
+    "type": "forms",
+    "examples": [
+      { "isolated": "ب", "form": "بـ", "name": "Ba — initial", "note": "Connects forward" },
+      { "isolated": "ت", "form": "تـ", "name": "Ta — initial", "note": "Connects forward" },
+      { "isolated": "ث", "form": "ثـ", "name": "Tha — initial", "note": "Connects forward" },
+      { "isolated": "ج", "form": "جـ", "name": "Jeem — initial", "note": "Connects forward" },
+      { "isolated": "ح", "form": "حـ", "name": "Ha — initial", "note": "Connects forward" },
+      { "isolated": "خ", "form": "خـ", "name": "Kha — initial", "note": "Connects forward" },
+      { "isolated": "س", "form": "سـ", "name": "Seen — initial", "note": "Connects forward" },
+      { "isolated": "ش", "form": "شـ", "name": "Sheen — initial", "note": "Connects forward" },
+      { "isolated": "ص", "form": "صـ", "name": "Sad — initial", "note": "Connects forward" },
+      { "isolated": "ض", "form": "ضـ", "name": "Dad — initial", "note": "Connects forward" },
+      { "isolated": "ط", "form": "طـ", "name": "Taa — initial", "note": "Connects forward" },
+      { "isolated": "ظ", "form": "ظـ", "name": "Dhaa — initial", "note": "Connects forward" },
+      { "isolated": "ع", "form": "عـ", "name": "Ain — initial", "note": "Connects forward" },
+      { "isolated": "غ", "form": "غـ", "name": "Ghain — initial", "note": "Connects forward" },
+      { "isolated": "ف", "form": "فـ", "name": "Fa — initial", "note": "Connects forward" },
+      { "isolated": "ق", "form": "قـ", "name": "Qaf — initial", "note": "Connects forward" },
+      { "isolated": "ك", "form": "كـ", "name": "Kaf — initial", "note": "Connects forward" },
+      { "isolated": "ل", "form": "لـ", "name": "Lam — initial", "note": "Connects forward" },
+      { "isolated": "م", "form": "مـ", "name": "Meem — initial", "note": "Connects forward" },
+      { "isolated": "ن", "form": "نـ", "name": "Noon — initial", "note": "Connects forward" },
+      { "isolated": "ه", "form": "هـ", "name": "Ha — initial", "note": "Connects forward" },
+      { "isolated": "ي", "form": "يـ", "name": "Ya — initial", "note": "Connects forward" }
+    ],
+    "non_connecting": ["ا","د","ذ","ر","ز","و"],
+    "quiz": true
+  },
+  {
+    "id": 3,
+    "title": "Connected Letters — Middle Form",
+    "urdu_title": "حروف — درمیانی شکل",
+    "description": "How letters look when they appear in the middle of a word — connected on both sides.",
+    "type": "forms",
+    "examples": [
+      { "isolated": "ب", "form": "ـبـ", "name": "Ba — medial", "word": "كَتَبَ", "meaning": "he wrote" },
+      { "isolated": "ت", "form": "ـتـ", "name": "Ta — medial", "word": "كِتَاب", "meaning": "book" },
+      { "isolated": "ج", "form": "ـجـ", "name": "Jeem — medial", "word": "مَجِيد", "meaning": "glorious" },
+      { "isolated": "ح", "form": "ـحـ", "name": "Ha — medial", "word": "رَحِيم", "meaning": "merciful" },
+      { "isolated": "خ", "form": "ـخـ", "name": "Kha — medial", "word": "أَخٌ", "meaning": "brother" },
+      { "isolated": "س", "form": "ـسـ", "name": "Seen — medial", "word": "مُسْلِم", "meaning": "Muslim" },
+      { "isolated": "ع", "form": "ـعـ", "name": "Ain — medial", "word": "تَعَالَى", "meaning": "exalted" },
+      { "isolated": "ف", "form": "ـفـ", "name": "Fa — medial", "word": "غَفُور", "meaning": "forgiving" },
+      { "isolated": "ل", "form": "ـلـ", "name": "Lam — medial", "word": "اللَّه", "meaning": "Allah" },
+      { "isolated": "م", "form": "ـمـ", "name": "Meem — medial", "word": "حَمِيد", "meaning": "praiseworthy" },
+      { "isolated": "ن", "form": "ـنـ", "name": "Noon — medial", "word": "إِنْسَان", "meaning": "human" }
+    ],
+    "quiz": true
+  },
+  {
+    "id": 4,
+    "title": "Connected Letters — End Form",
+    "urdu_title": "حروف — آخری شکل",
+    "description": "How letters look at the end of a word — connected from the left only.",
+    "type": "forms",
+    "examples": [
+      { "isolated": "ب", "form": "ـب", "name": "Ba — final", "word": "كَتَبَ", "meaning": "he wrote" },
+      { "isolated": "ت", "form": "ـت", "name": "Ta — final", "word": "بَيْت", "meaning": "house" },
+      { "isolated": "ج", "form": "ـج", "name": "Jeem — final", "word": "الحَجّ", "meaning": "pilgrimage" },
+      { "isolated": "ح", "form": "ـح", "name": "Ha — final", "word": "فَتَح", "meaning": "opened/victory" },
+      { "isolated": "ر", "form": "ـر", "name": "Ra — final", "word": "نَهَر", "meaning": "river" },
+      { "isolated": "م", "form": "ـم", "name": "Meem — final", "word": "قَلَم", "meaning": "pen" },
+      { "isolated": "ن", "form": "ـن", "name": "Noon — final", "word": "مُؤْمِن", "meaning": "believer" },
+      { "isolated": "ه", "form": "ـه", "name": "Ha — final", "word": "وَجْه", "meaning": "face" },
+      { "isolated": "ي", "form": "ـي", "name": "Ya — final", "word": "نَبِي", "meaning": "prophet" }
+    ],
+    "quiz": true
+  },
+  {
+    "id": 5,
+    "title": "Short Vowels — Harakat",
+    "urdu_title": "حرکات — زبر، زیر، پیش",
+    "description": "The three short vowel marks that give sound to a letter.",
+    "type": "harakat",
+    "examples": [
+      { "arabic": "بَ", "name": "Fatha (Zabar)", "urdu": "زبر", "sound": "ba", "color": "#E74C3C", "desc": "Small diagonal stroke above — adds 'a' sound" },
+      { "arabic": "بِ", "name": "Kasra (Zer)", "urdu": "زیر", "sound": "bi", "color": "#3498DB", "desc": "Small stroke below — adds 'i' sound" },
+      { "arabic": "بُ", "name": "Damma (Pesh)", "urdu": "پیش", "sound": "bu", "color": "#27AE60", "desc": "Small waw-like symbol above — adds 'u' sound" }
+    ],
+    "practice": [
+      { "arabic": "بَ تَ ثَ جَ حَ خَ", "label": "With Fatha" },
+      { "arabic": "بِ تِ ثِ جِ حِ خِ", "label": "With Kasra" },
+      { "arabic": "بُ تُ ثُ جُ حُ خُ", "label": "With Damma" }
+    ],
+    "quiz": true
+  },
+  {
+    "id": 6,
+    "title": "Tanween — Double Vowels",
+    "urdu_title": "تنوین",
+    "description": "Double harakat at the end of a word — adds 'n' sound after the vowel.",
+    "type": "harakat",
+    "examples": [
+      { "arabic": "بًا", "name": "Tanween Fath", "urdu": "دو زبر", "sound": "ban", "color": "#E74C3C", "desc": "Two fathas — sounds like 'an'" },
+      { "arabic": "بٍ", "name": "Tanween Kasr", "urdu": "دو زیر", "sound": "bin", "color": "#3498DB", "desc": "Two kasras — sounds like 'in'" },
+      { "arabic": "بٌ", "name": "Tanween Damm", "urdu": "دو پیش", "sound": "bun", "color": "#27AE60", "desc": "Two dammas — sounds like 'un'" }
+    ],
+    "practice": [
+      { "arabic": "كِتَابًا", "label": "Tanween Fath — kitaaban (a book)" },
+      { "arabic": "مُسْلِمٍ", "label": "Tanween Kasr — muslimin (of a Muslim)" },
+      { "arabic": "رَجُلٌ", "label": "Tanween Damm — rajulun (a man)" }
+    ],
+    "quiz": true
+  },
+  {
+    "id": 7,
+    "title": "Sukoon — No Vowel",
+    "urdu_title": "سکون — جزم",
+    "description": "A small circle above a letter — means that letter has no vowel. Its sound is cut short.",
+    "type": "harakat",
+    "examples": [
+      { "arabic": "بْ", "name": "Ba with Sukoon", "sound": "b (stopped)", "color": "#8E44AD", "desc": "The 'b' sound ends here — no vowel follows from this letter" },
+      { "arabic": "مْ", "name": "Meem with Sukoon", "sound": "m (stopped)", "color": "#8E44AD", "desc": "Lips close for meem then stop" },
+      { "arabic": "نْ", "name": "Noon with Sukoon", "sound": "n (nasal)", "color": "#8E44AD", "desc": "Subject to Tajweed rules (idgham, ikhfa etc.)" }
+    ],
+    "practice": [
+      { "arabic": "بِسْمِ", "label": "Bismi — seen has sukoon" },
+      { "arabic": "الْحَمْدُ", "label": "Alhamdu — lam and meem have sukoon" },
+      { "arabic": "مُسْلِم", "label": "Muslim — seen has sukoon" }
+    ],
+    "quiz": false
+  },
+  {
+    "id": 8,
+    "title": "Shaddah — Double Letter",
+    "urdu_title": "شدّہ — تشدید",
+    "description": "A small 'w'-shaped mark above a letter. It means the letter is doubled — pronounced twice as long.",
+    "type": "harakat",
+    "examples": [
+      { "arabic": "بَّ", "name": "Ba with Shaddah", "sound": "bba", "color": "#D35400", "desc": "As if two ba's — first with sukoon, second with fatha" },
+      { "arabic": "مَّ", "name": "Meem with Shaddah", "sound": "mma", "color": "#D35400", "desc": "Hold the meem sound — ghunnah applies" },
+      { "arabic": "نَّ", "name": "Noon with Shaddah", "sound": "nna", "color": "#D35400", "desc": "Ghunnah — nasal sound for 2 counts" }
+    ],
+    "practice": [
+      { "arabic": "اللَّه", "label": "Allah — lam has shaddah" },
+      { "arabic": "إِنَّ", "label": "Inna — noon has shaddah (ghunnah)" },
+      { "arabic": "رَبَّنَا", "label": "Rabbana — ba has shaddah" }
+    ],
+    "quiz": false
+  },
+  {
+    "id": 9,
+    "title": "Madd — Long Vowels",
+    "urdu_title": "مدّ — لمبی آواز",
+    "description": "Extending the vowel sound for 2 or more counts using Alif, Waw, or Ya.",
+    "type": "madd",
+    "examples": [
+      { "arabic": "آ / بَا", "name": "Alif Madd", "sound": "aaaa", "color": "#1ABC9C", "desc": "After fatha — Alif extends the 'a' sound for 2 counts: كِتَاب" },
+      { "arabic": "بِي", "name": "Ya Madd", "sound": "eeee", "color": "#2980B9", "desc": "After kasra — Ya extends the 'i' sound: رَحِيم" },
+      { "arabic": "بُو", "name": "Waw Madd", "sound": "oooo", "color": "#8E44AD", "desc": "After damma — Waw extends the 'u' sound: غَفُور" }
+    ],
+    "practice": [
+      { "arabic": "الرَّحْمَنِ الرَّحِيمِ", "label": "Rahman Raheem — alif madd + ya madd" },
+      { "arabic": "غَفُورٌ رَحِيمٌ", "label": "Ghafoor Raheem — waw madd + ya madd" },
+      { "arabic": "كِتَابٌ", "label": "Kitaab — alif madd" }
+    ],
+    "quiz": true
+  },
+  {
+    "id": 10,
+    "title": "Reading Full Words",
+    "urdu_title": "مکمل کلمات پڑھنا",
+    "description": "Practice reading complete words using everything learned so far.",
+    "type": "words",
+    "examples": [
+      { "arabic": "بِسْمِ", "transliteration": "Bismi", "meaning": "In the name of" },
+      { "arabic": "اللَّهِ", "transliteration": "Allahi", "meaning": "Allah (genitive)" },
+      { "arabic": "الرَّحْمَنِ", "transliteration": "Ar-Rahmani", "meaning": "The Most Gracious" },
+      { "arabic": "الرَّحِيمِ", "transliteration": "Ar-Rahimi", "meaning": "The Most Merciful" },
+      { "arabic": "الْحَمْدُ", "transliteration": "Al-Hamdu", "meaning": "All praise" },
+      { "arabic": "لِلَّهِ", "transliteration": "Lillahi", "meaning": "Belongs to Allah" },
+      { "arabic": "رَبِّ", "transliteration": "Rabbi", "meaning": "Lord of" },
+      { "arabic": "الْعَالَمِينَ", "transliteration": "Al-'Alameen", "meaning": "All the worlds" },
+      { "arabic": "إِيَّاكَ", "transliteration": "Iyyaka", "meaning": "You alone" },
+      { "arabic": "نَعْبُدُ", "transliteration": "Na'budu", "meaning": "We worship" }
+    ],
+    "quiz": false
+  }
+]

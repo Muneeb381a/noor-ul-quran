@@ -1,0 +1,486 @@
+[
+  {
+    "id": "izhar",
+    "category": "noon",
+    "name": "Izhar",
+    "arabic_name": "إظهار حلقي",
+    "urdu_name": "اظہار",
+    "color": "#E53935",
+    "bg": "#FFF5F5",
+    "icon": "👄",
+    "counts": null,
+    "short": "Clear pronunciation — no nasality",
+    "definition": "To pronounce the noon sakinah (نْ) or tanween (ً ٍ ٌ) clearly and distinctly, without any nasal sound (ghunnah), when followed by one of the six throat letters.",
+    "urdu_def": "نون ساکن یا تنوین کو گلے کے چھ حروف سے پہلے بالکل واضح اور صاف پڑھنا، کسی غنہ کے بغیر۔",
+    "trigger_letters": ["ء", "ه", "ع", "غ", "ح", "خ"],
+    "trigger_label": "6 Throat Letters (Huroof-e-Halqi)",
+    "mnemonic": "أخي هاع — أَخِي هَاعَ (These 6 letters come from your throat)",
+    "how_to": [
+      "Read نْ or tanween in your nasal passage normally",
+      "When you see one of the 6 throat letters after it",
+      "Pronounce the نْ/tanween CLEARLY — full sound",
+      "No nasal resonance — cut it clean",
+      "Move straight into the throat letter"
+    ],
+    "examples": [
+      { "arabic": "مَنْ ءَامَنَ", "highlight": "نْ ء", "transliteration": "man aamana", "note": "نْ before ء — say it clearly" },
+      { "arabic": "مَنْ هَاجَرَ", "highlight": "نْ ه", "transliteration": "man haajara", "note": "نْ before ه — clear noon" },
+      { "arabic": "عَلِيمٌ حَكِيمٌ", "highlight": "ٌ ح", "transliteration": "'aleemun hakeemun", "note": "tanween before ح — Izhar" }
+    ],
+    "tip": "Think of it as a 'full stop' — the noon/tanween sound ends completely before the throat letter starts.",
+    "common_mistake": "Adding ghunnah (nasal hum) to the noon — don't prolong the nasal sound.",
+    "similar": ["idgham", "ikhfa", "iqlab"]
+  },
+  {
+    "id": "idgham",
+    "category": "noon",
+    "name": "Idgham",
+    "arabic_name": "إدغام",
+    "urdu_name": "ادغام",
+    "color": "#1E88E5",
+    "bg": "#F0F7FF",
+    "icon": "🔗",
+    "counts": "2 counts (with ghunnah)",
+    "short": "Merge noon/tanween into next letter",
+    "definition": "To merge the noon sakinah (نْ) or tanween into the following letter so that only one merged letter remains. It occurs before 6 specific letters. Divided into two types: with ghunnah (nasal) and without ghunnah.",
+    "urdu_def": "نون ساکن یا تنوین کو اگلے حرف میں ملا دینا تاکہ صرف ایک مشدد حرف رہ جائے۔",
+    "trigger_letters": ["ي", "ن", "م", "و", "ل", "ر"],
+    "trigger_label": "6 Letters — مذكور يرملون (Yarmaloon)",
+    "mnemonic": "يَرْمَلُون — Remember this word: its letters are the 6 Idgham letters",
+    "subtypes": [
+      {
+        "name": "Idgham with Ghunnah",
+        "arabic": "إدغام بغنة",
+        "letters": ["ي", "ن", "م", "و"],
+        "desc": "Merge the noon into these 4 letters AND hold a nasal (ghunnah) for 2 counts"
+      },
+      {
+        "name": "Idgham without Ghunnah",
+        "arabic": "إدغام بلا غنة",
+        "letters": ["ل", "ر"],
+        "desc": "Merge the noon into ل or ر completely — no nasal sound at all"
+      }
+    ],
+    "how_to": [
+      "See نْ or tanween followed by one of the 6 letters",
+      "Do NOT pronounce the نْ at all — skip it",
+      "Go directly into the next letter",
+      "If it's ي ن م و — add 2 counts of nasal hum (ghunnah)",
+      "If it's ل ر — merge and continue cleanly, no nasal"
+    ],
+    "examples": [
+      { "arabic": "مَن يَقُولُ", "highlight": "نْ ي", "transliteration": "may yaqoolu", "note": "نْ + ي — merge with ghunnah" },
+      { "arabic": "مِن وَلِيٍّ", "highlight": "نْ و", "transliteration": "miw waliyyin", "note": "نْ + و — merge with ghunnah" },
+      { "arabic": "مِن لَّدُنْهُ", "highlight": "نْ ل", "transliteration": "mil ladunhu", "note": "نْ + ل — merge without ghunnah" },
+      { "arabic": "مِن رَّبِّهِمْ", "highlight": "نْ ر", "transliteration": "mir rabbihim", "note": "نْ + ر — merge without ghunnah" }
+    ],
+    "tip": "Idgham only applies when نْ and the following letter are in TWO DIFFERENT WORDS. If in the same word (like نَّ), it becomes a shaddah.",
+    "common_mistake": "Saying نْ fully before merging. The noon should disappear completely.",
+    "similar": ["izhar", "ikhfa", "iqlab"]
+  },
+  {
+    "id": "iqlab",
+    "category": "noon",
+    "name": "Iqlab",
+    "arabic_name": "إقلاب",
+    "urdu_name": "اقلاب",
+    "color": "#8E24AA",
+    "bg": "#F9F0FF",
+    "icon": "🔄",
+    "counts": "2 counts (ghunnah)",
+    "short": "Change noon/tanween to meem before ب",
+    "definition": "To change (substitute) the noon sakinah or tanween into a meem sound, when followed by the letter ب (ba), and hold the nasal (ghunnah) for 2 counts.",
+    "urdu_def": "نون ساکن یا تنوین کو 'ب' سے پہلے میم کی آواز میں بدل دینا اور دو حرکات غنہ کے ساتھ ادا کرنا۔",
+    "trigger_letters": ["ب"],
+    "trigger_label": "Only 1 letter — ب (Ba)",
+    "mnemonic": "Only ONE letter triggers Iqlab — and that's ب. Easy to remember!",
+    "how_to": [
+      "See نْ or tanween followed by ب",
+      "Do NOT say نْ — convert it to a MEEM sound",
+      "Close your lips slightly (like meem)",
+      "Hold the nasal ghunnah for 2 counts",
+      "Then open lips and pronounce the ب"
+    ],
+    "examples": [
+      { "arabic": "مِن بَعْدِ", "highlight": "نْ ب", "transliteration": "mim ba'di", "note": "نْ becomes meem before ب" },
+      { "arabic": "سَمِيعٌ بَصِيرٌ", "highlight": "ٌ ب", "transliteration": "samee'um baseer", "note": "tanween becomes meem before ب" },
+      { "arabic": "أَنبِئُونِي", "highlight": "ن ب", "transliteration": "ambiooni", "note": "noon changes to meem sound" }
+    ],
+    "tip": "In written Qurans, an iqlab is marked with a small م above the noon or tanween, helping you recognize it instantly.",
+    "common_mistake": "Pronouncing the نْ fully before ب — you should not hear any 'n' sound. Only the meem (lips together) + ghunnah.",
+    "similar": ["izhar", "idgham", "ikhfa"]
+  },
+  {
+    "id": "ikhfa",
+    "category": "noon",
+    "name": "Ikhfa",
+    "arabic_name": "إخفاء حقيقي",
+    "urdu_name": "اخفا",
+    "color": "#F57C00",
+    "bg": "#FFF8F0",
+    "icon": "🫥",
+    "counts": "2 counts (ghunnah)",
+    "short": "Hide noon/tanween — between clear and merged",
+    "definition": "To pronounce the noon sakinah or tanween in a state between Izhar (clear) and Idgham (merged) — with ghunnah for 2 counts — when followed by 15 specific letters.",
+    "urdu_def": "نون ساکن یا تنوین کو پندرہ حروف سے پہلے اظہار اور ادغام کے درمیان کی حالت میں پڑھنا، دو حرکات غنہ کے ساتھ۔",
+    "trigger_letters": ["ت", "ث", "ج", "د", "ذ", "ز", "س", "ش", "ص", "ض", "ط", "ظ", "ف", "ق", "ك"],
+    "trigger_label": "15 Letters (remaining after Izhar, Idgham, Iqlab)",
+    "mnemonic": "All letters EXCEPT the 6 throat letters (Izhar), 6 yarmaloon letters (Idgham), and ب (Iqlab) = Ikhfa!",
+    "how_to": [
+      "See نْ or tanween before one of the 15 letters",
+      "Do NOT pronounce نْ fully (no Izhar)",
+      "Do NOT merge it completely (no Idgham)",
+      "Hold ghunnah for 2 counts with tongue/lips positioned for the NEXT letter",
+      "Then proceed to the next letter"
+    ],
+    "examples": [
+      { "arabic": "مِن تَحْتِهَا", "highlight": "نْ ت", "transliteration": "min tahtiha", "note": "نْ before ت — hide with ghunnah" },
+      { "arabic": "أَنتُم", "highlight": "ن ت", "transliteration": "antum", "note": "Hidden noon before ت" },
+      { "arabic": "مَنصُورًا", "highlight": "ن ص", "transliteration": "mansoorun", "note": "نْ before ص — ikhfa" }
+    ],
+    "tip": "Your tongue/lips should be positioned for the next letter WHILE you hum the ghunnah — a preparation + nasal hum together.",
+    "common_mistake": "Either reading نْ too clearly (becomes Izhar) or merging completely (becomes Idgham). Aim for the middle.",
+    "similar": ["izhar", "idgham", "iqlab"]
+  },
+  {
+    "id": "ghunnah",
+    "category": "ghunnah",
+    "name": "Ghunnah",
+    "arabic_name": "غُنَّة",
+    "urdu_name": "غنہ",
+    "color": "#2E7D32",
+    "bg": "#F0FFF4",
+    "icon": "🎵",
+    "counts": "2 counts",
+    "short": "Nasal resonance — noon/meem with shaddah",
+    "definition": "A nasal sound that resonates from the nose for 2 full counts. It is ALWAYS applied on noon (ن) or meem (م) that carries a shaddah (ّ).",
+    "urdu_def": "ناک سے نکلنے والی آواز جو نون مشدد یا میم مشدد پر لازمی ہوتی ہے — دو حرکات کے لیے۔",
+    "trigger_letters": ["نّ", "مّ"],
+    "trigger_label": "Noon or Meem with Shaddah",
+    "mnemonic": "Shaddah on ن or م = ALWAYS 2 counts of ghunnah. No exceptions!",
+    "how_to": [
+      "See نّ or مّ (with shaddah)",
+      "Place tongue/lips for that letter",
+      "Hum from your NOSE — not throat",
+      "Hold the nasal hum for exactly 2 counts",
+      "Then release into the next letter"
+    ],
+    "examples": [
+      { "arabic": "إِنَّ", "highlight": "نّ", "transliteration": "inna", "note": "نّ shaddah — 2 counts nasal" },
+      { "arabic": "ثُمَّ", "highlight": "مّ", "transliteration": "thumma", "note": "مّ shaddah — 2 counts nasal" },
+      { "arabic": "إِنَّ اللَّهَ", "highlight": "نّ", "transliteration": "innallaaha", "note": "Ghunnah before entering lam" },
+      { "arabic": "أَمَّا", "highlight": "مّ", "transliteration": "amma", "note": "Ghunnah on مّ — 2 counts" }
+    ],
+    "tip": "Block your nose with your fingers while reading — if the sound stops, you're doing ghunnah correctly from your nose!",
+    "common_mistake": "Making ghunnah too short (less than 2 counts) or applying it on regular ن and م without shaddah.",
+    "similar": ["idgham", "ikhfa", "iqlab"]
+  },
+  {
+    "id": "qalqalah",
+    "category": "qalqalah",
+    "name": "Qalqalah",
+    "arabic_name": "قَلْقَلَة",
+    "urdu_name": "قلقلہ",
+    "color": "#6D4C41",
+    "bg": "#FFF8F5",
+    "icon": "🔔",
+    "counts": null,
+    "short": "Echoing bounce on 5 letters with sukoon",
+    "definition": "A slight echoing or bouncing vibration in the sound produced when one of the 5 Qalqalah letters has a sukoon (ْ) — either naturally or at a pause.",
+    "urdu_def": "پانچ مخصوص حروف پر جب سکون ہو تو انہیں ایک خاص ارتعاش کے ساتھ ادا کرنا۔",
+    "trigger_letters": ["ق", "ط", "ب", "ج", "د"],
+    "trigger_label": "5 Letters — قُطُبُ جَدٍّ (Qutbu Jad)",
+    "mnemonic": "قُطْبُ جَدٍّ — These two words contain ALL 5 Qalqalah letters!",
+    "subtypes": [
+      {
+        "name": "Qalqalah Sughra (Minor)",
+        "arabic": "قلقلة صغرى",
+        "letters": [],
+        "desc": "When the qalqalah letter has sukoon in the MIDDLE of a word — slight echo"
+      },
+      {
+        "name": "Qalqalah Kubra (Major)",
+        "arabic": "قلقلة كبرى",
+        "letters": [],
+        "desc": "When you PAUSE on a qalqalah letter at the END of a word/ayah — stronger, more prominent echo"
+      }
+    ],
+    "how_to": [
+      "Identify one of the 5 letters: ق ط ب ج د",
+      "Check if it has sukoon (ْ) or if you're pausing on it",
+      "Begin pronouncing the letter from its makhraj",
+      "Before releasing, create a slight 'echo' or 'bounce'",
+      "For end of ayah (Kubra): the echo is stronger and longer"
+    ],
+    "examples": [
+      { "arabic": "يَخْلُقُ", "highlight": "قُ", "transliteration": "yakhluq", "note": "ق at end — Qalqalah Kubra" },
+      { "arabic": "أَحَدٌ", "highlight": "دٌ", "transliteration": "ahad", "note": "د at end — strong Kubra" },
+      { "arabic": "يَبْطِشُ", "highlight": "بْ", "transliteration": "yabtishu", "note": "بْ in middle — Sughra" },
+      { "arabic": "قُلْ أَعُوذُ", "highlight": "قُلْ", "transliteration": "qul", "note": "لْ after ق — pause: Kubra on ل" }
+    ],
+    "tip": "Surah Al-Ikhlas (قُلْ هُوَ اللَّهُ أَحَدٌ) is the BEST practice — it has multiple qalqalah letters at the end of every ayah!",
+    "common_mistake": "Not bouncing at all, or over-exaggerating into a full 'ha' sound. It should be subtle but distinct.",
+    "similar": []
+  },
+  {
+    "id": "madd_tabee",
+    "category": "madd",
+    "name": "Madd Tabee",
+    "arabic_name": "مَدٌّ طَبِيعِي",
+    "urdu_name": "مد طبعی",
+    "color": "#00838F",
+    "bg": "#F0FDFF",
+    "icon": "〰️",
+    "counts": "2 counts (1 alif)",
+    "short": "Natural elongation — 2 counts on alif/ya/waw",
+    "definition": "The natural (original) elongation that occurs on one of the three madd letters — alif (ا), ya (ي), waw (و) — when they are preceded by a letter with their corresponding vowel. It is held for exactly 2 counts.",
+    "urdu_def": "تین حروف مد (الف، واو، یا) پر دو حرکات کی لمبی آواز — یہ سب سے بنیادی مد ہے۔",
+    "trigger_letters": ["ا", "و", "ي"],
+    "trigger_label": "3 Madd Letters — ا و ي (Alif, Waw, Ya)",
+    "mnemonic": "Alif after fatha | Waw after damma | Ya after kasra = 2 counts. Simple and natural!",
+    "how_to": [
+      "See ا preceded by a fatha (ـَا)",
+      "OR see و preceded by a damma (ـُو)",
+      "OR see ي preceded by a kasra (ـِي)",
+      "Elongate that vowel sound for exactly 2 counts",
+      "Do not cut it short or overextend"
+    ],
+    "examples": [
+      { "arabic": "قَالَ", "highlight": "ـَا", "transliteration": "qaala", "note": "فتحة + ا — 2 counts on aa" },
+      { "arabic": "يَقُولُ", "highlight": "ـُو", "transliteration": "yaqoolu", "note": "ضمة + و — 2 counts on oo" },
+      { "arabic": "رَحِيمٌ", "highlight": "ـِي", "transliteration": "raheem", "note": "كسرة + ي — 2 counts on ee" },
+      { "arabic": "الرَّحْمَـٰنِ", "highlight": "ـَا", "transliteration": "ar-rahmaan", "note": "Long aa — Madd Tabee" }
+    ],
+    "tip": "Count '1-2' in your head while elongating. If no vowel precedes the madd letter, or another madd rule applies — it becomes a different type of madd.",
+    "common_mistake": "Cutting the madd too short (less than 2 counts) or not elongating at all.",
+    "similar": ["madd_muttasil", "madd_munfasil", "madd_arid"]
+  },
+  {
+    "id": "madd_muttasil",
+    "category": "madd",
+    "name": "Madd Muttasil",
+    "arabic_name": "مَدٌّ مُتَّصِل",
+    "urdu_name": "مد متصل",
+    "color": "#0277BD",
+    "bg": "#F0F8FF",
+    "icon": "📏",
+    "counts": "4–5 counts",
+    "short": "Connected madd — madd letter + hamza IN same word",
+    "definition": "When a madd letter (ا و ي) is immediately followed by a hamza (ء) within THE SAME WORD — elongate for 4 to 5 counts. This is obligatory (wajib).",
+    "urdu_def": "ایک ہی کلمے میں حرف مد کے بعد ہمزہ آئے تو 4 یا 5 حرکات تک کھینچنا لازم ہے۔",
+    "trigger_letters": ["ء"],
+    "trigger_label": "Madd letter + Hamza (ء) — in SAME word",
+    "mnemonic": "Muttasil = Connected — the madd and hamza are CONNECTED in one word",
+    "how_to": [
+      "Find a madd letter (ا و ي) inside a word",
+      "Check: is the VERY NEXT letter a hamza (ء)?",
+      "Is it all in ONE word? → Muttasil",
+      "Elongate for 4 counts minimum (some reciters: 5)",
+      "Stay consistent throughout your recitation"
+    ],
+    "examples": [
+      { "arabic": "جَاءَ", "highlight": "ـَاءَ", "transliteration": "jaa'a", "note": "ا then ء in same word — 4-5 counts" },
+      { "arabic": "السَّمَاءِ", "highlight": "ـَاءِ", "transliteration": "as-samaa'i", "note": "ا + ء — Muttasil" },
+      { "arabic": "يَشَاءُ", "highlight": "ـَاءُ", "transliteration": "yashaa'u", "note": "ا + ء — 4-5 counts" },
+      { "arabic": "سُوءَ", "highlight": "ـُوءَ", "transliteration": "soo'a", "note": "و + ء — Muttasil" }
+    ],
+    "tip": "In the Quran, Muttasil is often marked with a special symbol (ۤ or a curved madd sign). Look for it!",
+    "common_mistake": "Reading it like a Tabee (only 2 counts). Muttasil MUST be 4+ counts — it's obligatory.",
+    "similar": ["madd_tabee", "madd_munfasil", "madd_arid"]
+  },
+  {
+    "id": "madd_munfasil",
+    "category": "madd",
+    "name": "Madd Munfasil",
+    "arabic_name": "مَدٌّ مُنفَصِل",
+    "urdu_name": "مد منفصل",
+    "color": "#00695C",
+    "bg": "#F0FFF8",
+    "icon": "↔️",
+    "counts": "4–5 counts (or 2 counts for Qasr)",
+    "short": "Separated madd — madd letter then hamza in NEXT word",
+    "definition": "When a word ends with a madd letter and the NEXT word begins with a hamza (ء). Unlike Muttasil, this is in TWO SEPARATE words. Elongation is 4–5 counts (or 2 counts in the Qasr method).",
+    "urdu_def": "ایک لفظ حرف مد پر ختم ہو اور اگلا لفظ ہمزہ سے شروع ہو — دونوں الگ الگ کلمے۔",
+    "trigger_letters": ["ء"],
+    "trigger_label": "Madd letter at end of word + Hamza (ء) starting NEXT word",
+    "mnemonic": "Munfasil = Separated — the madd and hamza are in SEPARATE words",
+    "how_to": [
+      "A word ends with ا / و / ي (madd letter)",
+      "The next word starts with ء (hamza)",
+      "They are in TWO different words",
+      "Elongate 4–5 counts (Hafs 'an Asim method)",
+      "You may also use 2 counts (called Qasr)"
+    ],
+    "examples": [
+      { "arabic": "إِنَّا أَنزَلْنَا", "highlight": "ـَا أَ", "transliteration": "innaa anzalnaa", "note": "نَا ends, then أَ begins next word" },
+      { "arabic": "بِمَا أُنزِلَ", "highlight": "ـَا أُ", "transliteration": "bimaa unzila", "note": "مَا ends, then أُ begins" },
+      { "arabic": "فِي أَنفُسِكُمْ", "highlight": "ـِي أَ", "transliteration": "fee anfusikum", "note": "ي madd, then أَ next word" }
+    ],
+    "tip": "When in doubt: is the hamza in the SAME word or NEXT word? Same = Muttasil (4-5). Next = Munfasil (4-5 or 2).",
+    "common_mistake": "Confusing Munfasil with Muttasil. Check if it's one word or two!",
+    "similar": ["madd_tabee", "madd_muttasil", "madd_arid"]
+  },
+  {
+    "id": "madd_arid",
+    "category": "madd",
+    "name": "Madd Arid Lissukoon",
+    "arabic_name": "مَدٌّ عَارِض لِلسُّكُون",
+    "urdu_name": "مد عارض",
+    "color": "#AD1457",
+    "bg": "#FFF0F7",
+    "icon": "⏸️",
+    "counts": "2, 4, or 6 counts",
+    "short": "Madd at pause — last letter gets sukoon when stopping",
+    "definition": "When you pause (waqf) at the end of an ayah or word, and the last syllable contains a madd letter — the pause causes a temporary sukoon, extending the elongation. You may elongate for 2, 4, or 6 counts.",
+    "urdu_def": "جب کسی آیت یا لفظ کے آخر پر وقف کریں اور آخری حرف پر مد آئے تو اسے 2، 4 یا 6 حرکات تک لمبا کرنا جائز ہے۔",
+    "trigger_letters": [],
+    "trigger_label": "Pause (Waqf) at end of ayah/word with madd letter before last letter",
+    "mnemonic": "Arid = Occasional/Temporary. The sukoon happens ONLY because you paused — it's not written in the text.",
+    "how_to": [
+      "You reach the end of an ayah or decide to pause",
+      "The last letter will get a sukoon when you pause",
+      "If a madd letter comes just before the last letter",
+      "Elongate: 2 counts (minimum), 4 counts (medium), 6 counts (maximum)",
+      "All three are valid — choose one and stay consistent"
+    ],
+    "examples": [
+      { "arabic": "الرَّحِيمِ", "highlight": "يمِ", "transliteration": "ar-Raheem", "note": "Pausing: ي + مْ — 2/4/6 counts" },
+      { "arabic": "نَعْبُدُ", "highlight": "دُ", "transliteration": "na'bud", "note": "Pausing at end: 2/4/6" },
+      { "arabic": "الضَّالِّينَ", "highlight": "نَ", "transliteration": "ad-daalleen", "note": "Pause: ي + نْ — madd arid" }
+    ],
+    "tip": "Al-Fatiha is PERFECT for practicing Madd Arid — every ayah ending has one!",
+    "common_mistake": "Continuing with Madd Arid while reading without stopping. If you don't pause, it becomes a Madd Tabee (2 counts only).",
+    "similar": ["madd_tabee", "madd_muttasil", "madd_munfasil"]
+  },
+  {
+    "id": "lam_shamsia",
+    "category": "lam",
+    "name": "Lam Shamsia",
+    "arabic_name": "لام شمسية",
+    "urdu_name": "لام شمسی",
+    "color": "#F9A825",
+    "bg": "#FFFDF0",
+    "icon": "☀️",
+    "counts": null,
+    "short": "Al- lam disappears — absorbed into next letter",
+    "definition": "When the definite article اَلـ (al-) is followed by one of 14 solar (shams) letters, the lam is NOT pronounced. Instead it merges into the following letter, which is then doubled (shaddah).",
+    "urdu_def": "جب اَلـ کے بعد چودہ شمسی حروف میں سے کوئی آئے تو لام کو ادا نہیں کیا جاتا — اگلا حرف مشدد ہوجاتا ہے۔",
+    "trigger_letters": ["ت", "ث", "د", "ذ", "ر", "ز", "س", "ش", "ص", "ض", "ط", "ظ", "ل", "ن"],
+    "trigger_label": "14 Solar Letters (الحروف الشمسية)",
+    "mnemonic": "طِبْ ثُمَّ صِلْ رَحِمًا تَفُزْ ضِفْ ذَا نِعَمٍ دَعْ سُوءَ ظَنٍّ زُرْ شَرِيفًا لِلْكَرَمِ",
+    "how_to": [
+      "See اَلـ before a word",
+      "Look at the FIRST letter of the word",
+      "Is it one of the 14 solar letters?",
+      "If YES — skip the lam, double the solar letter",
+      "Pronounce as if the lam was never there"
+    ],
+    "examples": [
+      { "arabic": "الشَّمْسُ", "highlight": "الشّ", "transliteration": "ash-shamsu", "note": "لام disappears — شّ is doubled" },
+      { "arabic": "الرَّحِيمُ", "highlight": "الرّ", "transliteration": "ar-Raheem", "note": "لام absorbed into رّ" },
+      { "arabic": "النَّاسُ", "highlight": "النّ", "transliteration": "an-naas", "note": "لام into نّ — solar letter" },
+      { "arabic": "الدِّينُ", "highlight": "الدّ", "transliteration": "ad-deen", "note": "لام absorbed into دّ" }
+    ],
+    "tip": "The 14 letters are the same ones that start the words in the mnemonic. Memorize the mnemonic once — you'll know all 14 forever.",
+    "common_mistake": "Pronouncing اَلـ fully as 'al' before solar letters (e.g. saying 'al-shamsu' instead of 'ash-shamsu').",
+    "similar": ["lam_qamariya"]
+  },
+  {
+    "id": "lam_qamariya",
+    "category": "lam",
+    "name": "Lam Qamariya",
+    "arabic_name": "لام قمرية",
+    "urdu_name": "لام قمری",
+    "color": "#546E7A",
+    "bg": "#F5F8FA",
+    "icon": "🌙",
+    "counts": null,
+    "short": "Al- lam IS pronounced — clear before 14 lunar letters",
+    "definition": "When the definite article اَلـ is followed by one of 14 lunar (qamar) letters, the lam IS pronounced clearly. The following letter does NOT become doubled.",
+    "urdu_def": "جب اَلـ کے بعد چودہ قمری حروف میں سے کوئی آئے تو لام واضح طور پر پڑھا جاتا ہے اور اگلا حرف مشدد نہیں ہوتا۔",
+    "trigger_letters": ["ء", "ب", "ج", "ح", "خ", "ع", "غ", "ف", "ق", "ك", "م", "ه", "و", "ي"],
+    "trigger_label": "14 Lunar Letters (الحروف القمرية)",
+    "mnemonic": "اِبْغِ حَجَّكَ وَخَفْ عَقِيمَهُ — These 14 letters = Qamariya",
+    "how_to": [
+      "See اَلـ before a word",
+      "Look at the FIRST letter of the word",
+      "Is it one of the 14 lunar letters?",
+      "If YES — pronounce the لام clearly",
+      "No doubling on the next letter"
+    ],
+    "examples": [
+      { "arabic": "الْقُرْآنُ", "highlight": "الْق", "transliteration": "al-qur'aan", "note": "لام clearly pronounced before ق" },
+      { "arabic": "الْحَمْدُ", "highlight": "الْح", "transliteration": "al-hamdu", "note": "لام clear before ح" },
+      { "arabic": "الْكِتَابُ", "highlight": "الْك", "transliteration": "al-kitaabu", "note": "لام before ك — Qamariya" },
+      { "arabic": "الْمَلِكُ", "highlight": "الْم", "transliteration": "al-maliku", "note": "لام before م — clear" }
+    ],
+    "tip": "A sukoon (ْ) is always written on the lam of اَلـ when followed by a qamariya letter — this is your visual marker in the Quran.",
+    "common_mistake": "Forgetting to pronounce the lam fully — or confusing lunar with solar letters.",
+    "similar": ["lam_shamsia"]
+  },
+  {
+    "id": "tafkhim",
+    "category": "heavy_light",
+    "name": "Tafkhim",
+    "arabic_name": "تَفْخِيم",
+    "urdu_name": "تفخیم",
+    "color": "#BF360C",
+    "bg": "#FFF3F0",
+    "icon": "🔴",
+    "counts": null,
+    "short": "Heavy (thick) sound — 7 heavy letters",
+    "definition": "Tafkhim means to pronounce a letter with a 'full' or 'heavy' sound, as if the mouth is full. There are 7 permanently heavy letters in Arabic, plus the name of Allah (اللَّه) in certain conditions.",
+    "urdu_def": "کچھ حروف کو بھاری اور موٹی آواز کے ساتھ پڑھنا — ان کی ادائیگی میں منہ کی تمام جگہ استعمال ہوتی ہے۔",
+    "trigger_letters": ["خ", "ص", "ض", "غ", "ط", "ق", "ظ"],
+    "trigger_label": "7 Always-Heavy Letters — خُصَّ ضَغْطٍ قِظْ",
+    "mnemonic": "خُصَّ ضَغْطٍ قِظْ — Memorize this phrase and you know all 7 heavy letters!",
+    "how_to": [
+      "Identify one of the 7 heavy letters: خ ص ض غ ط ق ظ",
+      "OR the name اللَّه when preceded by fatha or damma",
+      "Round and raise the back of your tongue",
+      "Make the sound 'full' and 'thick'",
+      "The vowel after it should also sound heavy"
+    ],
+    "examples": [
+      { "arabic": "الصَّلَاةُ", "highlight": "صّ", "transliteration": "as-salaatu", "note": "ص is always heavy" },
+      { "arabic": "الطَّيِّبَاتُ", "highlight": "طّ", "transliteration": "at-tayyibaat", "note": "ط is always heavy" },
+      { "arabic": "قُلْ", "highlight": "قُ", "transliteration": "qul", "note": "ق is heavy" },
+      { "arabic": "قَالَ اللَّهُ", "highlight": "اللَّه", "transliteration": "qaalal-laahu", "note": "Allah after fatha — Tafkhim" }
+    ],
+    "tip": "A simple test: say 'law' vs 'lee' in English. 'Law' position = tafkhim. Heavy letters sound like the 'law' position.",
+    "common_mistake": "Reading heavy letters lightly, especially ق and ط — these must be noticeably heavy.",
+    "similar": ["tarqiq"]
+  },
+  {
+    "id": "tarqiq",
+    "category": "heavy_light",
+    "name": "Tarqiq",
+    "arabic_name": "تَرْقِيق",
+    "urdu_name": "ترقیق",
+    "color": "#1565C0",
+    "bg": "#F0F5FF",
+    "icon": "🔵",
+    "counts": null,
+    "short": "Light (thin) sound — most Arabic letters",
+    "definition": "Tarqiq means to pronounce a letter with a 'light' or 'thin' sound, without raising the back of the tongue. All Arabic letters except the 7 heavy ones are pronounced lightly (tarqiq).",
+    "urdu_def": "حروف کو ہلکی اور باریک آواز کے ساتھ پڑھنا — زبان کا پچھلا حصہ اوپر نہیں اٹھتا۔",
+    "trigger_letters": [],
+    "trigger_label": "All letters EXCEPT the 7 heavy ones — also: Allah's name after kasra/sukoon",
+    "mnemonic": "If it's NOT in خُصَّ ضَغْطٍ قِظْ → it's light (tarqiq). Simple!",
+    "how_to": [
+      "Any letter that is NOT one of the 7 heavy letters",
+      "Keep the back of your tongue flat and low",
+      "Keep lips relaxed — no rounding",
+      "Sound should feel 'front' and 'forward'",
+      "Special case: اللَّه after kasra/sukoon = Tarqiq"
+    ],
+    "examples": [
+      { "arabic": "بِسْمِ", "highlight": "بِ", "transliteration": "bismi", "note": "ب is light" },
+      { "arabic": "رَبِّ", "highlight": "رَ", "transliteration": "rabbi", "note": "ر is generally light here" },
+      { "arabic": "بِاللَّهِ", "highlight": "اللَّه", "transliteration": "billaahi", "note": "Allah after kasra — Tarqiq (light!)" }
+    ],
+    "tip": "The rule of اللَّه: before a fatha or damma = heavy (tafkhim). Before a kasra or sukoon = light (tarqiq).",
+    "common_mistake": "Making all Arabic letters heavy/thick. Only the 7 letters and اللَّه in certain cases are heavy.",
+    "similar": ["tafkhim"]
+  }
+]

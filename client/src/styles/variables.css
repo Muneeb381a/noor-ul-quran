@@ -1,0 +1,83 @@
+:root {
+  /* ── Brand Colors ── */
+  --green-deep:    #1B4332;
+  --green-mid:     #2D6A4F;
+  --green-light:   #52B788;
+  --green-pale:    #D8F3DC;
+  --gold:          #C9A84C;
+  --gold-light:    #E9C46A;
+  --gold-pale:     #FFF3CD;
+
+  /* ── Backgrounds ── */
+  --cream:         #FDF8F0;
+  --cream-dark:    #F5EDD8;
+  --cream-mid:     #EFE4CA;
+  --parchment:     #F9F3E3;
+  --white:         #FFFFFF;
+
+  /* ── Text ── */
+  --text-dark:     #1A1A1A;
+  --text-mid:      #4A4A4A;
+  --text-light:    #7A7A7A;
+  --text-gold:     #A07828;
+
+  /* ── Semantic ── */
+  --danger:        #C0392B;
+  --danger-pale:   #FDECEA;
+  --success:       #27AE60;
+  --success-pale:  #E8F8F0;
+  --info:          #2980B9;
+
+  /* ── Typography ── */
+  --font-quran:    'Amiri Quran', 'Amiri', 'Noto Naskh Arabic', serif;
+  --font-arabic:   'Noto Naskh Arabic', 'Amiri', serif;
+  --font-urdu:     'Noto Nastaliq Urdu', 'Noto Naskh Arabic', serif;
+  --font-heading:  'Cinzel', 'Georgia', serif;
+  --font-body:     'Lato', 'Segoe UI', sans-serif;
+
+  /* ── Arabic Text Sizes ── */
+  --arabic-sm:     20px;
+  --arabic-md:     26px;
+  --arabic-lg:     32px;
+  --arabic-xl:     40px;
+  --arabic-quran:  28px;
+
+  /* ── Spacing & Shape ── */
+  --radius-sm:     6px;
+  --radius:        10px;
+  --radius-lg:     16px;
+  --radius-xl:     24px;
+  --radius-full:   9999px;
+
+  /* ── Shadows ── */
+  --shadow-sm:  0 1px 4px rgba(27,67,50,0.08);
+  --shadow-md:  0 4px 16px rgba(27,67,50,0.10);
+  --shadow-lg:  0 8px 32px rgba(27,67,50,0.14);
+  --shadow-xl:  0 16px 48px rgba(27,67,50,0.18);
+  --shadow-gold: 0 4px 20px rgba(201,168,76,0.25);
+  --shadow-gold-lg: 0 8px 40px rgba(201,168,76,0.35);
+
+  /* ── Extended Palette ── */
+  --hero-dark:   #081510;
+  --hero-mid:    #0D2818;
+  --green-hover: #3A7D5E;
+  --gold-warm:   #D4A843;
+  --gold-dim:    rgba(201,168,76,0.15);
+
+  /* ── Transitions ── */
+  --transition: 0.2s ease;
+  --transition-slow: 0.4s ease;
+}
+
+[data-theme="dark"] {
+  --cream:      #0F1A14;
+  --cream-dark: #162212;
+  --cream-mid:  #1E2E1E;
+  --parchment:  #1A2A1A;
+  --text-dark:  #F0EDE6;
+  --text-mid:   #C8C4BA;
+  --text-light: #8A8A8A;
+  --shadow-sm:  0 1px 4px rgba(0,0,0,0.3);
+  --shadow-md:  0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg:  0 8px 32px rgba(0,0,0,0.5);
+}

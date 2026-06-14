@@ -1,0 +1,52 @@
+/* ── Arabic / Quran Text ── */
+.arabic {
+  font-family: var(--font-arabic);
+  direction: rtl;
+  text-align: right;
+  line-height: 2.4;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+}
+
+.quran-text {
+  font-family: var(--font-quran);
+  direction: rtl;
+  text-align: justify;
+  line-height: 2.6;
+  font-size: var(--arabic-quran);
+  color: var(--text-dark);
+  font-feature-settings: 'liga' 1, 'calt' 1, 'kern' 1;
+  word-spacing: 4px;
+}
+
+/* Ayah end marker ﴿١﴾ */
+.ayah-marker {
+  font-family: var(--font-quran);
+  color: var(--gold);
+  font-size: 0.85em;
+  vertical-align: middle;
+  padding: 0 0.2em;
+  white-space: nowrap;
+}
+
+/* Bismillah */
+.bismillah {
+  font-family: var(--font-quran);
+  font-size: 2.2rem;
+  color: var(--green-deep);
+  text-align: center;
+  direction: rtl;
+  line-height: 2.2;
+  letter-spacing: 0.02em;
+}
+
+.arabic-sm  { font-size: var(--arabic-sm); }
+.arabic-md  { font-size: var(--arabic-md); }
+.arabic-lg  { font-size: var(--arabic-lg); }
+.arabic-xl  { font-size: var(--arabic-xl); }
+
+.urdu {
+  font-family: var(--font-urdu);
+  direction: rtl;
+  text-align: right;
+  line-height: 2.4;
+}

@@ -1,0 +1,297 @@
+{
+  "intro": "Namaz (Salah) is the second pillar of Islam — obligatory 5 times daily. It is a direct conversation between the servant and Allah. The Prophet ﷺ said: 'The first thing a person will be questioned about on the Day of Judgment is Salah.' Learn each prayer's rakat count, method, and all duas.",
+
+  "wudu": {
+    "title": "Wudu — Ablution (Purification)",
+    "arabic_title": "الوضوء",
+    "intro": "Wudu is required before every Salah. Without valid wudu, Salah is not accepted.",
+    "steps": [
+      { "step": 1, "action": "Niyyah (Intention)", "arabic": "بِسْمِ اللَّهِ", "transliteration": "Bismillah", "translation": "In the name of Allah", "desc": "Make intention in your heart to purify yourself for Salah. Say Bismillah." },
+      { "step": 2, "action": "Wash Both Hands", "arabic": "", "transliteration": "", "translation": "", "desc": "Wash both hands up to the wrist 3 times, making sure water reaches between fingers." },
+      { "step": 3, "action": "Rinse Mouth (Madmadah)", "arabic": "", "transliteration": "", "translation": "", "desc": "Take water in your right hand and rinse your mouth thoroughly 3 times." },
+      { "step": 4, "action": "Clean Nose (Istinshaq)", "arabic": "", "transliteration": "", "translation": "", "desc": "Sniff water into your nose 3 times using the right hand, blow out with the left." },
+      { "step": 5, "action": "Wash Face", "arabic": "", "transliteration": "", "translation": "", "desc": "Wash your entire face 3 times from forehead to chin, and ear to ear. Include beard if thin." },
+      { "step": 6, "action": "Wash Arms to Elbow", "arabic": "", "transliteration": "", "translation": "", "desc": "Wash right arm first, then left, including elbows, 3 times each. Reach between fingers." },
+      { "step": 7, "action": "Wipe Head (Masah)", "arabic": "", "transliteration": "", "translation": "", "desc": "Wet hands and wipe over head once — from forehead to back of head, then back to front." },
+      { "step": 8, "action": "Wipe Ears", "arabic": "", "transliteration": "", "translation": "", "desc": "With the same wet hands, wipe inside of ears with index fingers, outside with thumbs." },
+      { "step": 9, "action": "Wash Feet", "arabic": "", "transliteration": "", "translation": "", "desc": "Wash right foot first, then left, 3 times each up to and including the ankles. Reach between toes." },
+      { "step": 10, "action": "Dua After Wudu", "arabic": "أَشْهَدُ أَنْ لَّا إِلَهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ، وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ", "transliteration": "Ash-hadu allaa ilaaha illallaahu wahdahu laa shareeka lah, wa ash-hadu anna muhammadun 'abduhu wa rasooluh", "translation": "I testify that none deserves worship except Allah alone, and I testify that Muhammad is His servant and Messenger", "desc": "Look towards the sky and recite this dua. All 8 gates of Paradise will be opened for you. (Muslim 234)" }
+    ]
+  },
+
+  "prayers": [
+    {
+      "id": "fajr",
+      "name": "Fajr",
+      "arabic": "الفجر",
+      "urdu": "فجر",
+      "time": "Dawn — before sunrise",
+      "time_ur": "طلوع آفتاب سے پہلے",
+      "rakaat": { "fardh": 2, "sunnah_before": 2, "total": 4 },
+      "icon": "🌅",
+      "color": "#E65100",
+      "bg": "#FFF3E0",
+      "desc": "The morning prayer. Prayed at dawn before sunrise. Missing Fajr while sleeping is forgiven with makeup; intentionally missing is a major sin.",
+      "virtue": "Whoever prays Fajr is under the protection of Allah for the entire day. (Muslim 657)"
+    },
+    {
+      "id": "dhuhr",
+      "name": "Dhuhr",
+      "arabic": "الظهر",
+      "urdu": "ظہر",
+      "time": "After midday — until afternoon",
+      "time_ur": "دوپہر کے بعد",
+      "rakaat": { "fardh": 4, "sunnah_before": 4, "sunnah_after": 2, "total": 10 },
+      "icon": "☀️",
+      "color": "#F57F17",
+      "bg": "#FFFDE7",
+      "desc": "The midday prayer. Begins when the sun passes its highest point and shadow equals the object's length.",
+      "virtue": "The Prophet ﷺ would delay Dhuhr in summer heat and pray on time. He said: 'When heat is intense, delay the prayer until it cools.' (Bukhari)"
+    },
+    {
+      "id": "asr",
+      "name": "Asr",
+      "arabic": "العصر",
+      "urdu": "عصر",
+      "time": "Mid-afternoon until sunset",
+      "time_ur": "دوپہر بعد تا غروب آفتاب",
+      "rakaat": { "fardh": 4, "sunnah_before": 4, "total": 8 },
+      "icon": "🌤️",
+      "color": "#1565C0",
+      "bg": "#E3F2FD",
+      "desc": "The afternoon prayer. Allah specifically swears by Asr time in Surah Al-Asr. Missing it is called the 'middle prayer' that must be protected.",
+      "virtue": "Whoever misses Asr prayer, it is as if he lost his family and wealth. (Bukhari 552)"
+    },
+    {
+      "id": "maghrib",
+      "name": "Maghrib",
+      "arabic": "المغرب",
+      "urdu": "مغرب",
+      "time": "Just after sunset",
+      "time_ur": "غروب آفتاب کے بعد",
+      "rakaat": { "fardh": 3, "sunnah_after": 2, "total": 5 },
+      "icon": "🌆",
+      "color": "#AD1457",
+      "bg": "#FCE4EC",
+      "desc": "The sunset prayer. Has only 3 fardh rakaat. Its time is short — begin as soon as possible after sunset.",
+      "virtue": "Whoever prays Maghrib and Isha in congregation, he gets the reward of one who prayed the entire night. (Muslim)"
+    },
+    {
+      "id": "isha",
+      "name": "Isha",
+      "arabic": "العشاء",
+      "urdu": "عشاء",
+      "time": "Nighttime — until midnight",
+      "time_ur": "رات کے وقت",
+      "rakaat": { "fardh": 4, "sunnah_before": 4, "sunnah_after": 2, "witr": 3, "total": 13 },
+      "icon": "🌙",
+      "color": "#1A237E",
+      "bg": "#E8EAF6",
+      "desc": "The night prayer. The Prophet ﷺ liked to delay Isha slightly. Witr prayer is highly recommended after Isha.",
+      "virtue": "Whoever prays Isha in congregation gets half the night's reward; whoever prays Fajr in congregation gets as if he prayed the full night. (Muslim)"
+    }
+  ],
+
+  "how_to_pray": {
+    "title": "How to Perform Salah — Step by Step",
+    "arabic_title": "كيفية أداء الصلاة",
+    "note": "This shows a complete 2-rakat prayer (like Fajr Fardh or any 2-rakat Sunnah). For 3 or 4 rakaat prayers, additional rakaat are added after step 12.",
+    "steps": [
+      {
+        "step": 1,
+        "name": "Niyyah — Intention",
+        "arabic": "",
+        "transliteration": "",
+        "translation": "",
+        "urdu": "نماز کی نیت",
+        "desc": "Make intention in your heart for which prayer you are praying (e.g., '2 rakat fardh of Fajr for Allah'). Saying it aloud is not required — the heart's intention is what matters.",
+        "position": "Standing"
+      },
+      {
+        "step": 2,
+        "name": "Takbeer-e-Tahrima — Opening Takbeer",
+        "arabic": "اللَّهُ أَكْبَرُ",
+        "transliteration": "Allaahu Akbar",
+        "translation": "Allah is the Greatest",
+        "urdu": "اللہ سب سے بڑا ہے",
+        "desc": "Raise both hands to ear level (palms facing qibla), say Allahu Akbar, then fold hands below chest (right hand on left wrist). Women fold hands on chest.",
+        "position": "Standing (Qiyam)"
+      },
+      {
+        "step": 3,
+        "name": "Thana — Opening Supplication",
+        "arabic": "سُبْحَانَكَ اللَّهُمَّ وَبِحَمْدِكَ، وَتَبَارَكَ اسْمُكَ، وَتَعَالَى جَدُّكَ، وَلَا إِلَهَ غَيْرُكَ",
+        "transliteration": "Subhaanaka Allaahumma wa bihamdika wa tabaarakasmuka wa ta'aalaa jadduka wa laa ilaaha ghayruk",
+        "translation": "Glory be to You, O Allah, and praise. Blessed is Your name and exalted is Your majesty, and there is none worthy of worship except You",
+        "urdu": "اے اللہ! تو پاک ہے اور تیری تعریف ہے، تیرا نام بابرکت ہے، تیری شان بلند ہے، اور تیرے سوا کوئی معبود نہیں",
+        "desc": "Recite this silently after the opening Takbeer. Only read in the first rakat.",
+        "position": "Standing (Qiyam)"
+      },
+      {
+        "step": 4,
+        "name": "Ta'awwudh & Tasmiyah",
+        "arabic": "أَعُوذُ بِاللَّهِ مِنَ الشَّيْطَانِ الرَّجِيمِ ۝ بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ",
+        "transliteration": "A'oothu billaahi minash-shaytaanir-rajeem. Bismillaahir-Rahmaanir-Raheem",
+        "translation": "I seek refuge in Allah from the cursed Shaytan. In the name of Allah, the Most Gracious, the Most Merciful",
+        "urdu": "میں شیطان مردود سے اللہ کی پناہ مانگتا ہوں۔ اللہ کے نام سے جو بڑا مہربان نہایت رحم والا ہے",
+        "desc": "Recite silently. Only in first rakat. Then proceed to Surah Al-Fatihah.",
+        "position": "Standing (Qiyam)"
+      },
+      {
+        "step": 5,
+        "name": "Surah Al-Fatihah",
+        "arabic": "الْحَمْدُ لِلَّهِ رَبِّ الْعَالَمِينَ ۝ الرَّحْمَنِ الرَّحِيمِ ۝ مَالِكِ يَوْمِ الدِّينِ ۝ إِيَّاكَ نَعْبُدُ وَإِيَّاكَ نَسْتَعِينُ ۝ اهْدِنَا الصِّرَاطَ الْمُسْتَقِيمَ ۝ صِرَاطَ الَّذِينَ أَنْعَمْتَ عَلَيْهِمْ غَيْرِ الْمَغْضُوبِ عَلَيْهِمْ وَلَا الضَّالِّينَ",
+        "transliteration": "Alhamdu lillaahi rabbil-'aalameen. Ar-rahmaanir-raheem. Maaliki yawmid-deen. Iyyaaka na'budu wa iyyaaka nasta'een. Ihdinassiraatal-mustaqeem. Siraatal-ladheena an'amta 'alayhim ghayril-maghdoobi 'alayhim wa lad-daaallleen",
+        "translation": "All praise is for Allah, Lord of all worlds. The Most Gracious, the Most Merciful. Master of the Day of Judgment. You alone we worship, You alone we ask for help. Guide us to the straight path — the path of those You have blessed, not of those who have incurred anger, nor of those who are astray",
+        "urdu": "تمام تعریفیں اللہ کے لیے جو تمام جہانوں کا رب ہے۔ بڑا مہربان، نہایت رحم والا۔ روز قیامت کا مالک۔ ہم تیری ہی عبادت کرتے ہیں اور تجھ سے ہی مدد مانگتے ہیں",
+        "desc": "Recite Al-Fatihah in every rakat — it is the pillar of Salah. The Prophet ﷺ said: 'There is no Salah for the one who does not recite Al-Fatihah.' (Bukhari). After completing, say Ameen (silently in Hanafi; aloud in Shafi'i).",
+        "position": "Standing (Qiyam)"
+      },
+      {
+        "step": 6,
+        "name": "Surah (Any Quran Verse)",
+        "arabic": "قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ",
+        "transliteration": "Qul huwallaahu ahad. Allaahus-samad. Lam yalid wa lam yoolad. Wa lam yakul-lahu kufuwan ahad",
+        "translation": "Say: He is Allah, One. Allah, the Eternal Refuge. He neither begets nor is born. And there is none equal to Him",
+        "urdu": "کہو: وہ اللہ ایک ہے۔ اللہ بے نیاز ہے۔ نہ اس نے کسی کو جنا، نہ وہ جنا گیا۔ اور نہ کوئی اس کا ہمسر ہے",
+        "desc": "After Al-Fatihah, recite any portion of the Quran (minimum 3 short ayahs or 1 long). Surah Al-Ikhlas is shown as an example. Do this in first and second rakat only.",
+        "position": "Standing (Qiyam)"
+      },
+      {
+        "step": 7,
+        "name": "Ruku — Bowing",
+        "arabic": "سُبْحَانَ رَبِّيَ الْعَظِيمِ",
+        "transliteration": "Subhaana rabbiyal-'azeem",
+        "translation": "Glory be to my Lord, the Great",
+        "urdu": "پاک ہے میرا رب جو عظمت والا ہے",
+        "desc": "Say Allahu Akbar while going into ruku. Bow until your back is parallel to the ground, hands gripping knees. Recite 'Subhaana Rabbiyal-Azeem' minimum 3 times.",
+        "position": "Ruku (Bowing)"
+      },
+      {
+        "step": 8,
+        "name": "I'tidal — Rising from Ruku",
+        "arabic": "سَمِعَ اللَّهُ لِمَنْ حَمِدَهُ ۝ رَبَّنَا وَلَكَ الْحَمْدُ",
+        "transliteration": "Sami'allaahu liman hamidah. Rabbanaa wa lakal-hamd",
+        "translation": "Allah hears whoever praises Him. Our Lord, and to You is all praise",
+        "urdu": "اللہ نے اس کی سنی جس نے اس کی تعریف کی۔ اے ہمارے رب! تیرے لیے تمام تعریفیں",
+        "desc": "Rise from ruku saying 'Sami'allaahu liman hamidah'. When fully upright, say 'Rabbanaa wa lakal-hamd'. Stand still for a moment before going to sujood.",
+        "position": "Standing (I'tidal)"
+      },
+      {
+        "step": 9,
+        "name": "Sujood — Prostration",
+        "arabic": "سُبْحَانَ رَبِّيَ الْأَعْلَى",
+        "transliteration": "Subhaana rabbiyal-a'laa",
+        "translation": "Glory be to my Lord, the Most High",
+        "urdu": "پاک ہے میرا رب جو سب سے اونچا ہے",
+        "desc": "Say Allahu Akbar, then go into sujood: knees first, then hands, then forehead and nose. 7 body parts touch the ground: forehead+nose, two palms, two knees, toes of both feet. Recite 3 times minimum.",
+        "position": "Sujood (Prostration)"
+      },
+      {
+        "step": 10,
+        "name": "Jalsa — Sitting Between Sujood",
+        "arabic": "رَبِّ اغْفِرْ لِي",
+        "transliteration": "Rabbighfir lee",
+        "translation": "My Lord, forgive me",
+        "urdu": "اے میرے رب! مجھے معاف فرما",
+        "desc": "Rise from sujood saying Allahu Akbar. Sit on left foot with right foot upright. Recite 'Rabbighfir lee' once or three times. Then go for second sujood with Allahu Akbar.",
+        "position": "Sitting (Jalsa)"
+      },
+      {
+        "step": 11,
+        "name": "Second Sujood",
+        "arabic": "سُبْحَانَ رَبِّيَ الْأَعْلَى",
+        "transliteration": "Subhaana rabbiyal-a'laa",
+        "translation": "Glory be to my Lord, the Most High",
+        "urdu": "پاک ہے میرا رب جو سب سے اونچا ہے",
+        "desc": "Perform second sujood identical to the first. Say 'Subhaana Rabbiyal-A'la' minimum 3 times. This completes ONE rakat.",
+        "position": "Sujood (Prostration)"
+      },
+      {
+        "step": 12,
+        "name": "Second Rakat",
+        "arabic": "",
+        "transliteration": "",
+        "translation": "",
+        "urdu": "دوسری رکعت",
+        "desc": "Rise for the second rakat (without Thana — it's only in the first). Read Bismillah silently, then Al-Fatihah, then another Surah. Complete ruku and two sujood as before.",
+        "position": "Standing (Qiyam)"
+      },
+      {
+        "step": 13,
+        "name": "Qa'dah — Tashahhud Sitting",
+        "arabic": "التَّحِيَّاتُ لِلَّهِ وَالصَّلَوَاتُ وَالطَّيِّبَاتُ، السَّلَامُ عَلَيْكَ أَيُّهَا النَّبِيُّ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ، السَّلَامُ عَلَيْنَا وَعَلَى عِبَادِ اللَّهِ الصَّالِحِينَ، أَشْهَدُ أَنْ لَا إِلَهَ إِلَّا اللَّهُ وَأَشْهَدُ أَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُولُهُ",
+        "transliteration": "At-tahiyyaatu lillaahi was-salawaatu wat-tayyibaat. As-salaamu 'alayka ayyuhan-nabiyyu wa rahmatullaahi wa barakaatuh. As-salaamu 'alaynaa wa 'alaa 'ibaadillaahis-saaliheen. Ash-hadu allaa ilaaha illallaah wa ash-hadu anna muhammadan 'abduhu wa rasooluh",
+        "translation": "All greetings, prayers, and good things are for Allah. Peace be upon you, O Prophet, and the mercy of Allah and His blessings. Peace be upon us and upon the righteous servants of Allah. I bear witness that none has the right to be worshipped except Allah, and I bear witness that Muhammad is His servant and Messenger",
+        "urdu": "تمام آداب اللہ کے لیے، نمازیں اور پاک چیزیں۔ اے نبی! آپ پر سلام ہو اور اللہ کی رحمت اور برکات۔ ہم پر اور اللہ کے نیک بندوں پر سلام ہو۔",
+        "desc": "After second sujood of last rakat, sit in qa'dah position (left foot flat, right upright). Raise index finger of right hand when saying 'Ash-hadu allaa ilaaha...' and lower it after. Then recite Durood and Dua.",
+        "position": "Sitting (Qa'dah)"
+      },
+      {
+        "step": 14,
+        "name": "Durood Ibrahim",
+        "arabic": "اللَّهُمَّ صَلِّ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا صَلَّيْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ ۝ اللَّهُمَّ بَارِكْ عَلَى مُحَمَّدٍ وَعَلَى آلِ مُحَمَّدٍ كَمَا بَارَكْتَ عَلَى إِبْرَاهِيمَ وَعَلَى آلِ إِبْرَاهِيمَ إِنَّكَ حَمِيدٌ مَجِيدٌ",
+        "transliteration": "Allaahumma salli 'alaa Muhammadin wa 'alaa aali Muhammad kamaa sallayta 'alaa Ibraaheema wa 'alaa aali Ibraaheem innaka Hameedun Majeed. Allaahumma baarik 'alaa Muhammadin wa 'alaa aali Muhammad kamaa baarakta 'alaa Ibraaheema wa 'alaa aali Ibraaheem innaka Hameedun Majeed",
+        "translation": "O Allah, send blessings upon Muhammad and the family of Muhammad, as You sent blessings upon Ibrahim and the family of Ibrahim. Truly You are Praiseworthy and Glorious. O Allah, bless Muhammad and the family of Muhammad, as You blessed Ibrahim and the family of Ibrahim. Truly You are Praiseworthy and Glorious",
+        "urdu": "اے اللہ! محمد ﷺ اور آل محمد پر رحمت نازل فرما جیسا تو نے ابراہیم اور آل ابراہیم پر نازل فرمائی، بے شک تو قابل تعریف اور بزرگی والا ہے",
+        "desc": "Recite Durood Ibrahim after Tashahhud. This is Sunnah Mu'akkadah — strongly recommended.",
+        "position": "Sitting (Qa'dah)"
+      },
+      {
+        "step": 15,
+        "name": "Dua Before Salam",
+        "arabic": "اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنْ عَذَابِ جَهَنَّمَ، وَمِنْ عَذَابِ الْقَبْرِ، وَمِنْ فِتْنَةِ الْمَحْيَا وَالْمَمَاتِ، وَمِنْ شَرِّ فِتْنَةِ الْمَسِيحِ الدَّجَّالِ",
+        "transliteration": "Allaahumma innee a'oothu bika min 'athaabi jahannam, wa min 'athaabil-qabr, wa min fitnatil-mahyaa wal-mamaat, wa min sharri fitnatil-maseehid-dajjaal",
+        "translation": "O Allah, I seek refuge in You from the punishment of Hell, from the punishment of the grave, from the trial of life and death, and from the evil trial of the False Messiah",
+        "urdu": "اے اللہ! میں جہنم کے عذاب، قبر کے عذاب، زندگی اور موت کی آزمائش اور دجال کی آزمائش سے تیری پناہ مانگتا ہوں",
+        "desc": "The Prophet ﷺ commanded this dua before every salam. (Bukhari 1377). Then make any personal dua to Allah — the last moments of salah are precious.",
+        "position": "Sitting (Qa'dah)"
+      },
+      {
+        "step": 16,
+        "name": "Salam — Ending the Prayer",
+        "arabic": "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ",
+        "transliteration": "As-salaamu 'alaykum wa rahmatullaah",
+        "translation": "Peace be upon you and the mercy of Allah",
+        "urdu": "تم پر سلامتی ہو اور اللہ کی رحمت",
+        "desc": "Turn head to the RIGHT first, then to the LEFT, saying salam both times. This ends the prayer. The angels on your shoulders record your deeds — you are greeting them with salam.",
+        "position": "Sitting — ending salah"
+      }
+    ]
+  },
+
+  "after_prayer": {
+    "title": "Adhkar After Salah",
+    "arabic_title": "أذكار بعد الصلاة",
+    "duas": [
+      {
+        "arabic": "أَسْتَغْفِرُ اللَّهَ (×٣)",
+        "transliteration": "Astaghfirullaah (3x)",
+        "translation": "I seek forgiveness from Allah (3 times)",
+        "urdu": "میں اللہ سے معافی مانگتا ہوں (3 بار)",
+        "note": "Say 3 times immediately after salam"
+      },
+      {
+        "arabic": "اللَّهُمَّ أَنْتَ السَّلَامُ، وَمِنْكَ السَّلَامُ، تَبَارَكْتَ يَا ذَا الْجَلَالِ وَالْإِكْرَامِ",
+        "transliteration": "Allaahumma antas-salaam, wa minkas-salaam, tabaarakta yaa thal-jalaali wal-ikraam",
+        "translation": "O Allah, You are As-Salam (Peace), and from You is peace. Blessed are You, O Possessor of Majesty and Honor",
+        "urdu": "اے اللہ! تو سلامتی ہے اور تجھ سے سلامتی ہے، تو بابرکت ہے اے جلال اور اکرام والے",
+        "note": "After Astaghfirullah"
+      },
+      {
+        "arabic": "سُبْحَانَ اللَّهِ (×٣٣) ۝ الْحَمْدُ لِلَّهِ (×٣٣) ۝ اللَّهُ أَكْبَرُ (×٣٣) ۝ لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ",
+        "transliteration": "Subhaanallaah (33x), Alhamdulillaah (33x), Allaahu Akbar (33x), then: Laa ilaaha illallaahu wahdahu laa shareeka lah, lahul-mulku wa lahul-hamdu wa huwa 'alaa kulli shay'in qadeer",
+        "translation": "Glory be to Allah (33x), All praise is for Allah (33x), Allah is Greatest (33x). Then: None has the right to be worshipped except Allah alone, without partner, to Him belongs all sovereignty and praise, and He is over all things powerful",
+        "urdu": "اللہ پاک ہے (33 بار)، تمام تعریفیں اللہ کے لیے (33 بار)، اللہ سب سے بڑا ہے (33 بار)، پھر: اللہ کے سوا کوئی معبود نہیں...",
+        "note": "The Prophet ﷺ said sins are forgiven even if like foam of the sea (Muslim 597)"
+      },
+      {
+        "arabic": "آيَةُ الْكُرْسِيِّ",
+        "transliteration": "Ayatul Kursi (2:255)",
+        "translation": "Recite the full Ayatul Kursi",
+        "urdu": "پوری آیت الکرسی پڑھیں",
+        "note": "Whoever reads Ayatul Kursi after every obligatory prayer, nothing prevents them from entering Jannah except death. (Nasa'i)"
+      }
+    ]
+  }
+}
