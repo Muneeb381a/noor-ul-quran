@@ -1,14 +1,14 @@
-﻿import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useLang } from '../../context/LanguageContext';
 
 const NAV_LINKS = (user, dashPath) => [
-  { to: '/quran',   label: 'Quran',     ar: 'القرآن',  icon: '📖' },
-  { to: '/learn',   label: 'Learn',     ar: 'تعلّم',   icon: '🎓' },
+  { to: '/quran',   label: 'Quran'     },
+  { to: '/learn',   label: 'Learn'     },
   ...(user ? [
-    { to: '/hifz',   label: 'Hifz',     ar: 'الحفظ',  icon: '🎯' },
-    { to: dashPath,  label: 'Dashboard', ar: 'لوحتي',  icon: '📊' },
+    { to: '/hifz',    label: 'Hifz'      },
+    { to: dashPath,   label: 'Dashboard' },
   ] : []),
 ];
 
@@ -23,10 +23,10 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [userDrop, setUserDrop]     = useState(false);
   const dropRef   = useRef(null);
-  const mobileRef = useRef(null);
+  const navRef    = useRef(null);
 
   useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 10);
+    const fn = () => setScrolled(window.scrollY > 16);
     window.addEventListener('scroll', fn, { passive: true });
     return () => window.removeEventListener('scroll', fn);
   }, []);
@@ -42,7 +42,7 @@ export default function Navbar() {
 
   useEffect(() => {
     if (!mobileOpen) return;
-    const close = e => { if (mobileRef.current && !mobileRef.current.contains(e.target)) setMobileOpen(false); };
+    const close = e => { if (navRef.current && !navRef.current.contains(e.target)) setMobileOpen(false); };
     document.addEventListener('mousedown', close);
     return () => document.removeEventListener('mousedown', close);
   }, [mobileOpen]);
@@ -52,317 +52,230 @@ export default function Navbar() {
   const links    = NAV_LINKS(user, dashPath);
 
   return (
-    <>
-      {/* ── Gold shimmer top line ── */}
-      <div style={{
-        height: 2, position: 'relative', zIndex: 101,
-        background: 'linear-gradient(90deg,transparent 0%,#6B4E0A 10%,#F59E0B 30%,#F5DFA0 50%,#F59E0B 70%,#6B4E0A 90%,transparent 100%)',
-      }}/>
+    <nav ref={navRef} style={{
+      position: 'sticky', top: 0, zIndex: 100,
+      background: '#0B1D11',
+      borderBottom: scrolled ? '1px solid rgba(245,158,11,0.22)' : '1px solid rgba(255,255,255,0.06)',
+      boxShadow: scrolled ? '0 2px 40px rgba(0,0,0,0.55)' : 'none',
+      transition: 'box-shadow 0.3s ease, border-color 0.3s ease',
+    }}>
+      <div style={{ maxWidth: 1300, margin: '0 auto', padding: '0 2rem', display: 'flex', alignItems: 'center', height: 62, gap: '1.5rem' }}>
 
-      <nav ref={mobileRef} style={{
-        position: 'sticky', top: 0, zIndex: 100,
-        background: scrolled ? 'rgba(4,9,6,0.98)' : 'rgba(5,12,7,0.94)',
-        backdropFilter: 'blur(32px) saturate(2)',
-        WebkitBackdropFilter: 'blur(32px) saturate(2)',
-        borderBottom: `1px solid ${scrolled ? 'rgba(245,158,11,0.18)' : 'rgba(245,158,11,0.1)'}`,
-        boxShadow: scrolled ? '0 8px 48px rgba(0,0,0,0.6),0 1px 0 rgba(245,158,11,0.1) inset' : 'none',
-        transition: 'all 0.4s cubic-bezier(0.22,1,0.36,1)',
-      }}>
-        <div style={{ maxWidth: 1260, margin: '0 auto', padding: '0 1.75rem', display: 'flex', alignItems: 'center', height: 68, gap: '0.5rem' }}>
-
-          {/* ══ LOGO ══ */}
-          <Link to="/" style={{ display:'flex',alignItems:'center',gap:'0.72rem',textDecoration:'none',marginRight:'1.75rem',flexShrink:0 }}>
-            {/* Emblem */}
-            <div style={{ width:40,height:40,position:'relative',display:'flex',alignItems:'center',justifyContent:'center',flexShrink:0 }}>
-              <svg viewBox="0 0 42 42" width="42" height="42" style={{ position:'absolute',inset:0 }}>
-                <defs>
-                  <radialGradient id="emblemGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="rgba(245,158,11,0.35)"/>
-                    <stop offset="100%" stopColor="rgba(245,158,11,0.06)"/>
-                  </radialGradient>
-                </defs>
-                <circle cx="21" cy="21" r="20" fill="url(#emblemGlow)" stroke="rgba(245,158,11,0.3)" strokeWidth="0.6"/>
-                <polygon
-                  points="21,3 24.8,13.2 35.7,13.2 27.1,19.4 30.3,29.6 21,23.7 11.7,29.6 14.9,19.4 6.3,13.2 17.2,13.2"
-                  fill="none" stroke="rgba(245,158,11,0.65)" strokeWidth="0.7"/>
-                <circle cx="21" cy="21" r="12" fill="none" stroke="rgba(245,158,11,0.2)" strokeWidth="0.5"/>
-              </svg>
-              <span style={{ fontFamily:'var(--font-arabic)',fontSize:'1.15rem',color:'#FCD34D',position:'relative',zIndex:1,filter:'drop-shadow(0 0 10px rgba(245,158,11,0.55))' }}>ن</span>
-            </div>
-            <div>
-              <div style={{ fontFamily:'var(--font-arabic)',fontSize:'1.18rem',color:'#FCD34D',lineHeight:1.15,direction:'rtl',filter:'drop-shadow(0 0 12px rgba(245,158,11,0.28))' }}>نور القرآن</div>
-              <div style={{ fontFamily:'var(--font-heading)',fontSize:'0.44rem',color:'rgba(245,158,11,0.32)',letterSpacing:'0.32em',textTransform:'uppercase',marginTop:2 }}>NOOR UL QURAN</div>
-            </div>
-          </Link>
-
-          {/* ══ NAV LINKS ══ */}
-          <div className="nav-desktop" style={{ display:'flex',alignItems:'center',gap:'0.15rem',flex:1 }}>
-            {links.map(({ to, label, ar, icon }) => {
-              const active = isActive(to);
-              return (
-                <Link key={to} to={to} style={{
-                  position: 'relative',
-                  display: 'flex', alignItems: 'center', gap: '0.38rem',
-                  padding: '0.52rem 1rem',
-                  borderRadius: 10,
-                  textDecoration: 'none',
-                  fontFamily: 'var(--font-heading)',
-                  fontSize: '0.8rem',
-                  letterSpacing: '0.04em',
-                  textTransform: 'uppercase',
-                  fontWeight: active ? 700 : 500,
-                  color: active ? '#0A1810' : 'rgba(255,255,255,0.65)',
-                  background: active
-                    ? 'linear-gradient(135deg,#D4A843 0%,#F59E0B 100%)'
-                    : 'transparent',
-                  boxShadow: active
-                    ? '0 2px 18px rgba(245,158,11,0.5),0 1px 0 rgba(255,255,255,0.22) inset'
-                    : 'none',
-                  transition: 'all 0.22s cubic-bezier(0.22,1,0.36,1)',
-                }}
-                onMouseEnter={e => {
-                  if (active) return;
-                  e.currentTarget.style.color = '#fff';
-                  e.currentTarget.style.background = 'rgba(255,255,255,0.07)';
-                  e.currentTarget.style.transform = 'translateY(-1px)';
-                }}
-                onMouseLeave={e => {
-                  if (active) return;
-                  e.currentTarget.style.color = 'rgba(255,255,255,0.65)';
-                  e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.transform = '';
-                }}
-                >
-                  <span style={{ fontSize:'0.82rem',lineHeight:1 }}>{icon}</span>
-                  <span>{label}</span>
-                  {active && (
-                    <span style={{ fontFamily:'var(--font-arabic)',fontSize:'0.68rem',opacity:0.55,lineHeight:1,marginLeft:1 }}>{ar}</span>
-                  )}
-                </Link>
-              );
-            })}
+        {/* ── Logo ── */}
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.7rem', textDecoration: 'none', flexShrink: 0 }}>
+          <div style={{
+            width: 36, height: 36, borderRadius: 9,
+            background: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            boxShadow: '0 0 0 1px rgba(245,158,11,0.25) inset, 0 2px 10px rgba(245,158,11,0.3)',
+            flexShrink: 0,
+          }}>
+            <span style={{ fontFamily: 'var(--font-arabic)', fontSize: '1.2rem', color: '#0B1D11', lineHeight: 1, fontWeight: 700 }}>ن</span>
           </div>
-
-          {/* ══ RIGHT ACTIONS ══ */}
-          <div style={{ display:'flex',alignItems:'center',gap:'0.5rem',flexShrink:0 }}>
-
-            {/* Lang toggle */}
-            <button onClick={toggleLang} style={{
-              background:'rgba(255,255,255,0.06)',border:'1px solid rgba(255,255,255,0.1)',
-              color:'rgba(255,255,255,0.55)',padding:'0.38rem 0.82rem',
-              borderRadius:99,fontSize:'0.77rem',cursor:'pointer',transition:'all 0.2s',
-              fontFamily: lang === 'ur' ? 'var(--font-arabic)' : 'var(--font-heading)',
-              letterSpacing: lang === 'ur' ? 0 : '0.06em',
-            }}
-            onMouseEnter={e=>{e.currentTarget.style.background='rgba(245,158,11,0.1)';e.currentTarget.style.borderColor='rgba(245,158,11,0.38)';e.currentTarget.style.color='#FCD34D';}}
-            onMouseLeave={e=>{e.currentTarget.style.background='rgba(255,255,255,0.06)';e.currentTarget.style.borderColor='rgba(255,255,255,0.1)';e.currentTarget.style.color='rgba(255,255,255,0.55)';}}
-            >{lang === 'en' ? 'اردو' : 'EN'}</button>
-
-            <div className="nav-desktop" style={{ width:1,height:22,background:'rgba(255,255,255,0.12)',flexShrink:0 }}/>
-
-            {user ? (
-              /* ── User dropdown ── */
-              <div ref={dropRef} style={{ position:'relative' }}>
-                <button onClick={() => setUserDrop(p => !p)} style={{
-                  display:'flex',alignItems:'center',gap:'0.52rem',
-                  background: userDrop ? 'rgba(245,158,11,0.12)' : 'rgba(255,255,255,0.05)',
-                  border:`1px solid ${userDrop ? 'rgba(245,158,11,0.4)' : 'rgba(255,255,255,0.1)'}`,
-                  borderRadius:99,padding:'0.3rem 0.82rem 0.3rem 0.3rem',
-                  cursor:'pointer',transition:'all 0.22s',
-                }}
-                onMouseEnter={e=>{if(!userDrop){e.currentTarget.style.background='rgba(255,255,255,0.08)';e.currentTarget.style.borderColor='rgba(255,255,255,0.18)';}}}
-                onMouseLeave={e=>{if(!userDrop){e.currentTarget.style.background='rgba(255,255,255,0.05)';e.currentTarget.style.borderColor='rgba(255,255,255,0.08)';}}}
-                >
-                  <div style={{ width:32,height:32,borderRadius:'50%',flexShrink:0,background:'linear-gradient(135deg,#E2B84E 0%,#9A7210 100%)',display:'flex',alignItems:'center',justifyContent:'center',color:'#fff',fontWeight:800,fontSize:'0.82rem',fontFamily:'var(--font-heading)',boxShadow:'0 0 0 2px rgba(245,158,11,0.28),0 2px 12px rgba(245,158,11,0.28)' }}>
-                    {getInitial(user.name)}
-                  </div>
-                  <div className="nav-desktop" style={{ display:'flex',flexDirection:'column',alignItems:'flex-start',lineHeight:1.15 }}>
-                    <span style={{ fontSize:'0.78rem',color:'rgba(255,255,255,0.9)',fontWeight:600,maxWidth:78,overflow:'hidden',textOverflow:'ellipsis',whiteSpace:'nowrap' }}>{user.name.split(' ')[0]}</span>
-                    <span style={{ fontSize:'0.6rem',color:'rgba(245,158,11,0.55)',textTransform:'capitalize' }}>{user.role}</span>
-                  </div>
-                  <svg width="9" height="9" viewBox="0 0 10 10" style={{ color:'rgba(255,255,255,0.32)',transition:'transform 0.22s',transform:userDrop?'rotate(180deg)':'none',flexShrink:0 }}>
-                    <path d="M1 3L5 7L9 3" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-
-                {userDrop && (
-                  <div style={{
-                    position:'absolute',top:'calc(100% + 10px)',right:0,minWidth:214,zIndex:200,
-                    background:'rgba(5,12,7,0.99)',backdropFilter:'blur(28px)',
-                    border:'1px solid rgba(245,158,11,0.15)',borderRadius:18,overflow:'hidden',
-                    boxShadow:'0 24px 64px rgba(0,0,0,0.65),0 0 0 1px rgba(255,255,255,0.03)',
-                    animation:'dropIn 0.18s cubic-bezier(0.22,1,0.36,1)',
-                  }}>
-                    {/* Header */}
-                    <div style={{ padding:'1rem 1.1rem 0.85rem',background:'linear-gradient(135deg,rgba(245,158,11,0.08),rgba(245,158,11,0.02))',borderBottom:'1px solid rgba(255,255,255,0.06)',display:'flex',alignItems:'center',gap:'0.7rem' }}>
-                      <div style={{ width:38,height:38,borderRadius:'50%',background:'linear-gradient(135deg,#E2B84E,#9A7210)',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,color:'#fff',fontSize:'0.9rem',boxShadow:'0 0 0 3px rgba(245,158,11,0.2)' }}>{getInitial(user.name)}</div>
-                      <div>
-                        <div style={{ fontSize:'0.87rem',color:'#fff',fontWeight:700 }}>{user.name}</div>
-                        <div style={{ fontSize:'0.67rem',color:'rgba(245,158,11,0.6)',textTransform:'capitalize',display:'flex',alignItems:'center',gap:'0.3rem' }}>
-                          <span style={{ width:5,height:5,borderRadius:'50%',background:'#22C55E',display:'inline-block' }}/>
-                          {user.role}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Menu items */}
-                    {[
-                      { icon:'📊', label:'Dashboard', sub:'Your progress',    to:dashPath },
-                      { icon:'🎯', label:'My Hifz',   sub:'Sessions & streak', to:'/hifz'  },
-                      { icon:'📖', label:'Quran',     sub:'Read & listen',    to:'/quran'  },
-                    ].map(item => (
-                      <Link key={item.to} to={item.to} style={{
-                        display:'flex',alignItems:'center',gap:'0.72rem',padding:'0.65rem 1.1rem',
-                        textDecoration:'none',color:'rgba(255,255,255,0.75)',fontSize:'0.84rem',
-                        transition:'all 0.15s',borderBottom:'1px solid rgba(255,255,255,0.05)',
-                      }}
-                      onMouseEnter={e=>{e.currentTarget.style.background='rgba(255,255,255,0.06)';e.currentTarget.style.color='#fff';e.currentTarget.style.paddingLeft='1.3rem';}}
-                      onMouseLeave={e=>{e.currentTarget.style.background='transparent';e.currentTarget.style.color='rgba(255,255,255,0.75)';e.currentTarget.style.paddingLeft='1.1rem';}}
-                      >
-                        <div style={{ width:30,height:30,borderRadius:8,background:'rgba(255,255,255,0.05)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'0.84rem',flexShrink:0 }}>{item.icon}</div>
-                        <div style={{ flex:1 }}>
-                          <div style={{ fontWeight:600,lineHeight:1.2 }}>{item.label}</div>
-                          <div style={{ fontSize:'0.67rem',color:'#D6D3D1',marginTop:1 }}>{item.sub}</div>
-                        </div>
-                        <svg width="7" height="7" viewBox="0 0 8 8" style={{ color:'#E7E5E4',flexShrink:0 }}>
-                          <path d="M1 1L7 4L1 7" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
-                        </svg>
-                      </Link>
-                    ))}
-
-                    {/* Sign out */}
-                    <button onClick={() => { logout(); navigate('/'); }} style={{
-                      display:'flex',alignItems:'center',gap:'0.72rem',width:'100%',
-                      padding:'0.7rem 1.1rem',background:'transparent',border:'none',
-                      color:'rgba(255,100,100,0.75)',fontSize:'0.84rem',cursor:'pointer',textAlign:'left',transition:'all 0.15s',
-                    }}
-                    onMouseEnter={e=>{e.currentTarget.style.background='rgba(255,50,50,0.07)';e.currentTarget.style.color='rgba(255,130,130,1)';e.currentTarget.style.paddingLeft='1.3rem';}}
-                    onMouseLeave={e=>{e.currentTarget.style.background='transparent';e.currentTarget.style.color='rgba(255,100,100,0.75)';e.currentTarget.style.paddingLeft='1.1rem';}}
-                    >
-                      <div style={{ width:30,height:30,borderRadius:8,background:'rgba(255,50,50,0.07)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:'0.84rem',flexShrink:0 }}>🚪</div>
-                      <span style={{ fontWeight:600 }}>Sign Out</span>
-                    </button>
-                  </div>
-                )}
-              </div>
-            ) : (
-              /* ── Auth buttons ── */
-              <div className="nav-desktop" style={{ display:'flex',gap:'0.45rem',alignItems:'center' }}>
-                <Link to="/login" style={{
-                  padding:'0.44rem 1.1rem',
-                  color:'rgba(255,255,255,0.65)',fontSize:'0.82rem',fontWeight:500,
-                  border:'1px solid rgba(255,255,255,0.12)',borderRadius:99,textDecoration:'none',
-                  fontFamily:'var(--font-heading)',letterSpacing:'0.04em',transition:'all 0.2s',
-                }}
-                onMouseEnter={e=>{e.currentTarget.style.color='#fff';e.currentTarget.style.borderColor='rgba(255,255,255,0.32)';e.currentTarget.style.background='rgba(255,255,255,0.07)';}}
-                onMouseLeave={e=>{e.currentTarget.style.color='rgba(255,255,255,0.65)';e.currentTarget.style.borderColor='rgba(255,255,255,0.12)';e.currentTarget.style.background='transparent';}}
-                >Login</Link>
-
-                <Link to="/register" style={{
-                  padding:'0.44rem 1.2rem',
-                  background:'linear-gradient(135deg,#D4A843 0%,#B8960C 100%)',
-                  color:'#07110A',fontSize:'0.82rem',fontWeight:800,borderRadius:99,
-                  textDecoration:'none',fontFamily:'var(--font-heading)',letterSpacing:'0.04em',
-                  boxShadow:'0 2px 16px rgba(245,158,11,0.48),0 1px 0 rgba(255,255,255,0.28) inset',
-                  transition:'all 0.22s',
-                }}
-                onMouseEnter={e=>{e.currentTarget.style.transform='translateY(-1px)';e.currentTarget.style.boxShadow='0 6px 28px rgba(245,158,11,0.65)';}}
-                onMouseLeave={e=>{e.currentTarget.style.transform='';e.currentTarget.style.boxShadow='0 2px 16px rgba(245,158,11,0.48),0 1px 0 rgba(255,255,255,0.28) inset';}}
-                >Get Started</Link>
-              </div>
-            )}
-
-            {/* ── Hamburger ── */}
-            <button onClick={() => setMobileOpen(p => !p)} className="mob-toggle" style={{
-              display:'none',width:38,height:38,borderRadius:9,
-              background: mobileOpen ? 'rgba(245,158,11,0.14)' : 'rgba(255,255,255,0.05)',
-              border:`1px solid ${mobileOpen ? 'rgba(245,158,11,0.38)' : 'rgba(28,25,23,0.1)'}`,
-              color: mobileOpen ? '#FCD34D' : 'rgba(255,255,255,0.7)',
-              cursor:'pointer',transition:'all 0.2s',
-              alignItems:'center',justifyContent:'center',flexShrink:0,
-            }}>
-              {mobileOpen
-                ? <svg width="13" height="13" viewBox="0 0 14 14"><path d="M1 1L13 13M13 1L1 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
-                : <svg width="16" height="11" viewBox="0 0 16 11"><path d="M0 1h16M0 5.5h12M0 10h8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
-              }
-            </button>
+          <div style={{ lineHeight: 1.15 }}>
+            <div style={{ fontFamily: 'var(--font-heading)', fontWeight: 700, fontSize: '0.95rem', color: '#F5F0E6', letterSpacing: '0.01em' }}>NoorulQuran</div>
+            <div style={{ fontFamily: 'var(--font-arabic)', fontSize: '0.65rem', color: 'rgba(245,158,11,0.5)', letterSpacing: '0.02em' }}>نور القرآن</div>
           </div>
+        </Link>
+
+        {/* ── Desktop Nav Links ── */}
+        <div className="nq-nav-desktop" style={{ display: 'flex', alignItems: 'center', gap: '0.1rem', flex: 1 }}>
+          {links.map(({ to, label }) => {
+            const active = isActive(to);
+            return (
+              <Link key={to} to={to} style={{
+                padding: '0.45rem 1rem',
+                borderRadius: 7,
+                textDecoration: 'none',
+                fontFamily: 'var(--font-body)',
+                fontSize: '0.875rem',
+                fontWeight: active ? 600 : 400,
+                color: active ? '#FCD34D' : 'rgba(255,255,255,0.55)',
+                background: active ? 'rgba(245,158,11,0.1)' : 'transparent',
+                borderBottom: `2px solid ${active ? '#F59E0B' : 'transparent'}`,
+                transition: 'all 0.18s ease',
+              }}
+              onMouseEnter={e => { if (!active) { e.currentTarget.style.color = 'rgba(255,255,255,0.9)'; e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; }}}
+              onMouseLeave={e => { if (!active) { e.currentTarget.style.color = 'rgba(255,255,255,0.55)'; e.currentTarget.style.background = 'transparent'; }}}
+              >{label}</Link>
+            );
+          })}
         </div>
 
-        {/* ══ MOBILE MENU ══ */}
-        {mobileOpen && (
-          <div style={{
-            background:'rgba(4,10,6,0.99)',backdropFilter:'blur(28px)',
-            borderTop:'1px solid rgba(245,158,11,0.1)',padding:'0.75rem 1.5rem 1.5rem',
-            animation:'slideDown 0.22s cubic-bezier(0.22,1,0.36,1)',
-          }}>
-            <div style={{ display:'flex',flexDirection:'column',gap:'0.22rem',marginBottom:'1rem' }}>
-              {links.map(({ to, label, ar, icon }) => {
-                const active = isActive(to);
-                return (
-                  <Link key={to} to={to} style={{
-                    display:'flex',alignItems:'center',justifyContent:'space-between',
-                    padding:'0.78rem 0.9rem',textDecoration:'none',borderRadius:11,
-                    color: active ? '#0A1810' : 'rgba(255,255,255,0.78)',
-                    fontWeight: active ? 700 : 400,fontSize:'0.94rem',
-                    fontFamily: active ? 'var(--font-heading)' : 'inherit',
-                    letterSpacing: active ? '0.04em' : 0,
-                    background: active ? 'linear-gradient(135deg,#D4A843,#F59E0B)' : 'rgba(255,255,255,0.03)',
-                    border:`1px solid ${active ? 'transparent' : 'rgba(255,255,255,0.05)'}`,
-                    boxShadow: active ? '0 2px 16px rgba(245,158,11,0.38)' : 'none',
-                    transition:'all 0.18s',
-                  }}>
-                    <span style={{ display:'flex',alignItems:'center',gap:'0.65rem' }}>
-                      <span style={{ fontSize:'1rem',opacity:active?1:0.68 }}>{icon}</span>
-                      {label}
-                    </span>
-                    <span style={{ fontFamily:'var(--font-arabic)',fontSize:'0.85rem',opacity:active?0.55:0.3 }}>{ar}</span>
-                  </Link>
-                );
-              })}
-            </div>
+        {/* ── Right Actions ── */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexShrink: 0 }}>
 
-            <div style={{ height:1,background:'rgba(255,255,255,0.07)',margin:'0.5rem 0 1rem' }}/>
+          {/* Lang toggle */}
+          <button onClick={toggleLang} style={{
+            background: 'transparent',
+            border: '1px solid rgba(255,255,255,0.1)',
+            color: 'rgba(255,255,255,0.45)',
+            padding: '0.32rem 0.7rem',
+            borderRadius: 6, fontSize: '0.78rem', cursor: 'pointer',
+            transition: 'all 0.18s',
+            fontFamily: lang === 'ur' ? 'var(--font-arabic)' : 'var(--font-body)',
+          }}
+          onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(245,158,11,0.4)'; e.currentTarget.style.color = '#FCD34D'; e.currentTarget.style.background = 'rgba(245,158,11,0.07)'; }}
+          onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = 'rgba(255,255,255,0.45)'; e.currentTarget.style.background = 'transparent'; }}
+          >{lang === 'en' ? 'اردو' : 'EN'}</button>
 
-            {user ? (
-              <div>
-                <div style={{ display:'flex',alignItems:'center',gap:'0.75rem',padding:'0.62rem 0.9rem',background:'rgba(245,158,11,0.06)',borderRadius:11,marginBottom:'0.7rem',border:'1px solid rgba(245,158,11,0.12)' }}>
-                  <div style={{ width:36,height:36,borderRadius:'50%',background:'linear-gradient(135deg,#E2B84E,#9A7210)',display:'flex',alignItems:'center',justifyContent:'center',fontWeight:800,color:'#fff',flexShrink:0,boxShadow:'0 0 0 2px rgba(245,158,11,0.22)' }}>{getInitial(user.name)}</div>
-                  <div>
-                    <div style={{ fontSize:'0.88rem',color:'#fff',fontWeight:600 }}>{user.name}</div>
-                    <div style={{ fontSize:'0.67rem',color:'rgba(245,158,11,0.55)',textTransform:'capitalize' }}>{user.role}</div>
+          {user ? (
+            <div ref={dropRef} style={{ position: 'relative' }}>
+              <button onClick={() => setUserDrop(p => !p)} style={{
+                display: 'flex', alignItems: 'center', gap: '0.45rem',
+                background: userDrop ? 'rgba(245,158,11,0.12)' : 'rgba(255,255,255,0.05)',
+                border: `1px solid ${userDrop ? 'rgba(245,158,11,0.38)' : 'rgba(255,255,255,0.1)'}`,
+                borderRadius: 8, padding: '0.3rem 0.65rem 0.3rem 0.35rem',
+                cursor: 'pointer', transition: 'all 0.18s',
+              }}
+              onMouseEnter={e => { if (!userDrop) { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.18)'; }}}
+              onMouseLeave={e => { if (!userDrop) { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}}
+              >
+                <div style={{
+                  width: 26, height: 26, borderRadius: 6, flexShrink: 0,
+                  background: 'linear-gradient(135deg, #F59E0B, #D97706)',
+                  display: 'flex', alignItems: 'center', justifyContent: 'center',
+                  color: '#0B1D11', fontWeight: 800, fontSize: '0.75rem',
+                }}>{getInitial(user.name)}</div>
+                <span className="nq-nav-desktop" style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.8)', fontWeight: 500, maxWidth: 70, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{user.name.split(' ')[0]}</span>
+                <svg width="10" height="10" viewBox="0 0 10 10" style={{ color: 'rgba(255,255,255,0.35)', transition: 'transform 0.18s', transform: userDrop ? 'rotate(180deg)' : 'none', flexShrink: 0 }}>
+                  <path d="M1 3L5 7L9 3" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </button>
+
+              {userDrop && (
+                <div style={{
+                  position: 'absolute', top: 'calc(100% + 10px)', right: 0, minWidth: 210, zIndex: 200,
+                  background: '#0B1D11',
+                  border: '1px solid rgba(245,158,11,0.18)',
+                  borderRadius: 14, overflow: 'hidden',
+                  boxShadow: '0 20px 60px rgba(0,0,0,0.55)',
+                  animation: 'nqDropIn 0.16s ease',
+                }}>
+                  <div style={{ padding: '0.85rem 1rem', borderBottom: '1px solid rgba(255,255,255,0.06)', display: 'flex', alignItems: 'center', gap: '0.6rem', background: 'rgba(245,158,11,0.04)' }}>
+                    <div style={{ width: 34, height: 34, borderRadius: 8, background: 'linear-gradient(135deg,#F59E0B,#D97706)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, color: '#0B1D11', fontSize: '0.85rem', flexShrink: 0 }}>{getInitial(user.name)}</div>
+                    <div>
+                      <div style={{ fontSize: '0.84rem', color: '#fff', fontWeight: 600, lineHeight: 1.2 }}>{user.name}</div>
+                      <div style={{ fontSize: '0.65rem', color: 'rgba(245,158,11,0.55)', textTransform: 'capitalize', marginTop: 1 }}>{user.role}</div>
+                    </div>
                   </div>
+                  {[
+                    { to: dashPath, label: 'Dashboard' },
+                    { to: '/hifz',  label: 'My Hifz'   },
+                    { to: '/quran', label: 'Read Quran' },
+                  ].map(item => (
+                    <Link key={item.to} to={item.to} style={{
+                      display: 'block', padding: '0.62rem 1rem',
+                      color: 'rgba(255,255,255,0.7)', textDecoration: 'none',
+                      fontSize: '0.84rem', transition: 'all 0.14s',
+                      borderBottom: '1px solid rgba(255,255,255,0.04)',
+                    }}
+                    onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; e.currentTarget.style.color = '#fff'; }}
+                    onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'rgba(255,255,255,0.7)'; }}
+                    >{item.label}</Link>
+                  ))}
+                  <button onClick={() => { logout(); navigate('/'); setUserDrop(false); }} style={{
+                    display: 'block', width: '100%', padding: '0.62rem 1rem',
+                    background: 'none', border: 'none', cursor: 'pointer',
+                    color: 'rgba(240,80,80,0.75)', fontSize: '0.84rem', textAlign: 'left',
+                    transition: 'all 0.14s',
+                  }}
+                  onMouseEnter={e => { e.currentTarget.style.background = 'rgba(220,50,50,0.07)'; e.currentTarget.style.color = '#f87171'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = 'rgba(240,80,80,0.75)'; }}
+                  >Sign Out</button>
                 </div>
-                <button onClick={() => { logout(); navigate('/'); }} style={{ width:'100%',padding:'0.62rem 1rem',background:'rgba(255,50,50,0.07)',border:'1px solid rgba(255,50,50,0.15)',color:'rgba(255,120,120,0.9)',borderRadius:11,cursor:'pointer',fontSize:'0.88rem',fontWeight:600 }}>🚪 Sign Out</button>
-              </div>
-            ) : (
-              <div style={{ display:'flex',gap:'0.65rem' }}>
-                <Link to="/login"    style={{ flex:1,padding:'0.65rem',textAlign:'center',border:'1px solid rgba(255,255,255,0.15)',color:'rgba(255,255,255,0.8)',borderRadius:99,fontSize:'0.9rem',textDecoration:'none',fontWeight:500 }}>Login</Link>
-                <Link to="/register" style={{ flex:1,padding:'0.65rem',textAlign:'center',background:'linear-gradient(135deg,#D4A843,#F59E0B)',color:'#07110A',borderRadius:99,fontSize:'0.9rem',fontWeight:800,textDecoration:'none' }}>Get Started</Link>
-              </div>
-            )}
+              )}
+            </div>
+          ) : (
+            <div className="nq-nav-desktop" style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
+              <Link to="/login" style={{
+                padding: '0.38rem 0.95rem',
+                color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem', fontWeight: 500,
+                border: '1px solid rgba(255,255,255,0.1)', borderRadius: 7,
+                textDecoration: 'none', transition: 'all 0.18s',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.28)'; }}
+              onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.6)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
+              >Sign in</Link>
+
+              <Link to="/register" style={{
+                padding: '0.38rem 1.1rem',
+                background: 'linear-gradient(135deg, #F59E0B 0%, #D97706 100%)',
+                color: '#0B1D11', fontSize: '0.85rem', fontWeight: 700,
+                borderRadius: 7, textDecoration: 'none',
+                boxShadow: '0 1px 12px rgba(245,158,11,0.35)',
+                transition: 'all 0.18s',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-1px)'; e.currentTarget.style.boxShadow = '0 4px 20px rgba(245,158,11,0.5)'; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.boxShadow = '0 1px 12px rgba(245,158,11,0.35)'; }}
+              >Get Started</Link>
+            </div>
+          )}
+
+          {/* ── Hamburger ── */}
+          <button onClick={() => setMobileOpen(p => !p)} className="mob-toggle" style={{
+            display: 'none', width: 36, height: 36, borderRadius: 8,
+            background: mobileOpen ? 'rgba(245,158,11,0.12)' : 'rgba(255,255,255,0.05)',
+            border: `1px solid ${mobileOpen ? 'rgba(245,158,11,0.35)' : 'rgba(255,255,255,0.1)'}`,
+            color: mobileOpen ? '#FCD34D' : 'rgba(255,255,255,0.65)',
+            cursor: 'pointer', transition: 'all 0.18s',
+            alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+          }}>
+            {mobileOpen
+              ? <svg width="13" height="13" viewBox="0 0 14 14"><path d="M1 1L13 13M13 1L1 13" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"/></svg>
+              : <svg width="16" height="11" viewBox="0 0 16 11"><path d="M0 1h16M0 5.5h12M0 10h8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+            }
+          </button>
+        </div>
+      </div>
+
+      {/* ── Mobile Menu ── */}
+      {mobileOpen && (
+        <div style={{
+          background: '#0B1D11',
+          borderTop: '1px solid rgba(245,158,11,0.1)',
+          padding: '0.75rem 1.25rem 1.25rem',
+          animation: 'nqSlideDown 0.2s ease',
+        }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.15rem', marginBottom: '1rem' }}>
+            {links.map(({ to, label }) => (
+              <Link key={to} to={to} style={{
+                display: 'block', padding: '0.7rem 0.9rem',
+                color: isActive(to) ? '#FCD34D' : 'rgba(255,255,255,0.65)',
+                textDecoration: 'none', fontSize: '0.92rem',
+                fontWeight: isActive(to) ? 600 : 400,
+                borderRadius: 8, background: isActive(to) ? 'rgba(245,158,11,0.08)' : 'transparent',
+              }}>{label}</Link>
+            ))}
           </div>
-        )}
-      </nav>
+          {!user && (
+            <div style={{ display: 'flex', gap: '0.5rem' }}>
+              <Link to="/login" style={{ flex: 1, textAlign: 'center', padding: '0.62rem', border: '1px solid rgba(255,255,255,0.14)', borderRadius: 8, color: 'rgba(255,255,255,0.75)', textDecoration: 'none', fontSize: '0.875rem' }}>Sign in</Link>
+              <Link to="/register" style={{ flex: 1, textAlign: 'center', padding: '0.62rem', background: 'linear-gradient(135deg,#F59E0B,#D97706)', borderRadius: 8, color: '#0B1D11', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 700 }}>Get Started</Link>
+            </div>
+          )}
+          {user && (
+            <button onClick={() => { logout(); navigate('/'); }} style={{ width: '100%', padding: '0.62rem', background: 'rgba(220,50,50,0.08)', border: '1px solid rgba(220,50,50,0.18)', borderRadius: 8, color: '#f87171', fontSize: '0.875rem', cursor: 'pointer', marginTop: '0.5rem' }}>
+              Sign Out
+            </button>
+          )}
+        </div>
+      )}
 
       <style>{`
-        @media (max-width: 720px) {
-          .mob-toggle  { display: flex !important; }
-          .nav-desktop { display: none !important; }
+        @media (max-width: 700px) {
+          .nq-nav-desktop { display: none !important; }
+          .mob-toggle { display: flex !important; }
         }
-        @media (min-width: 721px) {
-          .mob-toggle  { display: none !important; }
-          .nav-desktop { display: flex !important; }
+        @keyframes nqDropIn {
+          from { opacity: 0; transform: translateY(-6px) scale(0.98); }
+          to   { opacity: 1; transform: translateY(0) scale(1); }
         }
-        @keyframes dropIn {
-          from { opacity:0; transform:translateY(-10px) scale(0.97); }
-          to   { opacity:1; transform:translateY(0) scale(1); }
-        }
-        @keyframes slideDown {
-          from { opacity:0; transform:translateY(-12px); }
-          to   { opacity:1; transform:translateY(0); }
+        @keyframes nqSlideDown {
+          from { opacity: 0; transform: translateY(-8px); }
+          to   { opacity: 1; transform: translateY(0); }
         }
       `}</style>
-    </>
+    </nav>
   );
 }
