@@ -178,7 +178,7 @@ export default function Login() {
       minHeight: '100vh',
       display: 'grid',
       gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.1fr)',
-      background: 'var(--cream)',
+      background: '#030A05',
     }}>
       {/* Left decorative panel */}
       <LeftPanel />
@@ -187,7 +187,7 @@ export default function Login() {
       <div style={{
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         padding: '2rem',
-        background: 'var(--cream)',
+        background: '#030A05',
       }}>
         <div style={{ width: '100%', maxWidth: 420 }}>
 

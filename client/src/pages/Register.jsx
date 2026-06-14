@@ -77,7 +77,7 @@ export default function Register() {
       minHeight: '100vh',
       display: 'grid',
       gridTemplateColumns: 'minmax(0,1fr) minmax(0,1.2fr)',
-      background: 'var(--cream)',
+      background: '#030A05',
     }}>
       {/* Left decorative panel */}
       <div style={{
@@ -132,7 +132,7 @@ export default function Register() {
       </div>
 
       {/* Right: form */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem', background: 'var(--cream)', overflowY: 'auto' }}>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem', background: '#030A05', overflowY: 'auto' }}>
         <div style={{ width: '100%', maxWidth: 460, padding: '0.5rem 0' }}>
 
           {/* Header */}

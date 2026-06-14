@@ -72,7 +72,7 @@ const TIPS = [
 
 export default function LearnHome() {
   return (
-    <div style={{ minHeight: '100vh', background: '#F6F1E9' }}>
+    <div style={{ minHeight: '100vh', background: '#030A05' }}>
 
       {/* Hero */}
       <div style={{
@@ -101,10 +101,10 @@ export default function LearnHome() {
       </div>
 
       {/* Tip bar */}
-      <div style={{ background: 'rgba(201,168,76,0.08)', borderBottom: '1px solid rgba(201,168,76,0.18)', padding: '0.75rem 1.5rem' }}>
-        <div style={{ maxWidth: 900, margin: '0 auto', display: 'flex', gap: '1.5rem', overflowX: 'auto', flexWrap: 'wrap' }}>
+      <div style={{ background: 'rgba(201,168,76,0.06)', borderBottom: '1px solid rgba(201,168,76,0.12)', padding: '0.72rem 1.5rem', position:'sticky', top:68, zIndex:9, backdropFilter:'blur(12px)' }}>
+        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'flex', gap: '1.5rem', overflowX: 'auto', flexWrap: 'wrap' }}>
           {TIPS.map((t, i) => (
-            <span key={i} style={{ fontSize: '0.78rem', color: '#7A5C00', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+            <span key={i} style={{ fontSize: '0.76rem', color: 'rgba(201,168,76,0.7)', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
               {t.icon} {t.text}
             </span>
           ))}
@@ -112,7 +112,7 @@ export default function LearnHome() {
       </div>
 
       {/* Module Cards */}
-      <div style={{ maxWidth: 1000, margin: '0 auto', padding: '2.5rem 1.5rem' }}>
+      <div style={{ maxWidth: 1000, margin: '0 auto', padding: '2.5rem 1.5rem', background: '#030A05' }}>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {MODULES.map((m, i) => (
             <Link key={m.path} to={m.path} style={{ textDecoration: 'none' }}>
@@ -148,7 +148,7 @@ export default function LearnHome() {
                     <span style={{ fontSize: '2rem' }}>{m.icon}</span>
                     <div>
                       <p style={{ fontFamily: '"Noto Naskh Arabic", serif', fontSize: '1.1rem', color: m.accent, direction: 'rtl', margin: 0, lineHeight: 1.5 }}>{m.arabic}</p>
-                      <p style={{ fontFamily: '"Noto Nastaliq Urdu", serif', fontSize: '0.78rem', color: 'rgba(255,255,255,0.35)', direction: 'rtl', margin: 0 }}>{m.urdu}</p>
+                      <p style={{ fontFamily: 'var(--font-urdu)', fontSize: '0.88rem', lineHeight: 3.2, color: 'rgba(255,255,255,0.38)', direction: 'rtl', margin: 0, wordSpacing: '2px' }}>{m.urdu}</p>
                     </div>
                   </div>
 
@@ -184,27 +184,25 @@ export default function LearnHome() {
           ))}
         </div>
 
-        {/* Bottom nav hint */}
+        {/* Quick links */}
         <div style={{ marginTop: '2.5rem', display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1rem', textAlign: 'center' }}>
           {[
-            { icon: '📖', label: 'Quran', sub: 'Read full Quran', to: '/quran' },
-            { icon: '🎯', label: 'Hifz', sub: 'Track memorization', to: '/hifz' },
-            { icon: '📊', label: 'Dashboard', sub: 'Your progress', to: '/dashboard/student' },
+            { icon: '📖', label: 'Quran',     sub: 'Read full Quran',    to: '/quran',              color:'#52B788' },
+            { icon: '🎯', label: 'Hifz',      sub: 'Track memorization', to: '/hifz',               color:'#64B5F6' },
+            { icon: '📊', label: 'Dashboard', sub: 'Your progress',      to: '/dashboard/student',  color:'#B39DDB' },
           ].map(item => (
             <Link key={item.to} to={item.to} style={{ textDecoration: 'none' }}>
               <div style={{
-                background: '#fff', borderRadius: 16,
-                border: '1px solid rgba(27,67,50,0.1)',
-                boxShadow: '0 2px 12px rgba(27,67,50,0.06)',
-                padding: '1.1rem 0.75rem',
-                transition: 'all 0.2s',
+                background: 'rgba(255,255,255,0.025)', borderRadius: 18,
+                border: '1px solid rgba(255,255,255,0.07)',
+                padding: '1.25rem 0.75rem', transition: 'all 0.22s',
               }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-3px)'; e.currentTarget.style.boxShadow = '0 8px 24px rgba(27,67,50,0.12)'; e.currentTarget.style.borderColor = 'rgba(201,168,76,0.3)'; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 2px 12px rgba(27,67,50,0.06)'; e.currentTarget.style.borderColor = 'rgba(27,67,50,0.1)'; }}
+              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.background = `rgba(${item.color === '#52B788' ? '82,183,136' : item.color === '#64B5F6' ? '100,181,246' : '179,157,219'},0.07)`; e.currentTarget.style.borderColor = `${item.color}28`; }}
+              onMouseLeave={e => { e.currentTarget.style.transform = ''; e.currentTarget.style.background = 'rgba(255,255,255,0.025)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)'; }}
               >
-                <div style={{ fontSize: '1.5rem', marginBottom: '0.35rem' }}>{item.icon}</div>
-                <p style={{ margin: 0, fontWeight: 700, fontSize: '0.85rem', color: '#1B4332' }}>{item.label}</p>
-                <p style={{ margin: '0.15rem 0 0', fontSize: '0.7rem', color: '#999' }}>{item.sub}</p>
+                <div style={{ fontSize: '1.6rem', marginBottom: '0.4rem' }}>{item.icon}</div>
+                <p style={{ margin: 0, fontWeight: 700, fontSize: '0.85rem', color: 'rgba(255,255,255,0.82)' }}>{item.label}</p>
+                <p style={{ margin: '0.15rem 0 0', fontSize: '0.7rem', color: 'rgba(255,255,255,0.3)' }}>{item.sub}</p>
               </div>
             </Link>
           ))}

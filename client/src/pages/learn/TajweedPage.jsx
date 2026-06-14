@@ -11,40 +11,40 @@ const CATEGORIES = [
   { id: 'heavy_light', label: 'Heavy / Light',    ar: 'تفخيم وترقيق',   count: rules.filter(r=>r.category==='heavy_light').length },
 ];
 
-// ── Single expanded detail panel ──────────────────────────────────────────
 function RuleDetail({ rule, onClose }) {
   const [tab, setTab] = useState('learn');
 
   return (
     <div style={{
       position: 'fixed', inset: 0, zIndex: 500,
-      background: 'rgba(6,14,9,0.82)', backdropFilter: 'blur(8px)',
+      background: 'rgba(3,10,5,0.88)', backdropFilter: 'blur(12px)',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       padding: '1rem',
     }} onClick={onClose}>
       <div style={{
-        background: '#fff', borderRadius: 24, width: '100%', maxWidth: 780,
+        background: '#060F08', borderRadius: 24, width: '100%', maxWidth: 780,
         maxHeight: '90vh', overflowY: 'auto',
-        boxShadow: '0 24px 80px rgba(0,0,0,0.4)',
+        border: `1px solid ${rule.color}30`,
+        boxShadow: `0 24px 80px rgba(0,0,0,0.6), 0 0 0 1px ${rule.color}18`,
         animation: 'fadeUp 0.25s ease',
       }} onClick={e => e.stopPropagation()}>
 
         {/* Header */}
         <div style={{
-          background: `linear-gradient(135deg, ${rule.color}22, ${rule.color}08)`,
-          borderBottom: `3px solid ${rule.color}`,
+          background: `linear-gradient(135deg, ${rule.color}18, ${rule.color}06)`,
+          borderBottom: `2px solid ${rule.color}40`,
           padding: '1.75rem 2rem', borderRadius: '24px 24px 0 0',
           position: 'relative',
         }}>
           <button onClick={onClose} style={{
             position: 'absolute', top: '1.25rem', right: '1.25rem',
-            background: 'rgba(0,0,0,0.06)', border: 'none', borderRadius: '50%',
+            background: 'rgba(255,255,255,0.07)', border: 'none', borderRadius: '50%',
             width: 34, height: 34, cursor: 'pointer', fontSize: '1rem',
-            display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#555',
+            display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'rgba(255,255,255,0.5)',
             transition: 'all 0.15s',
           }}
-          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(0,0,0,0.12)'; }}
-          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(0,0,0,0.06)'; }}
+          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.14)'; }}
+          onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.07)'; }}
           >✕</button>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
@@ -53,35 +53,33 @@ function RuleDetail({ rule, onClose }) {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
                 <h2 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.6rem', color: rule.color, fontWeight: 700, margin: 0 }}>{rule.name}</h2>
                 <span style={{ fontFamily: 'var(--font-arabic)', fontSize: '1.5rem', color: rule.color, opacity: 0.8 }}>{rule.arabic_name}</span>
-                {rule.urdu_name && <span style={{ fontFamily: 'var(--font-urdu)', fontSize: '1rem', color: rule.color, opacity: 0.7 }}>{rule.urdu_name}</span>}
+                {rule.urdu_name && <span style={{ fontFamily: 'var(--font-urdu)', fontSize: '1rem', color: rule.color, opacity: 0.7, lineHeight: 3 }}>{rule.urdu_name}</span>}
               </div>
-              <p style={{ color: '#666', fontSize: '0.9rem', marginTop: '0.3rem' }}>{rule.short}</p>
+              <p style={{ color: 'rgba(255,255,255,0.4)', fontSize: '0.9rem', marginTop: '0.3rem' }}>{rule.short}</p>
             </div>
           </div>
 
-          {/* Counts badge */}
           {rule.counts && (
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginTop: '0.75rem',
-              background: rule.color + '18', border: `1px solid ${rule.color}35`,
+              background: `${rule.color}18`, border: `1px solid ${rule.color}35`,
               borderRadius: 9999, padding: '0.3rem 0.9rem',
               fontSize: '0.8rem', fontWeight: 700, color: rule.color,
-            }}>
-              ⏱ {rule.counts}
-            </div>
+            }}>⏱ {rule.counts}</div>
           )}
         </div>
 
         {/* Tabs */}
-        <div style={{ display: 'flex', borderBottom: '1px solid #F0EDE6', padding: '0 2rem' }}>
+        <div style={{ display: 'flex', borderBottom: '1px solid rgba(255,255,255,0.07)', padding: '0 2rem' }}>
           {[
-            { id: 'learn', label: '📖 Learn' },
-            { id: 'apply', label: '✅ How to Apply' },
+            { id: 'learn',    label: '📖 Learn' },
+            { id: 'apply',    label: '✅ How to Apply' },
             { id: 'examples', label: '🔤 Examples' },
           ].map(t => (
             <button key={t.id} onClick={() => setTab(t.id)} style={{
               padding: '0.85rem 1.1rem', border: 'none', background: 'transparent',
-              color: tab === t.id ? rule.color : '#888', fontWeight: tab === t.id ? 700 : 400,
+              color: tab === t.id ? rule.color : 'rgba(255,255,255,0.35)',
+              fontWeight: tab === t.id ? 700 : 400,
               fontSize: '0.88rem', cursor: 'pointer',
               borderBottom: tab === t.id ? `2.5px solid ${rule.color}` : '2.5px solid transparent',
               transition: 'all 0.18s', marginBottom: -1,
@@ -92,25 +90,21 @@ function RuleDetail({ rule, onClose }) {
         {/* Content */}
         <div style={{ padding: '1.75rem 2rem' }}>
 
-          {/* ── LEARN TAB ── */}
           {tab === 'learn' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-
-              {/* Definition */}
-              <div style={{ background: rule.bg, borderRadius: 14, padding: '1.25rem 1.5rem', borderLeft: `4px solid ${rule.color}` }}>
+              <div style={{ background: `${rule.color}0D`, borderRadius: 14, padding: '1.25rem 1.5rem', borderLeft: `4px solid ${rule.color}` }}>
                 <h4 style={{ color: rule.color, fontSize: '0.78rem', letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: '0.6rem', fontWeight: 700 }}>Definition</h4>
-                <p style={{ fontSize: '0.95rem', color: '#333', lineHeight: 1.8 }}>{rule.definition}</p>
+                <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.8 }}>{rule.definition}</p>
                 {rule.urdu_def && (
-                  <p style={{ fontFamily: 'var(--font-urdu)', fontSize: '1rem', color: '#555', direction: 'rtl', textAlign: 'right', marginTop: '0.75rem', lineHeight: 2, borderTop: '1px dashed rgba(0,0,0,0.1)', paddingTop: '0.75rem' }}>
+                  <p style={{ fontFamily: 'var(--font-urdu)', fontSize: '1rem', color: 'rgba(255,255,255,0.5)', direction: 'rtl', textAlign: 'right', marginTop: '0.75rem', lineHeight: 3.4, borderTop: '1px dashed rgba(255,255,255,0.1)', paddingTop: '0.75rem', wordSpacing: '3px' }}>
                     {rule.urdu_def}
                   </p>
                 )}
               </div>
 
-              {/* Trigger letters */}
               {rule.trigger_letters && rule.trigger_letters.length > 0 && (
                 <div>
-                  <h4 style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#555', marginBottom: '0.75rem' }}>
+                  <h4 style={{ fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', marginBottom: '0.75rem' }}>
                     {rule.trigger_label}
                   </h4>
                   <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap' }}>
@@ -126,13 +120,12 @@ function RuleDetail({ rule, onClose }) {
                 </div>
               )}
 
-              {/* Subtypes */}
               {rule.subtypes && (
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px,1fr))', gap: '0.75rem' }}>
                   {rule.subtypes.map(s => (
-                    <div key={s.name} style={{ background: '#FAFAFA', border: '1px solid #E8E2D8', borderRadius: 12, padding: '1rem' }}>
+                    <div key={s.name} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: 12, padding: '1rem' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
-                        <span style={{ fontWeight: 700, fontSize: '0.85rem', color: '#333' }}>{s.name}</span>
+                        <span style={{ fontWeight: 700, fontSize: '0.85rem', color: 'rgba(255,255,255,0.82)' }}>{s.name}</span>
                         <span style={{ fontFamily: 'var(--font-arabic)', fontSize: '0.95rem', color: rule.color }}>{s.arabic}</span>
                       </div>
                       {s.letters.length > 0 && (
@@ -142,27 +135,25 @@ function RuleDetail({ rule, onClose }) {
                           ))}
                         </div>
                       )}
-                      <p style={{ fontSize: '0.8rem', color: '#666', lineHeight: 1.6 }}>{s.desc}</p>
+                      <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.6 }}>{s.desc}</p>
                     </div>
                   ))}
                 </div>
               )}
 
-              {/* Mnemonic */}
               {rule.mnemonic && (
-                <div style={{ background: 'linear-gradient(135deg, #FFF8E1, #FFF3CD)', borderRadius: 12, padding: '1rem 1.25rem', border: '1px solid rgba(201,168,76,0.3)' }}>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#8B6914' }}>💡 Mnemonic / Memory Tip</span>
-                  <p style={{ marginTop: '0.4rem', fontSize: '0.9rem', color: '#5A4A10', lineHeight: 1.7 }}>{rule.mnemonic}</p>
+                <div style={{ background: 'rgba(201,168,76,0.08)', borderRadius: 12, padding: '1rem 1.25rem', border: '1px solid rgba(201,168,76,0.25)' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(201,168,76,0.8)' }}>💡 Mnemonic / Memory Tip</span>
+                  <p style={{ marginTop: '0.4rem', fontSize: '0.9rem', color: 'rgba(201,168,76,0.65)', lineHeight: 1.7 }}>{rule.mnemonic}</p>
                 </div>
               )}
             </div>
           )}
 
-          {/* ── APPLY TAB ── */}
           {tab === 'apply' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               <div>
-                <h4 style={{ fontWeight: 700, color: '#333', marginBottom: '1rem', fontSize: '0.95rem' }}>Step-by-Step Application</h4>
+                <h4 style={{ fontWeight: 700, color: 'rgba(255,255,255,0.7)', marginBottom: '1rem', fontSize: '0.95rem' }}>Step-by-Step Application</h4>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   {rule.how_to.map((step, i) => (
                     <div key={i} style={{ display: 'flex', gap: '0.85rem', alignItems: 'flex-start' }}>
@@ -172,58 +163,48 @@ function RuleDetail({ rule, onClose }) {
                         display: 'flex', alignItems: 'center', justifyContent: 'center',
                         fontFamily: 'var(--font-heading)', fontSize: '0.78rem', fontWeight: 700, color: rule.color,
                       }}>{i + 1}</div>
-                      <p style={{ fontSize: '0.92rem', color: '#333', lineHeight: 1.7, paddingTop: '0.15rem' }}>{step}</p>
+                      <p style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, paddingTop: '0.15rem' }}>{step}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                <div style={{ background: '#F0FFF4', borderRadius: 12, padding: '1rem', border: '1px solid #B7EBC8' }}>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', color: '#27AE60', textTransform: 'uppercase' }}>✅ Correct Approach</span>
-                  <p style={{ marginTop: '0.4rem', fontSize: '0.85rem', color: '#2D7A4A', lineHeight: 1.7 }}>{rule.tip}</p>
+                <div style={{ background: 'rgba(39,174,96,0.08)', borderRadius: 12, padding: '1rem', border: '1px solid rgba(39,174,96,0.22)' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', color: '#52B788', textTransform: 'uppercase' }}>✅ Correct Approach</span>
+                  <p style={{ marginTop: '0.4rem', fontSize: '0.85rem', color: 'rgba(82,183,136,0.75)', lineHeight: 1.7 }}>{rule.tip}</p>
                 </div>
-                <div style={{ background: '#FFF5F5', borderRadius: 12, padding: '1rem', border: '1px solid #FFB3B3' }}>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', color: '#E53935', textTransform: 'uppercase' }}>⚠️ Common Mistake</span>
-                  <p style={{ marginTop: '0.4rem', fontSize: '0.85rem', color: '#B71C1C', lineHeight: 1.7 }}>{rule.common_mistake}</p>
+                <div style={{ background: 'rgba(229,57,53,0.08)', borderRadius: 12, padding: '1rem', border: '1px solid rgba(229,57,53,0.22)' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.08em', color: '#EF5350', textTransform: 'uppercase' }}>⚠️ Common Mistake</span>
+                  <p style={{ marginTop: '0.4rem', fontSize: '0.85rem', color: 'rgba(239,83,80,0.75)', lineHeight: 1.7 }}>{rule.common_mistake}</p>
                 </div>
               </div>
             </div>
           )}
 
-          {/* ── EXAMPLES TAB ── */}
           {tab === 'examples' && (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <p style={{ fontSize: '0.85rem', color: '#888', marginBottom: '0.25rem' }}>
+              <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.3)', marginBottom: '0.25rem' }}>
                 The highlighted portion shows where the rule applies:
               </p>
               {rule.examples.map((ex, i) => (
                 <div key={i} style={{
-                  background: rule.bg, borderRadius: 14, padding: '1.25rem 1.5rem',
-                  border: `1px solid ${rule.color}25`,
+                  background: `${rule.color}0A`, borderRadius: 14, padding: '1.25rem 1.5rem',
+                  border: `1px solid ${rule.color}20`,
                   display: 'grid', gridTemplateColumns: '1fr auto', gap: '1rem', alignItems: 'center',
                 }}>
                   <div>
-                    <div style={{
-                      fontFamily: 'var(--font-quran)', fontSize: '2rem', direction: 'rtl',
-                      color: '#1A1A1A', lineHeight: 1.8, marginBottom: '0.4rem',
-                    }}>
+                    <div style={{ fontFamily: 'var(--font-quran)', fontSize: '2rem', direction: 'rtl', color: 'rgba(255,255,255,0.88)', lineHeight: 1.8, marginBottom: '0.4rem' }}>
                       {ex.arabic.split(ex.highlight).map((part, pi, arr) => (
                         <span key={pi}>
                           {part}
                           {pi < arr.length - 1 && (
-                            <span style={{
-                              color: rule.color, fontWeight: 700,
-                              background: `${rule.color}18`, borderRadius: 4,
-                              padding: '0 2px',
-                            }}>{ex.highlight}</span>
+                            <span style={{ color: rule.color, fontWeight: 700, background: `${rule.color}22`, borderRadius: 4, padding: '0 2px' }}>{ex.highlight}</span>
                           )}
                         </span>
                       ))}
                     </div>
-                    <div style={{ fontSize: '0.82rem', color: '#888', fontStyle: 'italic', marginBottom: '0.2rem' }}>
-                      {ex.transliteration}
-                    </div>
+                    <div style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.3)', fontStyle: 'italic', marginBottom: '0.2rem' }}>{ex.transliteration}</div>
                     <div style={{ fontSize: '0.85rem', color: rule.color, fontWeight: 600 }}>{ex.note}</div>
                   </div>
                   <div style={{
@@ -243,57 +224,45 @@ function RuleDetail({ rule, onClose }) {
   );
 }
 
-// ── Rule card (grid item) ──────────────────────────────────────────────────
 function RuleCard({ rule, onClick }) {
   return (
     <div onClick={onClick} style={{
-      background: '#fff', borderRadius: 18, overflow: 'hidden', cursor: 'pointer',
-      border: '1px solid rgba(0,0,0,0.07)',
-      boxShadow: '0 2px 12px rgba(0,0,0,0.05)',
+      background: 'rgba(255,255,255,0.025)', borderRadius: 18, overflow: 'hidden', cursor: 'pointer',
+      border: '1px solid rgba(255,255,255,0.07)',
       transition: 'all 0.25s cubic-bezier(0.22,1,0.36,1)',
       display: 'flex', flexDirection: 'column',
     }}
     onMouseEnter={e => {
       e.currentTarget.style.transform = 'translateY(-5px)';
-      e.currentTarget.style.boxShadow = `0 12px 36px ${rule.color}22`;
-      e.currentTarget.style.borderColor = rule.color + '50';
+      e.currentTarget.style.boxShadow = `0 12px 36px ${rule.color}18`;
+      e.currentTarget.style.borderColor = `${rule.color}45`;
+      e.currentTarget.style.background = `${rule.color}08`;
     }}
     onMouseLeave={e => {
       e.currentTarget.style.transform = '';
-      e.currentTarget.style.boxShadow = '0 2px 12px rgba(0,0,0,0.05)';
-      e.currentTarget.style.borderColor = 'rgba(0,0,0,0.07)';
+      e.currentTarget.style.boxShadow = '';
+      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)';
+      e.currentTarget.style.background = 'rgba(255,255,255,0.025)';
     }}
     >
-      {/* Colored top bar */}
-      <div style={{ height: 4, background: `linear-gradient(90deg, ${rule.color}, ${rule.color}80)` }} />
+      <div style={{ height: 3, background: `linear-gradient(90deg, ${rule.color}, ${rule.color}60)` }} />
 
-      {/* Card body */}
       <div style={{ padding: '1.4rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
-
-        {/* Icon + Arabic */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.85rem' }}>
           <div style={{
             width: 46, height: 46, borderRadius: 12,
-            background: `${rule.color}12`, border: `1.5px solid ${rule.color}25`,
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            fontSize: '1.4rem',
+            background: `${rule.color}14`, border: `1.5px solid ${rule.color}25`,
+            display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem',
           }}>{rule.icon}</div>
-
           <div style={{ textAlign: 'right' }}>
             <div style={{ fontFamily: 'var(--font-arabic)', fontSize: '1.35rem', color: rule.color, lineHeight: 1 }}>{rule.arabic_name}</div>
-            {rule.urdu_name && <div style={{ fontFamily: 'var(--font-urdu)', fontSize: '0.8rem', color: rule.color, opacity: 0.75, marginTop: '0.15rem' }}>{rule.urdu_name}</div>}
+            {rule.urdu_name && <div style={{ fontFamily: 'var(--font-urdu)', fontSize: '0.8rem', color: rule.color, opacity: 0.75, marginTop: '0.15rem', lineHeight: 3 }}>{rule.urdu_name}</div>}
           </div>
         </div>
 
-        {/* Title */}
-        <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.05rem', color: '#1A1A1A', fontWeight: 700, marginBottom: '0.4rem' }}>
-          {rule.name}
-        </h3>
+        <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1.05rem', color: 'rgba(255,255,255,0.88)', fontWeight: 700, marginBottom: '0.4rem' }}>{rule.name}</h3>
+        <p style={{ fontSize: '0.83rem', color: 'rgba(255,255,255,0.42)', lineHeight: 1.65, flex: 1 }}>{rule.short}</p>
 
-        {/* Short desc */}
-        <p style={{ fontSize: '0.83rem', color: '#666', lineHeight: 1.65, flex: 1 }}>{rule.short}</p>
-
-        {/* Counts badge */}
         {rule.counts && (
           <div style={{
             display: 'inline-flex', alignItems: 'center', gap: '0.3rem', marginTop: '0.85rem',
@@ -303,15 +272,10 @@ function RuleCard({ rule, onClick }) {
           }}>⏱ {rule.counts}</div>
         )}
 
-        {/* Trigger letters preview */}
         {rule.trigger_letters && rule.trigger_letters.length > 0 && rule.trigger_letters.length <= 7 && (
           <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap', marginTop: '0.75rem' }}>
             {rule.trigger_letters.map(l => (
-              <span key={l} style={{
-                fontFamily: 'var(--font-arabic)', fontSize: '1rem',
-                color: rule.color, background: `${rule.color}10`,
-                borderRadius: 6, padding: '0.1rem 0.45rem', fontWeight: 700,
-              }}>{l}</span>
+              <span key={l} style={{ fontFamily: 'var(--font-arabic)', fontSize: '1rem', color: rule.color, background: `${rule.color}10`, borderRadius: 6, padding: '0.1rem 0.45rem', fontWeight: 700 }}>{l}</span>
             ))}
           </div>
         )}
@@ -321,7 +285,6 @@ function RuleCard({ rule, onClick }) {
           </div>
         )}
 
-        {/* CTA */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginTop: '1rem', color: rule.color, fontSize: '0.82rem', fontWeight: 700 }}>
           Learn in detail <span style={{ fontSize: '1rem' }}>→</span>
         </div>
@@ -330,7 +293,6 @@ function RuleCard({ rule, onClick }) {
   );
 }
 
-// ── Main page ──────────────────────────────────────────────────────────────
 export default function TajweedPage() {
   const [category, setCategory] = useState('all');
   const [selected, setSelected] = useState(null);
@@ -344,64 +306,47 @@ export default function TajweedPage() {
   });
 
   return (
-    <div style={{ minHeight: '100vh', background: 'var(--cream)' }}>
+    <div style={{ minHeight: '100vh', background: '#030A05' }}>
 
-      {/* ── Hero Header ── */}
-      <div style={{
-        background: 'linear-gradient(160deg, #060E09 0%, #0D2818 55%, #1B4332 100%)',
-        padding: '3.5rem 1.5rem 2.5rem', position: 'relative', overflow: 'hidden',
-      }}>
-        {/* Hex pattern */}
-        <div style={{ position: 'absolute', inset: 0, opacity: 0.04, backgroundImage: 'repeating-linear-gradient(60deg, rgba(201,168,76,1) 0, rgba(201,168,76,1) 1px, transparent 0, transparent 50%), repeating-linear-gradient(-60deg, rgba(201,168,76,1) 0, rgba(201,168,76,1) 1px, transparent 0, transparent 50%)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
-
+      {/* Hero */}
+      <div style={{ background: 'linear-gradient(160deg,#060E09 0%,#0D2818 55%,#1B4332 100%)', padding: '3.5rem 1.5rem 2.5rem', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', inset: 0, opacity: 0.04, backgroundImage: 'repeating-linear-gradient(60deg,rgba(201,168,76,1) 0,rgba(201,168,76,1) 1px,transparent 0,transparent 50%),repeating-linear-gradient(-60deg,rgba(201,168,76,1) 0,rgba(201,168,76,1) 1px,transparent 0,transparent 50%)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
         <div style={{ maxWidth: 900, margin: '0 auto', position: 'relative' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem' }}>
-            <span style={{ background: 'rgba(201,168,76,0.15)', border: '1px solid rgba(201,168,76,0.3)', borderRadius: 9999, padding: '0.25rem 0.8rem', fontSize: '0.72rem', color: 'rgba(201,168,76,0.9)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-              علم التجويد
-            </span>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem', background: 'rgba(201,168,76,0.1)', border: '1px solid rgba(201,168,76,0.25)', borderRadius: 9999, padding: '0.25rem 0.9rem', fontSize: '0.72rem', color: 'rgba(201,168,76,0.85)', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+            ✦ علم التجويد
           </div>
-
-          <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.6rem,3vw,2.4rem)', color: '#fff', fontWeight: 700, marginBottom: '0.6rem' }}>
-            Tajweed Rules
-          </h1>
-          <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.95rem', maxWidth: 540, lineHeight: 1.7, marginBottom: '1.5rem' }}>
+          <h1 style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(1.6rem,3vw,2.4rem)', color: '#fff', fontWeight: 700, marginBottom: '0.6rem' }}>Tajweed Rules</h1>
+          <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: '0.95rem', maxWidth: 540, lineHeight: 1.7, marginBottom: '1.5rem' }}>
             Master the rules of Quranic recitation — from Noon & Tanween to Madd, Qalqalah, and beyond. Click any rule to learn in detail.
           </p>
-
-          {/* Search */}
           <div style={{ position: 'relative', maxWidth: 380 }}>
-            <span style={{ position: 'absolute', left: '0.9rem', top: '50%', transform: 'translateY(-50%)', fontSize: '0.9rem', opacity: 0.5 }}>🔍</span>
-            <input
-              value={search} onChange={e => setSearch(e.target.value)}
-              placeholder="Search rules..."
-              style={{
-                width: '100%', padding: '0.7rem 1rem 0.7rem 2.4rem',
-                background: 'rgba(255,255,255,0.08)', backdropFilter: 'blur(8px)',
-                border: '1px solid rgba(255,255,255,0.15)', borderRadius: 9999,
-                color: '#fff', fontSize: '0.88rem', outline: 'none',
-              }}
+            <span style={{ position: 'absolute', left: '0.9rem', top: '50%', transform: 'translateY(-50%)', fontSize: '0.9rem', opacity: 0.4 }}>🔍</span>
+            <input value={search} onChange={e => setSearch(e.target.value)} placeholder="Search rules..."
+              style={{ width: '100%', padding: '0.7rem 1rem 0.7rem 2.4rem', background: 'rgba(255,255,255,0.07)', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 9999, color: '#fff', fontSize: '0.88rem', outline: 'none' }}
+              onFocus={e=>{e.target.style.borderColor='rgba(201,168,76,0.4)';}}
+              onBlur={e=>{e.target.style.borderColor='rgba(255,255,255,0.12)';}}
             />
           </div>
         </div>
       </div>
 
-      {/* ── Category tabs ── */}
-      <div style={{ background: '#fff', borderBottom: '1px solid rgba(0,0,0,0.07)', position: 'sticky', top: 68, zIndex: 50 }}>
+      {/* Category tabs */}
+      <div style={{ background: 'rgba(3,10,5,0.97)', borderBottom: '1px solid rgba(255,255,255,0.07)', position: 'sticky', top: 68, zIndex: 50, backdropFilter: 'blur(16px)' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 1.5rem', display: 'flex', gap: '0.1rem', overflowX: 'auto', scrollbarWidth: 'none' }}>
           {CATEGORIES.map(cat => (
             <button key={cat.id} onClick={() => setCategory(cat.id)} style={{
               display: 'flex', alignItems: 'center', gap: '0.4rem',
               padding: '0.95rem 0.9rem', border: 'none', background: 'transparent', cursor: 'pointer',
-              color: category === cat.id ? 'var(--green-deep)' : '#888',
+              color: category === cat.id ? '#C9A84C' : 'rgba(255,255,255,0.35)',
               fontWeight: category === cat.id ? 700 : 400, fontSize: '0.85rem', whiteSpace: 'nowrap',
-              borderBottom: category === cat.id ? '2.5px solid var(--green-deep)' : '2.5px solid transparent',
+              borderBottom: category === cat.id ? '2.5px solid #C9A84C' : '2.5px solid transparent',
               transition: 'all 0.18s', marginBottom: -1,
             }}>
               <span style={{ fontFamily: 'var(--font-arabic)', fontSize: '0.8rem', opacity: 0.7 }}>{cat.ar}</span>
               {cat.label}
               <span style={{
-                background: category === cat.id ? 'var(--green-pale)' : '#F5F5F5',
-                color: category === cat.id ? 'var(--green-deep)' : '#999',
+                background: category === cat.id ? 'rgba(201,168,76,0.15)' : 'rgba(255,255,255,0.06)',
+                color: category === cat.id ? '#C9A84C' : 'rgba(255,255,255,0.3)',
                 borderRadius: 9999, padding: '0.05rem 0.45rem',
                 fontSize: '0.7rem', fontWeight: 700,
               }}>{cat.count}</span>
@@ -410,21 +355,19 @@ export default function TajweedPage() {
         </div>
       </div>
 
-      {/* ── Cards grid ── */}
+      {/* Cards grid */}
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '2.5rem 1.5rem' }}>
-
         {filtered.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-light)' }}>
+          <div style={{ textAlign: 'center', padding: '4rem', color: 'rgba(255,255,255,0.25)' }}>
             <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔍</div>
             <p>No rules match your search.</p>
           </div>
         ) : (
           <>
-            <p style={{ fontSize: '0.82rem', color: 'var(--text-light)', marginBottom: '1.5rem' }}>
-              Showing {filtered.length} rule{filtered.length !== 1 ? 's' : ''}
-              {search && ` for "${search}"`}
+            <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.25)', marginBottom: '1.5rem' }}>
+              Showing {filtered.length} rule{filtered.length !== 1 ? 's' : ''}{search && ` for "${search}"`}
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '1.25rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(290px,1fr))', gap: '1.25rem' }}>
               {filtered.map(rule => (
                 <RuleCard key={rule.id} rule={rule} onClick={() => setSelected(rule)} />
               ))}
@@ -433,44 +376,40 @@ export default function TajweedPage() {
         )}
       </div>
 
-      {/* ── Quick Reference Table ── */}
+      {/* Quick Reference Table */}
       <div style={{ maxWidth: 1100, margin: '0 auto 4rem', padding: '0 1.5rem' }}>
-        <div style={{ background: '#fff', borderRadius: 18, border: '1px solid rgba(0,0,0,0.07)', overflow: 'hidden' }}>
-          <div style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid #F0EDE6', background: 'linear-gradient(to right, var(--cream), #fff)' }}>
-            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1rem', color: 'var(--green-deep)', fontWeight: 700, margin: 0 }}>
+        <div style={{ background: 'rgba(255,255,255,0.025)', borderRadius: 18, border: '1px solid rgba(255,255,255,0.07)', overflow: 'hidden' }}>
+          <div style={{ padding: '1.25rem 1.5rem', borderBottom: '1px solid rgba(255,255,255,0.07)', background: 'rgba(201,168,76,0.05)' }}>
+            <h3 style={{ fontFamily: 'var(--font-heading)', fontSize: '1rem', color: 'rgba(201,168,76,0.85)', fontWeight: 700, margin: 0 }}>
               📋 Quick Reference — Noon Sakinah & Tanween
             </h3>
           </div>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.875rem' }}>
               <thead>
-                <tr style={{ background: 'var(--cream-dark)' }}>
+                <tr style={{ background: 'rgba(255,255,255,0.04)' }}>
                   {['Rule', 'Arabic', 'Trigger', 'What Happens', 'Counts'].map(h => (
-                    <th key={h} style={{ padding: '0.75rem 1rem', textAlign: 'left', fontWeight: 700, color: 'var(--text-mid)', fontSize: '0.78rem', letterSpacing: '0.05em', textTransform: 'uppercase', borderBottom: '1px solid #E8E2D8' }}>{h}</th>
+                    <th key={h} style={{ padding: '0.75rem 1rem', textAlign: 'left', fontWeight: 700, color: 'rgba(255,255,255,0.3)', fontSize: '0.78rem', letterSpacing: '0.05em', textTransform: 'uppercase', borderBottom: '1px solid rgba(255,255,255,0.07)' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { name: 'Izhar', ar: 'إظهار', trigger: 'ء ه ع غ ح خ', what: 'Pronounce clearly — no nasal', counts: 'No extra', color: '#E53935' },
-                  { name: 'Idgham (w/ Ghunnah)', ar: 'إدغام بغنة', trigger: 'ي ن م و', what: 'Merge noon + nasal hum', counts: '2 counts', color: '#1E88E5' },
-                  { name: 'Idgham (no Ghunnah)', ar: 'إدغام بلا غنة', trigger: 'ل ر', what: 'Merge noon completely', counts: 'No extra', color: '#1565C0' },
-                  { name: 'Iqlab', ar: 'إقلاب', trigger: 'ب only', what: 'Change to meem + nasal', counts: '2 counts', color: '#8E24AA' },
-                  { name: 'Ikhfa', ar: 'إخفاء', trigger: '15 letters', what: 'Hide noon — between clear & merged', counts: '2 counts', color: '#F57C00' },
+                  { name: 'Izhar',                  ar: 'إظهار',      trigger: 'ء ه ع غ ح خ', what: 'Pronounce clearly — no nasal',              counts: 'No extra', color: '#E57373' },
+                  { name: 'Idgham (w/ Ghunnah)',     ar: 'إدغام بغنة', trigger: 'ي ن م و',    what: 'Merge noon + nasal hum',                   counts: '2 counts', color: '#64B5F6' },
+                  { name: 'Idgham (no Ghunnah)',     ar: 'إدغام بلا غنة', trigger: 'ل ر',     what: 'Merge noon completely',                    counts: 'No extra', color: '#7986CB' },
+                  { name: 'Iqlab',                  ar: 'إقلاب',      trigger: 'ب only',      what: 'Change to meem + nasal',                   counts: '2 counts', color: '#BA68C8' },
+                  { name: 'Ikhfa',                  ar: 'إخفاء',      trigger: '15 letters',   what: 'Hide noon — between clear & merged',       counts: '2 counts', color: '#FFB74D' },
                 ].map((row, i) => (
-                  <tr key={i} style={{ borderBottom: '1px solid #F5F0E8', transition: 'background 0.15s' }}
-                    onMouseEnter={e => { e.currentTarget.style.background = '#FAFAF7'; }}
+                  <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', transition: 'background 0.15s' }}
+                    onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; }}
                     onMouseLeave={e => { e.currentTarget.style.background = ''; }}
                   >
-                    <td style={{ padding: '0.85rem 1rem' }}>
-                      <span style={{ fontWeight: 700, color: row.color }}>{row.name}</span>
-                    </td>
+                    <td style={{ padding: '0.85rem 1rem' }}><span style={{ fontWeight: 700, color: row.color }}>{row.name}</span></td>
                     <td style={{ padding: '0.85rem 1rem', fontFamily: 'var(--font-arabic)', fontSize: '1rem', color: row.color }}>{row.ar}</td>
-                    <td style={{ padding: '0.85rem 1rem', fontFamily: 'var(--font-arabic)', fontSize: '1rem', color: '#333', letterSpacing: '0.1em' }}>{row.trigger}</td>
-                    <td style={{ padding: '0.85rem 1rem', color: '#555', lineHeight: 1.5 }}>{row.what}</td>
-                    <td style={{ padding: '0.85rem 1rem' }}>
-                      <span style={{ background: `${row.color}12`, color: row.color, borderRadius: 9999, padding: '0.15rem 0.6rem', fontSize: '0.78rem', fontWeight: 700 }}>{row.counts}</span>
-                    </td>
+                    <td style={{ padding: '0.85rem 1rem', fontFamily: 'var(--font-arabic)', fontSize: '1rem', color: 'rgba(255,255,255,0.55)', letterSpacing: '0.1em' }}>{row.trigger}</td>
+                    <td style={{ padding: '0.85rem 1rem', color: 'rgba(255,255,255,0.4)', lineHeight: 1.5 }}>{row.what}</td>
+                    <td style={{ padding: '0.85rem 1rem' }}><span style={{ background: `${row.color}12`, color: row.color, borderRadius: 9999, padding: '0.15rem 0.6rem', fontSize: '0.78rem', fontWeight: 700 }}>{row.counts}</span></td>
                   </tr>
                 ))}
               </tbody>
@@ -479,8 +418,9 @@ export default function TajweedPage() {
         </div>
       </div>
 
-      {/* ── Modal ── */}
       {selected && <RuleDetail rule={selected} onClose={() => setSelected(null)} />}
+
+      <style>{`@keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }`}</style>
     </div>
   );
 }

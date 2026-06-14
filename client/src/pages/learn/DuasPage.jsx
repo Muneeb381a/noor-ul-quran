@@ -61,10 +61,9 @@ function DuaCard({ dua, isFav, onFav }) {
   return (
     <div
       style={{
-        background: '#fff',
+        background: 'rgba(255,255,255,0.025)',
         borderRadius: 20,
-        border: '1px solid rgba(201,168,76,0.15)',
-        boxShadow: '0 2px 8px rgba(0,0,0,0.05), 0 8px 28px rgba(27,67,50,0.07)',
+        border: '1px solid rgba(255,255,255,0.07)',
         overflow: 'hidden',
         transition: 'transform 0.22s ease, box-shadow 0.22s ease',
         display: 'flex',
@@ -72,11 +71,13 @@ function DuaCard({ dua, isFav, onFav }) {
       }}
       onMouseEnter={e => {
         e.currentTarget.style.transform = 'translateY(-4px)';
-        e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.09), 0 20px 48px rgba(27,67,50,0.12)';
+        e.currentTarget.style.boxShadow = `0 8px 32px rgba(0,0,0,0.35), 0 0 0 1px ${meta.color}30`;
+        e.currentTarget.style.background = `${meta.color}08`;
       }}
       onMouseLeave={e => {
         e.currentTarget.style.transform = 'translateY(0)';
-        e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.05), 0 8px 28px rgba(27,67,50,0.07)';
+        e.currentTarget.style.boxShadow = '';
+        e.currentTarget.style.background = 'rgba(255,255,255,0.025)';
       }}
     >
       <div style={{ height: 4, background: `linear-gradient(90deg, ${meta.color}, ${meta.color}80)` }} />
@@ -95,7 +96,7 @@ function DuaCard({ dua, isFav, onFav }) {
         </div>
         <button onClick={() => onFav(dua.id)} style={{
           background: 'none', border: 'none', fontSize: 18, lineHeight: 1,
-          color: isFav ? '#e53935' : '#ccc', cursor: 'pointer',
+          color: isFav ? '#e53935' : 'rgba(255,255,255,0.2)', cursor: 'pointer',
           transition: 'transform 0.2s', transform: isFav ? 'scale(1.2)' : 'scale(1)',
         }} title={isFav ? 'Remove favorite' : 'Add to favorites'}>
           {isFav ? '❤️' : '🤍'}
@@ -103,13 +104,13 @@ function DuaCard({ dua, isFav, onFav }) {
       </div>
 
       <div style={{ padding: '0 1.2rem 0.5rem' }}>
-        <h3 style={{ fontSize: '1rem', fontWeight: 700, color: '#1B4332', margin: 0 }}>{dua.title}</h3>
+        <h3 style={{ fontSize: '1rem', fontWeight: 700, color: 'rgba(255,255,255,0.88)', margin: 0 }}>{dua.title}</h3>
       </div>
 
       <div style={{
         margin: '0 1.2rem',
         padding: '1.2rem',
-        background: `linear-gradient(135deg, ${meta.color}08, ${meta.color}04)`,
+        background: `${meta.color}0A`,
         borderRadius: 14,
         border: `1px solid ${meta.color}20`,
         textAlign: 'right',
@@ -118,77 +119,77 @@ function DuaCard({ dua, isFav, onFav }) {
           fontFamily: '"Noto Naskh Arabic", "Amiri Quran", serif',
           fontSize: 'clamp(1.15rem, 2.5vw, 1.45rem)',
           lineHeight: 2.2,
-          color: '#1a1a1a',
+          color: 'rgba(255,255,255,0.92)',
           margin: 0,
           direction: 'rtl',
         }}>{dua.arabic}</p>
       </div>
 
       <div style={{ padding: '0.8rem 1.2rem 0.2rem' }}>
-        <p style={{ fontStyle: 'italic', color: '#666', fontSize: '0.82rem', lineHeight: 1.7, margin: 0 }}>
+        <p style={{ fontStyle: 'italic', color: 'rgba(255,255,255,0.32)', fontSize: '0.82rem', lineHeight: 1.7, margin: 0 }}>
           {dua.transliteration}
         </p>
       </div>
 
       <div style={{ padding: '0.5rem 1.2rem 0.8rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-        <div style={{ background: '#F6F9F7', borderRadius: 10, padding: '0.6rem 0.9rem', borderLeft: '3px solid #2E7D32' }}>
-          <p style={{ margin: 0, fontSize: '0.83rem', color: '#2a2a2a', lineHeight: 1.6 }}>
-            <span style={{ fontWeight: 700, color: '#2E7D32', marginRight: 4 }}>EN:</span>{dua.translation_en}
+        <div style={{ background: 'rgba(46,125,50,0.1)', borderRadius: 10, padding: '0.6rem 0.9rem', borderLeft: '3px solid #52B788' }}>
+          <p style={{ margin: 0, fontSize: '0.83rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.6 }}>
+            <span style={{ fontWeight: 700, color: '#52B788', marginRight: 4 }}>EN:</span>{dua.translation_en}
           </p>
         </div>
         {expanded && dua.translation_ur && (
-          <div style={{ background: '#FDF8FF', borderRadius: 10, padding: '0.6rem 0.9rem', borderRight: '3px solid #6A1B9A', textAlign: 'right' }}>
+          <div style={{ background: 'rgba(106,27,154,0.1)', borderRadius: 10, padding: '0.6rem 0.9rem', borderRight: '3px solid #B39DDB', textAlign: 'right' }}>
             <p style={{
-              margin: 0, fontSize: '0.85rem', color: '#2a2a2a', lineHeight: 1.8,
-              fontFamily: '"Noto Nastaliq Urdu", serif', direction: 'rtl',
+              margin: 0, fontSize: '0.88rem', color: 'rgba(255,255,255,0.65)', lineHeight: 3.4,
+              fontFamily: '"Noto Nastaliq Urdu", serif', direction: 'rtl', wordSpacing: '3px',
             }}>
-              <span style={{ fontWeight: 700, color: '#6A1B9A', marginLeft: 4 }}>اردو:</span>{dua.translation_ur}
+              <span style={{ fontWeight: 700, color: '#B39DDB', marginLeft: 4 }}>اردو:</span>{dua.translation_ur}
             </p>
           </div>
         )}
         {dua.explanation && (
-          <div style={{ background: '#FFFDE7', borderRadius: 10, padding: '0.65rem 0.9rem', borderLeft: '3px solid #F9A825' }}>
-            <p style={{ margin: '0 0 0.25rem', fontSize: '0.68rem', fontWeight: 700, color: '#F57F17', textTransform: 'uppercase', letterSpacing: '0.06em' }}>📖 Explanation</p>
-            <p style={{ margin: 0, fontSize: '0.78rem', color: '#555', lineHeight: 1.7 }}>{dua.explanation}</p>
+          <div style={{ background: 'rgba(201,168,76,0.08)', borderRadius: 10, padding: '0.65rem 0.9rem', borderLeft: '3px solid rgba(201,168,76,0.5)' }}>
+            <p style={{ margin: '0 0 0.25rem', fontSize: '0.68rem', fontWeight: 700, color: 'rgba(201,168,76,0.8)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>📖 Explanation</p>
+            <p style={{ margin: 0, fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.7 }}>{dua.explanation}</p>
           </div>
         )}
         {dua.benefit && (
-          <div style={{ background: '#F3E5F5', borderRadius: 10, padding: '0.5rem 0.9rem', borderLeft: '3px solid #8E24AA', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
+          <div style={{ background: 'rgba(142,36,170,0.1)', borderRadius: 10, padding: '0.5rem 0.9rem', borderLeft: '3px solid #BA68C8', display: 'flex', gap: '0.5rem', alignItems: 'flex-start' }}>
             <span style={{ fontSize: '0.78rem', flexShrink: 0, marginTop: '0.1rem' }}>⭐</span>
-            <p style={{ margin: 0, fontSize: '0.78rem', color: '#6A1B9A', lineHeight: 1.6, fontWeight: 600 }}>{dua.benefit}</p>
+            <p style={{ margin: 0, fontSize: '0.78rem', color: 'rgba(186,104,200,0.85)', lineHeight: 1.6, fontWeight: 600 }}>{dua.benefit}</p>
           </div>
         )}
       </div>
 
       <div style={{
         padding: '0.65rem 1.2rem',
-        borderTop: '1px solid rgba(0,0,0,0.06)',
-        background: '#FAFAFA',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+        background: 'rgba(255,255,255,0.025)',
         display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '0.5rem',
         flexWrap: 'wrap',
       }}>
         <span style={{
           padding: '0.2rem 0.65rem', borderRadius: 99,
-          background: '#1B433215', color: '#1B4332',
+          background: 'rgba(82,183,136,0.1)', color: 'rgba(82,183,136,0.75)',
           fontSize: '0.68rem', fontWeight: 600,
         }}>📖 {dua.source}</span>
         <div style={{ display: 'flex', gap: '0.4rem' }}>
           <button onClick={() => setExpanded(v => !v)} style={{
-            background: expanded ? '#1B433215' : 'none',
-            border: '1px solid #1B433230', borderRadius: 8,
+            background: expanded ? 'rgba(201,168,76,0.12)' : 'none',
+            border: '1px solid rgba(201,168,76,0.25)', borderRadius: 8,
             padding: '0.3rem 0.6rem', fontSize: '0.7rem', fontWeight: 600,
-            color: '#1B4332', cursor: 'pointer', transition: 'background 0.18s',
+            color: 'rgba(201,168,76,0.8)', cursor: 'pointer', transition: 'background 0.18s',
           }}>{expanded ? 'اردو ✕' : 'اردو'}</button>
           <button onClick={() => speakArabic(dua.arabic)} style={{
-            background: 'none', border: '1px solid rgba(27,67,50,0.2)', borderRadius: 8,
+            background: 'none', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 8,
             padding: '0.3rem 0.55rem', cursor: 'pointer', fontSize: '0.78rem',
-            color: '#1B4332', transition: 'background 0.18s',
+            color: 'rgba(255,255,255,0.45)', transition: 'background 0.18s',
           }} title="Listen">🔊</button>
           <button onClick={copy} style={{
-            background: copied ? '#E8F5E9' : 'none',
-            border: `1px solid ${copied ? '#2E7D32' : 'rgba(27,67,50,0.2)'}`,
+            background: copied ? 'rgba(82,183,136,0.1)' : 'none',
+            border: `1px solid ${copied ? 'rgba(82,183,136,0.4)' : 'rgba(255,255,255,0.12)'}`,
             borderRadius: 8, padding: '0.3rem 0.55rem', cursor: 'pointer',
-            fontSize: '0.78rem', color: copied ? '#2E7D32' : '#1B4332', transition: 'all 0.18s',
+            fontSize: '0.78rem', color: copied ? '#52B788' : 'rgba(255,255,255,0.45)', transition: 'all 0.18s',
           }} title="Copy">{copied ? '✓' : '📋'}</button>
         </div>
       </div>
@@ -226,8 +227,8 @@ function NotifPanel({ duas }) {
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem' }}>
         <div>
-          <p style={{ margin: 0, fontWeight: 700, fontSize: '0.9rem', color: '#1B4332' }}>روزانہ دعا یاددہانی</p>
-          <p style={{ margin: '0.2rem 0 0', fontSize: '0.75rem', color: '#666' }}>
+          <p style={{ margin: 0, fontWeight: 700, fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)', fontFamily: '"Noto Nastaliq Urdu",serif', direction: 'rtl', lineHeight: 3 }}>روزانہ دعا یاددہانی</p>
+          <p style={{ margin: '0.2rem 0 0', fontSize: '0.75rem', color: 'rgba(255,255,255,0.4)' }}>
             {permission === 'denied'
               ? '⚠️ نوٹیفکیشن بند ہیں — براؤزر سیٹنگز میں اجازت دیں'
               : settings.enabled
@@ -237,19 +238,20 @@ function NotifPanel({ duas }) {
         </div>
         <button onClick={toggle} disabled={permission === 'denied'} style={{
           padding: '0.5rem 1.1rem', borderRadius: 99,
-          background: settings.enabled ? '#e53935' : 'linear-gradient(135deg, #1B4332, #2E7D32)',
-          color: '#fff', border: 'none', fontSize: '0.78rem', fontWeight: 700,
+          background: settings.enabled ? 'rgba(229,57,53,0.2)' : 'linear-gradient(135deg,#1B4332,#2D6A4F)',
+          color: settings.enabled ? '#ef5350' : '#fff', border: `1px solid ${settings.enabled ? 'rgba(229,57,53,0.4)' : 'transparent'}`,
+          fontSize: '0.78rem', fontWeight: 700,
           cursor: permission === 'denied' ? 'not-allowed' : 'pointer',
-          opacity: permission === 'denied' ? 0.5 : 1, transition: 'all 0.2s',
+          opacity: permission === 'denied' ? 0.5 : 1, transition: 'all 0.2s', fontFamily: '"Noto Nastaliq Urdu",serif',
         }}>{settings.enabled ? 'بند کریں' : 'فعال کریں'}</button>
       </div>
       {settings.enabled && (
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-          <label style={{ fontSize: '0.8rem', color: '#555', whiteSpace: 'nowrap' }}>وقت منتخب کریں:</label>
+          <label style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', whiteSpace: 'nowrap', fontFamily: '"Noto Nastaliq Urdu",serif', lineHeight: 3 }}>وقت منتخب کریں:</label>
           <input type="time" value={time} onChange={handleTimeChange} style={{
             padding: '0.4rem 0.7rem', borderRadius: 8,
-            border: '1px solid rgba(27,67,50,0.25)', fontSize: '0.85rem',
-            background: '#F6F9F7', color: '#1B4332', fontWeight: 600,
+            border: '1px solid rgba(255,255,255,0.12)', fontSize: '0.85rem',
+            background: 'rgba(255,255,255,0.06)', color: 'rgba(255,255,255,0.8)', fontWeight: 600,
             outline: 'none', cursor: 'pointer',
           }} />
         </div>
@@ -302,7 +304,7 @@ export default function DuasPage() {
   };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#F6F1E9' }}>
+    <div style={{ minHeight: '100vh', background: '#030A05' }}>
 
       {/* HERO */}
       <div style={{
@@ -410,9 +412,8 @@ export default function DuasPage() {
       {/* NOTIFICATION PANEL */}
       <div style={{ maxWidth: 860, margin: '1.5rem auto 0', padding: '0 1.5rem' }}>
         <div style={{
-          background: '#fff', borderRadius: 16,
-          border: '1px solid rgba(201,168,76,0.18)',
-          boxShadow: '0 2px 12px rgba(27,67,50,0.06)',
+          background: 'rgba(255,255,255,0.025)', borderRadius: 16,
+          border: '1px solid rgba(201,168,76,0.15)',
           overflow: 'hidden',
         }}>
           <button onClick={() => setShowNotifPanel(v => !v)} style={{
@@ -422,12 +423,12 @@ export default function DuasPage() {
           }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
               <span style={{ fontSize: 20 }}>🔔</span>
-              <span style={{ fontWeight: 700, fontSize: '0.88rem', color: '#1B4332' }}>یاددہانی ترتیبات</span>
+              <span style={{ fontWeight: 700, fontSize: '0.88rem', color: 'rgba(201,168,76,0.85)', fontFamily: '"Noto Nastaliq Urdu",serif', lineHeight: 3 }}>یاددہانی ترتیبات</span>
             </div>
-            <span style={{ color: '#999', fontSize: '0.8rem' }}>{showNotifPanel ? '▲' : '▼'}</span>
+            <span style={{ color: 'rgba(255,255,255,0.25)', fontSize: '0.8rem' }}>{showNotifPanel ? '▲' : '▼'}</span>
           </button>
           {showNotifPanel && (
-            <div style={{ padding: '0 1.3rem 1.3rem', borderTop: '1px solid rgba(0,0,0,0.06)' }}>
+            <div style={{ padding: '0 1.3rem 1.3rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
               <div style={{ paddingTop: '1rem' }}>
                 <NotifPanel duas={duasData} />
               </div>
@@ -439,16 +440,16 @@ export default function DuasPage() {
       {/* FILTER BAR */}
       <div ref={filterRef} style={{
         position: 'sticky', top: 68, zIndex: 10,
-        background: 'rgba(246,241,233,0.92)', backdropFilter: 'blur(12px)',
-        borderBottom: '1px solid rgba(201,168,76,0.18)',
+        background: 'rgba(3,10,5,0.95)', backdropFilter: 'blur(16px)',
+        borderBottom: '1px solid rgba(201,168,76,0.12)',
         padding: '0.75rem 1.5rem', marginTop: '1.5rem',
       }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', gap: '0.5rem', overflowX: 'auto', paddingBottom: 2 }}>
           <button onClick={() => { setShowFavOnly(v => !v); setActiveCategory('All'); }} style={{
             padding: '0.42rem 0.9rem', borderRadius: 99, border: '1px solid',
-            borderColor: showFavOnly ? '#e53935' : 'rgba(0,0,0,0.15)',
-            background: showFavOnly ? '#FFEBEE' : 'transparent',
-            color: showFavOnly ? '#e53935' : '#555',
+            borderColor: showFavOnly ? 'rgba(229,57,53,0.5)' : 'rgba(255,255,255,0.1)',
+            background: showFavOnly ? 'rgba(229,57,53,0.12)' : 'transparent',
+            color: showFavOnly ? '#ef5350' : 'rgba(255,255,255,0.5)',
             fontSize: '0.75rem', fontWeight: 700, cursor: 'pointer', whiteSpace: 'nowrap', transition: 'all 0.18s',
           }}>❤️ Favorites {favorites.length > 0 && `(${favorites.length})`}</button>
           {CATEGORIES.map(cat => {
@@ -457,9 +458,9 @@ export default function DuasPage() {
             return (
               <button key={cat} onClick={() => handleCatClick(cat)} style={{
                 padding: '0.42rem 0.9rem', borderRadius: 99, border: '1px solid',
-                borderColor: active ? meta.color : 'rgba(0,0,0,0.12)',
-                background: active ? meta.color : 'transparent',
-                color: active ? '#fff' : '#444',
+                borderColor: active ? `${meta.color}80` : 'rgba(255,255,255,0.1)',
+                background: active ? `${meta.color}1A` : 'transparent',
+                color: active ? meta.color : 'rgba(255,255,255,0.45)',
                 fontSize: '0.75rem', fontWeight: active ? 700 : 500,
                 cursor: 'pointer', whiteSpace: 'nowrap', transition: 'all 0.18s',
               }}>{meta.icon} {cat}</button>
@@ -471,10 +472,10 @@ export default function DuasPage() {
       {/* DUAS GRID */}
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '2rem 1.5rem' }}>
         {filtered.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '4rem 2rem', color: '#999' }}>
+          <div style={{ textAlign: 'center', padding: '4rem 2rem', color: 'rgba(255,255,255,0.3)' }}>
             <p style={{ fontSize: '3rem', marginBottom: '1rem' }}>🔍</p>
-            <p style={{ fontSize: '1rem', fontWeight: 600, color: '#555' }}>کوئی دعا نہیں ملی</p>
-            <p style={{ fontSize: '0.85rem', marginTop: '0.4rem' }}>کوئی اور تلاش کریں یا فلٹر صاف کریں</p>
+            <p style={{ fontSize: '1rem', fontWeight: 600, fontFamily: '"Noto Nastaliq Urdu",serif', lineHeight: 3 }}>کوئی دعا نہیں ملی</p>
+            <p style={{ fontSize: '0.85rem', marginTop: '0.4rem', fontFamily: '"Noto Nastaliq Urdu",serif', lineHeight: 3 }}>کوئی اور تلاش کریں یا فلٹر صاف کریں</p>
           </div>
         ) : (
           <div style={{

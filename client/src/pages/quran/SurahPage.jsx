@@ -131,7 +131,7 @@ export default function SurahPage() {
   );
 
   return (
-    <div style={{ minHeight: '80vh', background: 'var(--parchment)' }}>
+    <div style={{ minHeight: '80vh', background: '#030A05' }}>
       {/* ── Surah Header ── */}
       <div style={{
         background: 'linear-gradient(160deg, var(--green-deep) 0%, #0D2B1D 100%)',
@@ -188,50 +188,49 @@ export default function SurahPage() {
       </div>
 
       {/* ── Toolbar ── */}
-      <div style={{ background: 'var(--white)', borderBottom: '1px solid rgba(27,67,50,0.08)', padding: '0.6rem 1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', position: 'sticky', top: 64, zIndex: 10, boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}>
+      <div style={{ background: 'rgba(4,10,6,0.97)', backdropFilter:'blur(20px)', borderBottom: '1px solid rgba(201,168,76,0.1)', padding: '0.6rem 1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', position: 'sticky', top: 68, zIndex: 10 }}>
         {/* Play all */}
         <button onClick={handlePlayAll} style={{
-          display: 'flex', alignItems: 'center', gap: '0.4rem',
-          padding: '0.45rem 1rem',
-          background: playingAll ? 'var(--green-deep)' : 'transparent',
-          color: playingAll ? '#fff' : 'var(--green-deep)',
-          border: '1.5px solid var(--green-deep)',
-          borderRadius: 'var(--radius-full)', fontSize: '0.82rem', fontWeight: 600, cursor: 'pointer', transition: 'all 0.2s',
+          display:'flex',alignItems:'center',gap:'0.4rem',padding:'0.42rem 1rem',
+          background: playingAll ? 'linear-gradient(135deg,#1B4332,#2D6A4F)' : 'rgba(82,183,136,0.08)',
+          color: playingAll ? '#fff' : 'rgba(82,183,136,0.9)',
+          border: `1.5px solid ${playingAll ? 'rgba(82,183,136,0.5)' : 'rgba(82,183,136,0.25)'}`,
+          borderRadius:99,fontSize:'0.8rem',fontWeight:600,cursor:'pointer',transition:'all 0.2s',
         }}>
           {playingAll ? '⏸ Stop' : '▶ Play All'}
         </button>
 
         {/* Translation toggle */}
         <button onClick={() => setShowTrans(p => !p)} style={{
-          padding: '0.45rem 1rem',
-          background: showTrans ? 'var(--green-pale)' : 'transparent',
-          color: showTrans ? 'var(--green-mid)' : 'var(--text-mid)',
-          border: `1.5px solid ${showTrans ? 'var(--green-light)' : 'rgba(0,0,0,0.12)'}`,
-          borderRadius: 'var(--radius-full)', fontSize: '0.82rem', fontWeight: 600, cursor: 'pointer', transition: 'all 0.2s',
+          padding:'0.42rem 1rem',
+          background: showTrans ? 'rgba(201,168,76,0.1)' : 'rgba(255,255,255,0.04)',
+          color: showTrans ? '#E9C46A' : 'rgba(255,255,255,0.45)',
+          border: `1.5px solid ${showTrans ? 'rgba(201,168,76,0.35)' : 'rgba(255,255,255,0.1)'}`,
+          borderRadius:99,fontSize:'0.8rem',fontWeight:600,cursor:'pointer',transition:'all 0.2s',
         }}>
-          Translation {showTrans ? 'On' : 'Off'} (EN + UR)
+          Translation {showTrans ? 'On' : 'Off'}
         </button>
 
         {/* Font size */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', marginLeft: 'auto' }}>
-          <span style={{ fontSize: '0.72rem', color: 'var(--text-light)', marginRight: '0.15rem', whiteSpace: 'nowrap' }}>خط کا سائز</span>
+        <div style={{ display:'flex',alignItems:'center',gap:'0.32rem',marginLeft:'auto' }}>
+          <span style={{ fontSize:'0.7rem',color:'rgba(255,255,255,0.28)',marginRight:'0.15rem',whiteSpace:'nowrap',fontFamily:'var(--font-urdu)',lineHeight:3 }}>خط کا سائز</span>
           {[
-            { sz: 24, label: 'A', display: '0.72rem', title: 'Small' },
-            { sz: 28, label: 'A', display: '0.85rem', title: 'Medium' },
-            { sz: 32, label: 'A', display: '1rem',    title: 'Large' },
-            { sz: 38, label: 'A', display: '1.2rem',  title: 'Extra Large' },
-          ].map(({ sz, label, display, title }) => {
+            { sz:24, display:'0.72rem', title:'Small'       },
+            { sz:28, display:'0.88rem', title:'Medium'      },
+            { sz:32, display:'1.05rem', title:'Large'       },
+            { sz:38, display:'1.25rem', title:'Extra Large' },
+          ].map(({ sz, display, title }) => {
             const active = fontSize === sz;
             return (
               <button key={sz} onClick={() => setFontSize(sz)} title={title} style={{
-                width: 34, height: 34, borderRadius: 8,
-                background: active ? 'var(--green-deep)' : 'var(--cream-dark)',
-                color: active ? '#fff' : 'var(--text-mid)',
-                border: active ? '1.5px solid var(--green-mid)' : '1.5px solid transparent',
-                fontSize: display, fontWeight: 700, cursor: 'pointer',
-                transition: 'all 0.18s', lineHeight: 1,
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
-              }}>{label}</button>
+                width:34,height:34,borderRadius:8,cursor:'pointer',transition:'all 0.18s',lineHeight:1,
+                background: active ? 'linear-gradient(135deg,#1B4332,#2D6A4F)' : 'rgba(255,255,255,0.05)',
+                color: active ? '#fff' : 'rgba(255,255,255,0.45)',
+                border: active ? '1.5px solid rgba(82,183,136,0.5)' : '1.5px solid rgba(255,255,255,0.08)',
+                fontSize:display,fontWeight:700,
+                display:'flex',alignItems:'center',justifyContent:'center',
+                fontFamily:'var(--font-heading)',
+              }}>A</button>
             );
           })}
         </div>
@@ -393,15 +392,19 @@ export default function SurahPage() {
                           </p>
                         )}
 
-                        {/* Urdu — right aligned, Arabic font */}
+                        {/* Urdu translation */}
                         {urAyahs[i]?.text && (
                           <p style={{
-                            fontSize: '1.05rem',
-                            color: 'var(--green-mid)',
-                            lineHeight: 2.2,
+                            fontSize: '1.12rem',
+                            color: '#2D6A4F',
+                            lineHeight: 3.4,
                             fontFamily: 'var(--font-urdu)',
                             direction: 'rtl',
                             textAlign: 'right',
+                            wordSpacing: '3px',
+                            paddingRight: '0.25rem',
+                            borderRight: '3px solid rgba(201,168,76,0.35)',
+                            paddingTop: '0.5rem',
                           }}>
                             {urAyahs[i].text}
                           </p>

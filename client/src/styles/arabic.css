@@ -48,5 +48,9 @@
   font-family: var(--font-urdu);
   direction: rtl;
   text-align: right;
-  line-height: 2.4;
+  line-height: 3.4;        /* Nastaliq needs far more vertical space */
+  font-size: 1.08em;       /* Nastaliq appears smaller than Naskh at same px */
+  word-spacing: 3px;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+  -webkit-font-feature-settings: 'liga' 1, 'calt' 1;
 }

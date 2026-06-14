@@ -32,7 +32,7 @@ function StarRating({ value, onChange }) {
           }}
         >★</button>
       ))}
-      <span style={{ fontSize: '0.8rem', color: '#888', alignSelf: 'center', marginLeft: '0.25rem' }}>
+      <span style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.3)', alignSelf: 'center', marginLeft: '0.25rem' }}>
         {['', 'Poor', 'Fair', 'Good', 'Great', 'Perfect'][hover || value]}
       </span>
     </div>
@@ -88,16 +88,16 @@ export default function NewLog() {
 
   const inputStyle = {
     width: '100%', padding: '0.65rem 0.9rem',
-    border: '1.5px solid rgba(27,67,50,0.18)',
-    borderRadius: 10, fontSize: '0.9rem', background: '#FAFAF8',
-    color: '#1a1a1a', outline: 'none', boxSizing: 'border-box',
+    border: '1.5px solid rgba(255,255,255,0.1)',
+    borderRadius: 10, fontSize: '0.9rem', background: 'rgba(255,255,255,0.05)',
+    color: 'rgba(255,255,255,0.85)', outline: 'none', boxSizing: 'border-box',
     fontFamily: 'inherit', transition: 'border-color 0.18s',
   };
-  const errStyle = { fontSize: '0.7rem', color: '#e53935', marginTop: '0.25rem' };
-  const labelStyle = { display: 'block', fontSize: '0.78rem', fontWeight: 700, color: '#444', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.06em' };
+  const errStyle = { fontSize: '0.7rem', color: '#ef5350', marginTop: '0.25rem' };
+  const labelStyle = { display: 'block', fontSize: '0.78rem', fontWeight: 700, color: 'rgba(255,255,255,0.4)', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.06em' };
 
   return (
-    <div style={{ minHeight: '100vh', background: '#F6F1E9' }}>
+    <div style={{ minHeight: '100vh', background: '#030A05' }}>
 
       {/* Header */}
       <div style={{
@@ -117,8 +117,8 @@ export default function NewLog() {
         <form onSubmit={handleSubmit}>
 
           {/* Log Type selector */}
-          <div style={{ background: '#fff', borderRadius: 20, border: '1px solid rgba(0,0,0,0.07)', boxShadow: '0 2px 12px rgba(27,67,50,0.07)', padding: '1.5rem', marginBottom: '1rem' }}>
-            <p style={{ margin: '0 0 1rem', fontSize: '0.78rem', fontWeight: 700, color: '#444', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Session Type</p>
+          <div style={{ background: 'rgba(255,255,255,0.025)', borderRadius: 20, border: '1px solid rgba(255,255,255,0.07)', padding: '1.5rem', marginBottom: '1rem' }}>
+            <p style={{ margin: '0 0 1rem', fontSize: '0.78rem', fontWeight: 700, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Session Type</p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '0.6rem' }}>
               {LOG_TYPES.map(t => (
                 <button key={t.value} type="button" onClick={() => setVal('log_type', t.value)} style={{
@@ -132,14 +132,14 @@ export default function NewLog() {
                     <span style={{ fontWeight: 700, fontSize: '0.85rem', color: form.log_type === t.value ? t.color : '#333' }}>{t.label}</span>
                     <span style={{ fontFamily: '"Noto Nastaliq Urdu",serif', fontSize: '0.8rem', color: '#999', marginRight: 'auto', marginLeft: 'auto' }}>{t.urdu}</span>
                   </div>
-                  <p style={{ margin: 0, fontSize: '0.68rem', color: '#888' }}>{t.desc}</p>
+                  <p style={{ margin: 0, fontSize: '0.68rem', color: 'rgba(255,255,255,0.3)' }}>{t.desc}</p>
                 </button>
               ))}
             </div>
           </div>
 
           {/* Date + Duration */}
-          <div style={{ background: '#fff', borderRadius: 20, border: '1px solid rgba(0,0,0,0.07)', boxShadow: '0 2px 12px rgba(27,67,50,0.07)', padding: '1.5rem', marginBottom: '1rem' }}>
+          <div style={{ background: 'rgba(255,255,255,0.025)', borderRadius: 20, border: '1px solid rgba(255,255,255,0.07)', padding: '1.5rem', marginBottom: '1rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div>
                 <label style={labelStyle}>Date</label>
@@ -157,8 +157,8 @@ export default function NewLog() {
           </div>
 
           {/* Range */}
-          <div style={{ background: '#fff', borderRadius: 20, border: '1px solid rgba(0,0,0,0.07)', boxShadow: '0 2px 12px rgba(27,67,50,0.07)', padding: '1.5rem', marginBottom: '1rem' }}>
-            <p style={{ margin: '0 0 1rem', fontSize: '0.78rem', fontWeight: 700, color: '#444', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Ayah Range</p>
+          <div style={{ background: 'rgba(255,255,255,0.025)', borderRadius: 20, border: '1px solid rgba(255,255,255,0.07)', padding: '1.5rem', marginBottom: '1rem' }}>
+            <p style={{ margin: '0 0 1rem', fontSize: '0.78rem', fontWeight: 700, color: 'rgba(255,255,255,0.4)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Ayah Range</p>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.85rem' }}>
               <div>
                 <label style={labelStyle}>From Surah</label>
@@ -190,7 +190,7 @@ export default function NewLog() {
           </div>
 
           {/* Quality + Notes */}
-          <div style={{ background: '#fff', borderRadius: 20, border: '1px solid rgba(0,0,0,0.07)', boxShadow: '0 2px 12px rgba(27,67,50,0.07)', padding: '1.5rem', marginBottom: '1.5rem' }}>
+          <div style={{ background: 'rgba(255,255,255,0.025)', borderRadius: 20, border: '1px solid rgba(255,255,255,0.07)', padding: '1.5rem', marginBottom: '1.5rem' }}>
             <div style={{ marginBottom: '1.2rem' }}>
               <label style={labelStyle}>Quality Rating</label>
               <StarRating value={form.quality_rating} onChange={v => setVal('quality_rating', v)} />
